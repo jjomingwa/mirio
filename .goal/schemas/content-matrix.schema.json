@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "content-matrix.schema.json",
+  "title": "Crowntrail premium vertical-slice content matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "slice_id",
+    "commit_sha",
+    "status",
+    "rows",
+    "captured_playthrough_evidence_id",
+    "independent_review_ids"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "slice_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commit_sha": {
+      "type": "string",
+      "pattern": "^(NO_COMMIT|[0-9a-fA-F]{40})$"
+    },
+    "status": {
+      "enum": ["PASS", "FAIL", "UNKNOWN"]
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "category",
+          "player_purpose",
+          "implementation_evidence_ids",
+          "automated_check_ids",
+          "human_review_ids",
+          "status"
+        ],
+        "properties": {
+          "category": {
+            "enum": [
+              "narrative_hook",
+              "world_identity",
+              "course_beats",
+              "mechanics",
+              "enemy_behaviors",
+              "exploration_and_secret",
+              "boss_escalation",
+              "audio",
+              "visual_motion_and_effects",
+              "ui_and_onboarding",
+              "save_flow",
+              "accessibility"
+            ]
+          },
+          "player_purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "implementation_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "automated_check_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "human_review_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "enum": ["PASS", "FAIL", "UNKNOWN"]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "PASS"
+                }
+              },
+              "required": ["status"]
+            },
+            "then": {
+              "properties": {
+                "implementation_evidence_ids": {
+                  "minItems": 1
+                },
+                "human_review_ids": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "captured_playthrough_evidence_id": {
+      "type": ["string", "null"]
+    },
+    "independent_review_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "PASS"
+          }
+        },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "captured_playthrough_evidence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "independent_review_ids": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

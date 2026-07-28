@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.cache/
+.goal/evidence/runs/*
+.goal/evidence/reviews/*
+!.goal/evidence/runs/.gitkeep
+!.goal/evidence/reviews/.gitkeep
+output/
+*.log
+.DS_Store
+Thumbs.db

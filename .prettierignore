@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+public/assets/
+downloads/
+.cache/
+.goal/evidence/
+.goal/asset-inventory.json
+output/
+*.log
+tsconfig.tsbuildinfo
+NOTE.md

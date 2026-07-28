@@ -1,0 +1,4147 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-07-28T03:32:48.880Z",
+  "contract": ".goal/assets.json",
+  "file_count": 517,
+  "total_bytes": 29419840,
+  "unmapped_paths": [],
+  "multiply_mapped_paths": [],
+  "entries": [
+    {
+      "path": "public/assets/audio/music/exploration.ogg",
+      "bytes": 1079706,
+      "sha256": "d3730ceef6613d6f4cfa65c9c6c77c1a8c4a0ebf6904182c8f2b2d84f8355549",
+      "package_ids": [
+        "exploration-music"
+      ]
+    },
+    {
+      "path": "public/assets/audio/music/Going Up.ogg",
+      "bytes": 1339339,
+      "sha256": "55e7102f0356689c71ce8f0e58dedaa6b1fb134e5c6b72b2c0542842a850dc7d",
+      "package_ids": [
+        "going-up-music"
+      ]
+    },
+    {
+      "path": "public/assets/audio/music/platformer_level03_loop.ogg",
+      "bytes": 1924325,
+      "sha256": "aba14c2c11a5471b4e8266f534015fe24ce505178d441b2aaa1ba9e71f8ba988",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blaster_long with collets.wav",
+      "bytes": 785614,
+      "sha256": "2921d43fe5b1f8f01baeafd0e6356b643ef3b18fc10e7b7f5537a27606f5f9b9",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blaster_long.wav",
+      "bytes": 392398,
+      "sha256": "136a17fba45f2be2edc22b8a4119fa5f571de5c4a3846f479eef8a7fe30b527a",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blaster_short.wav",
+      "bytes": 392398,
+      "sha256": "7be7e8cbeeea9914c9f1cdad14698e5304a9fb5e29e368a04c7e974d43ee271e",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blink (crystal - bottom).wav",
+      "bytes": 785614,
+      "sha256": "b7689e845ce0a12351e8223495a354d4e7926cfcb0d8436b8da5deac3cfef800",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blink (life - money).wav",
+      "bytes": 397666,
+      "sha256": "4a32fc28c4847a3ac48d68a6a82702fe175f11881a1201ad7d97197b967508f2",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blink (menu).wav",
+      "bytes": 392398,
+      "sha256": "94f4e07daf20a87f7bce7f00ae70751bfd52fc6f0b6d640281475c6578350018",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blink (relic - artifact).wav",
+      "bytes": 785614,
+      "sha256": "131bd63307cbf5ebcb4797083f494a693b9ad66b70b55cb78df057cd49fa7a1b",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Blinl (stuff - save point).wav",
+      "bytes": 785614,
+      "sha256": "df6c30f27c8707ac5e2670064345c8a5d8555fab529039a6ecc3bbe727a59383",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Brick.wav",
+      "bytes": 392398,
+      "sha256": "a6ceb26a655e203411844bbfd4f3000a68c05acb756bfb5722fc725c43d8438b",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Collets down.wav",
+      "bytes": 785614,
+      "sha256": "a6a454d794e9e39cc9b4d20cc09337c87185b9a224595336038438488a323625",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Enemy.wav",
+      "bytes": 392398,
+      "sha256": "8e057c8233fc375b1965b0b03983b4e9b9f6cff5e316a4a3f7c21188ee15f566",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Gun_long with collets.wav",
+      "bytes": 785614,
+      "sha256": "1679a7ccfaf9d37c99c1adb023ec0e3e4a551b23cf090940fac6a09bf986681e",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Gun_long.wav",
+      "bytes": 554770,
+      "sha256": "a0006e04769588ef990d788e28363ae3a7562691f8397cfbf7655354e5503fca",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Gun_short.wav",
+      "bytes": 554770,
+      "sha256": "3a48d6840f28e922466753f6c5370c4c4cc7bbebf9801693ce97cadc1e3d31cb",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Jump.wav",
+      "bytes": 392398,
+      "sha256": "64f03948ebcae53b0bb079db0120608b471f78c84ea6fe9adb9f4d3a98c000b4",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Let down.wav",
+      "bytes": 392398,
+      "sha256": "4a3093daeaacc7a5b00b2110b307c75e8a5be56e1e223e97735f900f363a9282",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/Run.wav",
+      "bytes": 392398,
+      "sha256": "12de43ea4e5353622e2a86cd80ba1574994c83ef207d75c35f94955cabd7f58c",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/The Wall_long.wav",
+      "bytes": 1178830,
+      "sha256": "d35ad591b34087763048a2304088554a9a6354ded91742112ee1c0d65d541bce",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/audio/sfx/The Wall_short.wav",
+      "bytes": 392398,
+      "sha256": "a06628440fe3adea597de9609d8706305f396f1f86b969781296ba615ef14c66",
+      "package_ids": [
+        "platformer-sfx"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/colorful-tileset/PNG/layers/back-vegetation.png",
+      "bytes": 1578,
+      "sha256": "7a5c4954f8ab16ed612232e6e1ab94862fb08cd4566454f111429e414db625a6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/colorful-tileset/PNG/layers/background-sky.png",
+      "bytes": 1261,
+      "sha256": "9bcd63264c6023a43a6a6bbfaba8eda103adf8650073dacb579d7ba044b6ba9e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/colorful-tileset/PNG/layers/cloud.png",
+      "bytes": 1607,
+      "sha256": "d785769ee575ea028687884ce05f8373dbe78b45d5c77173dfcc2c15d4632711",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/colorful-tileset/PNG/layers/tile-set.png",
+      "bytes": 2666,
+      "sha256": "71f7a4365d0856413bc0d489d176d8156cb377c330af31f688160519141b9954",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/colorful-tileset/PNG/preview-colorful-tileset.png",
+      "bytes": 4894,
+      "sha256": "7c75d526f12e1120dcd3980358011b0a1e2aecce93f3a0ce801d0741bbe947d7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/colorful-tileset/PSD/colorful-tileset.psd",
+      "bytes": 125825,
+      "sha256": "77996c823cdc91788fd1d437e1a543ac4b8a2832eec7b183e41d9188a3d48173",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Day-Platformer/PNG/clouds.png",
+      "bytes": 4593,
+      "sha256": "d2c6bc891aca19e495c6aaa826dfb6f9fafe3b71d029392236cfe8a04d0aa213",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Day-Platformer/PNG/sky.png",
+      "bytes": 180,
+      "sha256": "37f4a4c5be5b271e49795265cdff91e6f1d03c734569be2241c74b32a4829103",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Day-Platformer/PNG/tileset.png",
+      "bytes": 10915,
+      "sha256": "2d152a55194a6d57140a9b3fd2b4d4446e0e8d53c71d99732f90e55806c40c61",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Day-Platformer/PNG/trees.png",
+      "bytes": 2449,
+      "sha256": "8519dc154e0d4dff4bba4631a715a30992a75d836a0efd6c810ad20e0b98d51e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Day-Platformer/preview-day-platformer.png",
+      "bytes": 15850,
+      "sha256": "564f2862352fdeb6f8faa62c017a998aa82862aef2619e32989b6dbb7a8b22a0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Day-Platformer/PSD/day-platformer.psd",
+      "bytes": 308508,
+      "sha256": "a02b70dbb5cab99c3ad21399b1737873f726e84659d485974f7a931ab8299ef4",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/forest-road-background/PNG/back.png",
+      "bytes": 892,
+      "sha256": "d17d0ecc1814032c67b5bb421eb91f5bc6307f1deaf159ead2df1b52cf48a9cc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/forest-road-background/PNG/forest-road-preview.png",
+      "bytes": 17557,
+      "sha256": "5e77ef15906321093f20f46e743408d1e41b0e3ae160f07440516856e5804eb5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/forest-road-background/PNG/front.png",
+      "bytes": 15607,
+      "sha256": "8637bcc095b871b09ca5d9c84949e7c3c2d1756998f7068e9cfa1f79c33d11e1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/forest-road-background/PNG/middle.png",
+      "bytes": 3417,
+      "sha256": "97a874ac462b929b2ff84e4f6ba94263566ba8cbea517874b89322e835bb07e4",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/forest-road-background/PSD/forest-road.psd",
+      "bytes": 210018,
+      "sha256": "10cc63569fa216ad889ed097279ba4d76c9b982334a03046846dbd2dcf00a8fe",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/gems/previews/gem-animation.gif",
+      "bytes": 1926,
+      "sha256": "e31b9400b32c5d3369e5229b91ce66b20b3c9e0bbec68ceef7200c8ec5d262aa",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/gems/previews/stage_x1.png",
+      "bytes": 10537,
+      "sha256": "3413fe6ce61f9e25051c313a5996af7174fc32ccd278c0cceb9677b5c5c26252",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/gems/previews/stage_x2.png",
+      "bytes": 16684,
+      "sha256": "7db805d542169f4261236ae7b93289f9b8a038ac8c1fac8477f20dcb333d8413",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/gems/PSD/stage.psd",
+      "bytes": 157701,
+      "sha256": "de5036e0d70adf0e9dcaaf21f19bdf0f68c59e8252a725c8f4e8f03c4b55d2d6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/gems/spritesheets/gems-spritesheet.png",
+      "bytes": 24198,
+      "sha256": "bfa7941b5e059513e49a4d772b6ecb91fdf4008ad1c5259c9f770d8ae2b43186",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/gems/spritesheets/stage-tileset.png",
+      "bytes": 10765,
+      "sha256": "e646413d27ef77d8cd6e9a1b5263bd73bcfd4c57f411616fd87409c0a6747e55",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/lava-background/PNG/background.png",
+      "bytes": 12531,
+      "sha256": "b050d03b1f22946acc06c84393dcadc0a0de9fa57bf48621d319d176791e3f44",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/lava-background/PNG/lava-background-preview.png",
+      "bytes": 15133,
+      "sha256": "ba5613680bf377681df7e150cf0d3e3d5bbe83f0323dad3cd96a890c824f547d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/lava-background/PNG/lava-tile.png",
+      "bytes": 695,
+      "sha256": "f0d4042e9344a40496639a0015de3639bc226b6167bc9a9dd736824891ac64bf",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/lava-background/PNG/middle-rocks.png",
+      "bytes": 3967,
+      "sha256": "50a292af6e135ad6fb55543db5b5d166ad3d2ae9f02d754a4e3d12925d88cc4d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/lava-background/PSD/lava-background.psd",
+      "bytes": 193879,
+      "sha256": "5a6e1aa94a14ef20e625e6be5c642badc602876feeaf5319e5c5e200308d2bf1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/layers/mist-forest-background-back-trees.png",
+      "bytes": 3397,
+      "sha256": "9f6b36fde6616f5c59191f8bcc826f8c109878f60785eec40a8fba5f897ff638",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/layers/mist-forest-background-back.png",
+      "bytes": 2584,
+      "sha256": "c30fea352da246fb7ecb1e44c860c9daf8336cd90140ab3b9599677c2cd3afef",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/layers/mist-forest-background-rocks.png",
+      "bytes": 2023,
+      "sha256": "409fc054c894272d4a6282095d4043e76af1f1aec08c500ce42a08521c8ba11d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/layers/mist-forest-background-tiles.png",
+      "bytes": 6265,
+      "sha256": "dd8fa25958d5b69d714760687047ca029551c8c820b087f8256e40a2ffe4b107",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/layers/mist-forest-background-tree.png",
+      "bytes": 11207,
+      "sha256": "e3c654cdc74387542204980e86fc80a7ebcb571863847c03c362249dc0a116a5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/mist-forest-background-preview.png",
+      "bytes": 20610,
+      "sha256": "bd34aaf6f45c67678fc565dcec93853cdaac53b88f7a957ec6904e90d2109398",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/mist-forest-background-previewx2.png",
+      "bytes": 26124,
+      "sha256": "0c03afe13c2d7f3e706ca3e7a4b9767359dedbb49a84ec265d2bf3af0bac3f3e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/mist-forest-background/mist-forest-background-Working-File.psd",
+      "bytes": 355123,
+      "sha256": "c7bb0af0367d492c80cba553ef209ca793ffed47b922f0d2614343a2a839dd6a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Modular-tileset/layers/modular-tileset-sky.png",
+      "bytes": 5037,
+      "sha256": "efdfe4223ff8801c92ec8913c1a88bfbef1a0aaa8bfd555e12e248cb5bbec0e6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Modular-tileset/layers/modular-tileset.png",
+      "bytes": 15913,
+      "sha256": "b42b084b7c65b671b6ef9295ab40be877f9b838223e84c46e4cc38e8c5e0e4ea",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Modular-tileset/modular-tileset-PREVIEW-HD.png",
+      "bytes": 19381,
+      "sha256": "7fa867682cd580fc2173828745d56ad9f7caebc53c1a6a6b4bfc8fde08c2437b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Modular-tileset/modular-tileset.psd",
+      "bytes": 445878,
+      "sha256": "12c731ab5ec0fecbb3e72f6c8eb43e55bb3e7a2881485813bd9f333d8d36764e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/all-rocks-preview.png",
+      "bytes": 20871,
+      "sha256": "2c4334256be4a8cbcc98a10c26cbe16c045520aab597c2e0ca772f8da1a0de87",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-1.png",
+      "bytes": 1082,
+      "sha256": "9bb83a64a21138f3878732d6096dd299191256122046e9c6048bb9d14288538b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-2.png",
+      "bytes": 1148,
+      "sha256": "6735d1646cc8f267cf53d8c1eaec16fc9274536cd0e889d876a12de0fd3802de",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-3.png",
+      "bytes": 1139,
+      "sha256": "d924fdd45b039339f97eeaf203e91011a59196c568b63abefd91ac199f8abde2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-4.png",
+      "bytes": 1285,
+      "sha256": "c3f8aa1c4211746b50b028c0eb4f7d1e0aaab331a3b21178914940d60ab1c891",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-5.png",
+      "bytes": 1119,
+      "sha256": "5bcba597272fefd4eaf93d24ea3b9901781d2782be56d769efd78761064e8584",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-6.png",
+      "bytes": 1239,
+      "sha256": "45a384ba41398e88a5366a5324624da5ea4f9b90339bbd8de303afbdd4410a41",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-7.png",
+      "bytes": 1098,
+      "sha256": "1b593fc91dabf2dce24fc2ca4532e815f421e26e87310a8363c2b3ca506f3909",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/previews/rocks-8.png",
+      "bytes": 1305,
+      "sha256": "0c20dfe913ad90bf4c00f9941f6aedf2bb2073a655e011c505a892fc61c6d183",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_01.png",
+      "bytes": 533,
+      "sha256": "a8158d7f73c464c41da3c467ed20191a336aeaf8c8964e78efd2ebb180399c62",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_02.png",
+      "bytes": 580,
+      "sha256": "5f3375614538f420b6b0ba4463549bd95272cbffffcc595ab6023ecb078485f7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_03.png",
+      "bytes": 576,
+      "sha256": "326804fde126aeb7440c506e5ee800bda986be17235d5bd4b728bb2e227ec9e0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_04.png",
+      "bytes": 728,
+      "sha256": "6fba053d773847cb4dd8646b4d409651cb24d9509a014f90607941e1315daa57",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_05.png",
+      "bytes": 605,
+      "sha256": "133c5e568ed4753be6fa7c35c5fef300fd7d0fda54601f04100fbcbbc2eacfb5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_06.png",
+      "bytes": 673,
+      "sha256": "c5d61286e3ee224df1f3d24c4126756377e1c9389549421b59828a91638aa28d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_07.png",
+      "bytes": 592,
+      "sha256": "dbf10be522748f0f37a3176787148d5ad3f64c53f9684b843c06c4c3790a1164",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles_08.png",
+      "bytes": 791,
+      "sha256": "5a17ca9c07eab150e2868a9642adf44d7cc5386eeb92d07aff988ee4057c2d25",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PNG/tiles/all-rock-tiles.png",
+      "bytes": 7195,
+      "sha256": "12912ba7ae148e533e03f2a42c1bab7a553cc1718bacbf7384b28c9ba7a2f4db",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-1.psd",
+      "bytes": 65792,
+      "sha256": "feb710f717c0a1b4b23956f55ffc255b4114a36830404a128a82dcccaad3c7a2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-2.psd",
+      "bytes": 80022,
+      "sha256": "e57c82b253e21a9b5cdfd0df1e5e50d89396bdfece8f4361bde2b814713fdc2c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-3.psd",
+      "bytes": 99588,
+      "sha256": "778a966e1ed6f680fc0b17e796bf3239e4bf8a11dd3255ccb067745e3bd89b8b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-4.psd",
+      "bytes": 99252,
+      "sha256": "f8a79939a987760b1ece0cc348554f09e1fdcb078fdede00de57ba754b229f9c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-5.psd",
+      "bytes": 84040,
+      "sha256": "f1f45688aaa286aca3487f6eb55e188c598ace7465696b8ec6dcc2ae08e1b269",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-6.psd",
+      "bytes": 85004,
+      "sha256": "5fb22ba8bf82c3b18d4582499c3976e9fc8111385a336a5ba3585a01ff8ac1ff",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-7.psd",
+      "bytes": 82318,
+      "sha256": "5286e8e86cfb57d676663f5255d8859eb490cd46360f26636a7a964be0e11c90",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocks-Textures/PSD/rocks-8.psd",
+      "bytes": 83938,
+      "sha256": "05bda7737012317c766fb9c32eb623a68de72f5a783a2d0a3002ff33c3e7a424",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky Beach environment/layers/background.png",
+      "bytes": 3716,
+      "sha256": "5e8815a02a8c23e31c2f39e791b1a8ade03d86d2b1dce16a37dc11926e9587fe",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky Beach environment/layers/mountain.png",
+      "bytes": 2025,
+      "sha256": "808db64d3f02d07fbb7ff3dc3e0664adf8255fd08f25005f86edeaa95faa20a3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky Beach environment/layers/tiles-example.png",
+      "bytes": 11884,
+      "sha256": "777fe44cf86ab9e48aba0fd6eb40ba10a5f3dfbfd8235aebb778305f1048feee",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky Beach environment/layers/tileset.png",
+      "bytes": 8144,
+      "sha256": "f9ed4572d13de900fa2c689e2397ba4979cc0d0a31144457875ec26b8cc3a140",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky Beach environment/Rocky-Tileset-HD-preview.png",
+      "bytes": 13369,
+      "sha256": "56ee82e172e7d2a3815623b395d9520bb5cd9c49050ad838c4655d475f6731ec",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky Beach environment/Rocky-Tileset.psd",
+      "bytes": 381747,
+      "sha256": "2ebf64b9d58040f5345409467e8fd037a18f7080d5d3426bfa38bca559618e57",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky-Tileset/PNG/layers/rocky-tileset-2.png",
+      "bytes": 8807,
+      "sha256": "6aab37055cd6805c20bd7674073825c4e8c020986c8a07c90fec6cc1d7034b4c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky-Tileset/PNG/layers/rocky-tileset-background.png",
+      "bytes": 3373,
+      "sha256": "664314727c0e4fa0854ddec19f1a4dee5c460b377794e37d56091e82f2354c13",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky-Tileset/PNG/layers/rocky-tileset.png",
+      "bytes": 3091,
+      "sha256": "60797f0a242289b34540b4b01835d850d27d7ed3b3f36e71022cad90f16236d3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky-Tileset/PNG/preview-rocky-tileset.png",
+      "bytes": 6675,
+      "sha256": "c1ec8076c41c778b5e46f49f95d6bff5ba91ceecc7a641fa1357f454f6dbac52",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/Rocky-Tileset/PSD/rocky-tileset.psd",
+      "bytes": 134367,
+      "sha256": "7982a71b1d864f5518b9b711d48a301e3f99d905dc9bb042435e69c4716b4d5e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/back-sand.png",
+      "bytes": 1357,
+      "sha256": "bbe67d32839ce7519a4b027b5ca6338080efa448daae59bd9866e98efaac59d9",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/boat-far.png",
+      "bytes": 1515,
+      "sha256": "8c150131d4f4302d9a5044d93d1fb1b600285377deb311fcec3dc40fb4e0ee41",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/boat-front.png",
+      "bytes": 5454,
+      "sha256": "6e0c20bffb5ce4e557a9b7f876bfd99ea4e7875d7ac8c3f1481a26fd2559b111",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/boat-middle.png",
+      "bytes": 2465,
+      "sha256": "aa15803740a3490dc9a1570dbb2ffb6bfff6ae82a30672797f48e59df495e687",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/front.png",
+      "bytes": 3937,
+      "sha256": "faaf4a7692d9c49ef1f678243ea6dd3a7f92c9f16c6033b4e4b82181141f3eae",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/middle-sand.png",
+      "bytes": 2488,
+      "sha256": "14fb5fb2ab0716cf4c1ff10d5593a93ff26cb68134115111d6e73a4c84c63560",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/layers/water.png",
+      "bytes": 7828,
+      "sha256": "cec0798c8e33be5412c65e95ec4d43865a942f7fec73da6d18ba8eb9652778ff",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/mockup/back.png",
+      "bytes": 2641,
+      "sha256": "85e4c4cd203a2a7a651a5bd6bdf8e9b53b8a24ba3ae475e29c62ecc6f04aaa5e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/mockup/background.png",
+      "bytes": 7914,
+      "sha256": "d91c5bf1b9c04b2fffe5538dcd9ecaf1d9147b5fb864b67aca1491de27c4707a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/mockup/front.png",
+      "bytes": 9895,
+      "sha256": "58c5ab21fec4ba57e05d8f32da386a20af0d26f99cae59189435a2e4436dc220",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/mockup/middle.png",
+      "bytes": 5265,
+      "sha256": "c72dc75031c8b416cf5c3f1831cdf278b5a2c2de18b2682223970992e1394469",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PNG/underwater-preview.png",
+      "bytes": 18140,
+      "sha256": "75553dbe0d5444259c984311726212c4674aae1363538316c75e3001352d6b57",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/ships-graveyard/PSD/ships-graveyard.psd",
+      "bytes": 232359,
+      "sha256": "f2da231763ee1a22f1adf9a0179ad22e1b7590e4962e280f0adba03fe43ed48d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/PNG/foreground.png",
+      "bytes": 7395,
+      "sha256": "554b330fa4d0ee63065c233de71147845eeeef28a2cadaa96f449d5ef07fd3f0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/PNG/sunny-mountains-far-back.png",
+      "bytes": 7775,
+      "sha256": "ae4187241d0baf8ac7c65b7c98fa9c900fbd8332c453947acd4d7b4cb600b096",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/PNG/sunny-mountains-hills.png",
+      "bytes": 7689,
+      "sha256": "257e29d3cab4a43e3526b40d28d12691fc6165272e409f22d8b37eb66da2cbdd",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/PNG/sunny-mountains-sky.png",
+      "bytes": 4984,
+      "sha256": "5ab8a199f3bc4ef11ff54c5a7b2f0b6c8a5add901a8d9f4ecf80250d18ed4e86",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/PNG/sunny-mountains-trees.png",
+      "bytes": 2076,
+      "sha256": "53c5c553fb4c55a6b9bb7ff18004d8ed9811990354428e7f31f035abcb2dc79f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/preview-sunny-mountains.png",
+      "bytes": 27655,
+      "sha256": "56a0a38479d08c823faebdd31395dab861d2543a2e7b4af991bf6ca878f66073",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/sunny-rocky-mountains/PSD/sunny-rocky-mountains.psd",
+      "bytes": 605558,
+      "sha256": "faf8be375840def71e857b80fd4dc7430dd5f0e1fe80fadda0295ecbb66c0cac",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/treasure-hoard-platform/PNG/back-gold.png",
+      "bytes": 2081,
+      "sha256": "ae4eb9af50ff36be35d4b0cc712087ee0663aa5931d458c38dabf56ac5c6d5bc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/treasure-hoard-platform/PNG/background.png",
+      "bytes": 2091,
+      "sha256": "f0e47c890b716f38fa891c73947e3168a0bff2047035659e57416f3a16fa168e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/treasure-hoard-platform/PNG/gold.png",
+      "bytes": 4890,
+      "sha256": "4380a01f347c0b68e247157f7a51d9c7219109ec35db6737b8afb61be18aa47c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/treasure-hoard-platform/PNG/ground.png",
+      "bytes": 1130,
+      "sha256": "2159dad0f956894fc34ad0750e0a0436ec5274463a10d45a4ac4f93af5b082f7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/treasure-hoard-platform/PNG/treasure-hoard-background-preview.png",
+      "bytes": 10709,
+      "sha256": "1f5abf802809ab0c9e69c0d1b97b5a5bbed9c5ca52b0020d531525594fe63690",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Environments/treasure-hoard-platform/PSD/treasure-hoard-background.psd",
+      "bytes": 275235,
+      "sha256": "b7e7cf3d9883087facc130aecb96f7bf02a58a304f6665907e7726add0e6b7a2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/GIF/no-particles.gif",
+      "bytes": 1431,
+      "sha256": "16e0b77a69501941bcdeb1541eed3195ba426efe634feadc2e4773a045286164",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/GIF/particles.gif",
+      "bytes": 1667,
+      "sha256": "07f09e68858a82d3882d7a1e70de9e69b25130264cbda1775c2c047e93530b91",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/GIF/transparent-no-particles.gif",
+      "bytes": 1718,
+      "sha256": "665c7044089a6a4649b5763d06afca623acac2d242dbbd2c7c9642dd8219ea8e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/GIF/transparent-particles.gif",
+      "bytes": 1965,
+      "sha256": "a39d98ce03dc45beae995e0f902308d4a889000ce16151894f1c5ca8a6db2dd9",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/PNG/transparent-no-particles.png",
+      "bytes": 2369,
+      "sha256": "74a9121ee9dd788a8dfb68df1a95bed5b1a44eba66d462b3634c0e0cb8685581",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/PNG/transparent-particles.png",
+      "bytes": 3023,
+      "sha256": "f0604182ac91831fc320adc16a998fa73bc77e852f245523f3f7585815567b33",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/enemy-ghost/PSD/enemy-ghost.psd",
+      "bytes": 61934,
+      "sha256": "7df8cfff1a93e28fd7221c16d46e7cabce2d4f49e00a33203407dc84aa7bb04d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/previews/flying-creature-cycle-skinx1.gif",
+      "bytes": 1091,
+      "sha256": "6180e54cfd660ef3d984c35d9d74a58cfecb6e38cd971e64badf28dc5c5e13e0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/previews/flying-creature-cycle-skinx4.gif",
+      "bytes": 25232,
+      "sha256": "7db3a4df5e3e6b633ace382feb16b5cc2713a7c5ad5edc886d4aed07db71c97e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/previews/flying-creature-previewx1.gif",
+      "bytes": 1027,
+      "sha256": "c10b87ef214b64245691f286a005034cd5ce152085357068ba2d9eb38624dcd6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/previews/flying-creature-previewx4.gfi",
+      "bytes": 4656,
+      "sha256": "ac557c7ce8843221c05274558d71f92f4bdb474d277cbdb8b370d011b2dfd852",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/PSD/flying-creature-cycle-skin.psd",
+      "bytes": 49433,
+      "sha256": "8947945cc51a352517bc83fb3d2c9d5d47454abbda47de8a7cab3c4063bdd6df",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/PSD/flying-creature-cycle.psd",
+      "bytes": 52479,
+      "sha256": "e084514a0512b1693bb9fd2814219149eddd49cc57f4b791ec9e0a0ffe284edc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/sprites/flying-creature-cycle-skin.png",
+      "bytes": 1740,
+      "sha256": "f6705df21e11cc536086674497aeea42e05a110eb564f92547eb002c19d0044c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/flying-bird/sprites/flying-creature-cycle.png",
+      "bytes": 1569,
+      "sha256": "6750c680b8546d1e898676df94d3eafcc97264def62734afb0ebd57b1a8f66cc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/gifs/breath.gif",
+      "bytes": 5640,
+      "sha256": "3bb6fc43862994e738a99c8e25fb7a213b4568fce817ce7372a42ef4ba51ced2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/gifs/idle.gif",
+      "bytes": 3967,
+      "sha256": "b273bb6d63ca1a4c014bc22f029502c205e1a08391274167e2e9788697f5a7ec",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/gifs/tail.gif",
+      "bytes": 4358,
+      "sha256": "be192630dba08c402504933c1a12a477659c1e454ee0134263b51bbe8136a4cd",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/patreon-license.txt",
+      "bytes": 337,
+      "sha256": "a2df60a439ff8ad829291f342da7f8576b020967fe26529b3f7309537049d8ba",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0000_Layer-1.png",
+      "bytes": 1565,
+      "sha256": "c04bf78b7753d188deab626202cbfd27ab60cc0621e25a087327b0722eecff90",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0001_Layer-2.png",
+      "bytes": 1491,
+      "sha256": "df3a5a720e13d6499fd385bd093324dd64e8c15df1ef4e2df9ce2d052edd6fa0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0002_Layer-3.png",
+      "bytes": 1382,
+      "sha256": "56cf5b2fc37ebafa38d131b33b7c1ec7a7a018a4b08301ff4f3ca3bf9e51eb73",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0003_Layer-4.png",
+      "bytes": 1676,
+      "sha256": "546b060f81252b01d05ff2adc3630cdc543c7658917558f2edb6fe9c80c80d72",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0004_Layer-5.png",
+      "bytes": 1839,
+      "sha256": "b78e69443d8752f31ac9880f4832cd0bdf1c3f99591b8b2d7d370b32ce35bded",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0005_Layer-6.png",
+      "bytes": 1893,
+      "sha256": "e8fc2385b15c7be38a3f24442a06016f445842e1f53ec5916394cd4838710047",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/breath/_0006_Layer-7.png",
+      "bytes": 2003,
+      "sha256": "0e3bae3db1e3a09034192df2a528660e6763cb5e446f8f1b76c52da12cfbe093",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/idle/_0000_Layer-1.png",
+      "bytes": 1548,
+      "sha256": "437e0f5b394369787db9a078683b5582827b77555c600ef08f1e7055ed6f43ae",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/idle/_0001_Layer-2.png",
+      "bytes": 1429,
+      "sha256": "ec119499db5ae0ab92b9aefe9f846ebc02f8089467b3c70b88efa7e819aa5760",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/idle/_0002_Layer-3.png",
+      "bytes": 1455,
+      "sha256": "eb2f6d6040c764cd974ab79f9f08c44e2ef3d7460b4b6a6925785a2a48b2660a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/idle/_0003_Layer-4.png",
+      "bytes": 1426,
+      "sha256": "7b3fbb35f47a4a75fe7c07ec7896574b159e168e7c73a99be89e7795c7d5393f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/idle/_0004_Layer-5.png",
+      "bytes": 1455,
+      "sha256": "eb2f6d6040c764cd974ab79f9f08c44e2ef3d7460b4b6a6925785a2a48b2660a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/idle/_0005_Layer-6.png",
+      "bytes": 1453,
+      "sha256": "8716e3b400100f0beacc8df4434b99dccbd40eea8c083da4857a6d48993899c0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0000_Layer-1.png",
+      "bytes": 1551,
+      "sha256": "f2f99ac9f3b510941b64f7fc35b6fd51b3fa5cf994fea0ceb274941beb7763c3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0001_Layer-2.png",
+      "bytes": 1461,
+      "sha256": "5034be0620eda147d52cb9f298c6179c2db852b554016a41bdc67fcb5f18a786",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0002_Layer-3.png",
+      "bytes": 1402,
+      "sha256": "9064afdca23a30d0a0d6f6d07ea44facc6aef0ee352837aebc3fbec020e6bf84",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0003_Layer-4.png",
+      "bytes": 1350,
+      "sha256": "adaac5172ca43241f155ed93b305e3cd93cebaa4ce7caa5c6ec3bf3592edad25",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0004_Layer-5.png",
+      "bytes": 1006,
+      "sha256": "e7ef4d8fe2da9ba75260bde628ac533aacf3381411328015d13f131b50953666",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0005_Layer-6.png",
+      "bytes": 919,
+      "sha256": "6bceedec6f4dffa7659dd4d57f409b11ca6c4ed4bfddb0a02b2bc77ef58140b1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0006_Layer-7.png",
+      "bytes": 1002,
+      "sha256": "747aa90ac9a68cd0959ba640e67759a2f47d84756e3b97be093dc4171bd316e7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/sprites/tail/_0007_Layer-8.png",
+      "bytes": 1028,
+      "sha256": "db0ebdd27b9a2046b2bbb1a3f77966c7ef925da476577368afdf408ec655c061",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/spritesheets/breath.png",
+      "bytes": 6817,
+      "sha256": "7bb21bbf51c19edc66948e04438a94b7b407adf5b0d178ed1e3c264fbb8bf7c1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/spritesheets/idle.png",
+      "bytes": 4446,
+      "sha256": "6abb34877315b49ff9e385068e24ee7c6629cf110d05b579f6985c5b44cdcfb3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PNG/spritesheets/tail.png",
+      "bytes": 6873,
+      "sha256": "11cbb2b2367364a884ca021afbd5d55d7561f63674f6b34eb71bc3f96d3943ef",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PSD/breath.psd",
+      "bytes": 138929,
+      "sha256": "4df703b94a1d602a321de70fdd75e753bb36a8c1577febfed13c278515c5e50c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PSD/idle.psd",
+      "bytes": 98387,
+      "sha256": "b17c0506dd67ea2f66323edcf0da899fe3f28a64a7ca548d7ee8dc90f17e612e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/PSD/tail.psd",
+      "bytes": 99531,
+      "sha256": "8eb17da7298f38cd1ab0c37d46bff9008615b00da88907d753f8a803a67b35bf",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/electro-shock.gif",
+      "bytes": 4635,
+      "sha256": "2588a67754ff2319d91e97c6b3a441ecd214952e6e7ac87fd4471d205a5bc6b6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/enemy-death.gif",
+      "bytes": 1319,
+      "sha256": "41c9cbf260e5f82851605319f858243934258bb9445a73452fe89d83d3da4984",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/energy-shield.gif",
+      "bytes": 1966,
+      "sha256": "3447d5be58038f6b0d749db6b7b410173bd800cb8f6d4e526724f218dc687076",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/energy-smack.gif",
+      "bytes": 2193,
+      "sha256": "d7a7b987d57d04d6d2f818f005052838bb2fc0b5bca5948b2b1089aa1720ba1b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/fire-ball.gif",
+      "bytes": 853,
+      "sha256": "21001c749f452e513ce98529483eabae6b619cf25a0e72df5f784369a58e39bf",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/slash-circular.gif",
+      "bytes": 1544,
+      "sha256": "778a8d7502055ffb681460facb68cc993f1b6efdf5021640c4231bea1b780ec1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/slash-horizontal.gif",
+      "bytes": 1075,
+      "sha256": "5f33d4462f645602fec98231278237160d2d085139642194182b2f5a0aac73e2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/gifs previews/slash-upward.gif",
+      "bytes": 1107,
+      "sha256": "295c6ea0963b3fae79d44771397a22a79a24956a70f1df778bd0a768d90f1177",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0000_Layer-1.png",
+      "bytes": 406,
+      "sha256": "088c864d2dac3f8e9602ce03e7b4e7337fe59a43f854dba73b8448c9f5d9d42d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0001_Layer-2.png",
+      "bytes": 440,
+      "sha256": "c324989d0aaa1663033d973bba013a6d9e877ef0af0d2df4dab778e95fce0833",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0002_Layer-3.png",
+      "bytes": 1570,
+      "sha256": "8a30c67999271f96d181fee3a5c6a11bf8cd68c1d78d17eef061d2da2ce550a3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0003_Layer-4.png",
+      "bytes": 1917,
+      "sha256": "60937b6732302ee4a05d59f7c4cd84757cdb6b640b2906af33556f85dd250690",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0004_Layer-5.png",
+      "bytes": 1474,
+      "sha256": "4826a43821a0ae8cf2b4c8943cf56a4c54fa02c56b08120a807f681f096767ca",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0005_Layer-6.png",
+      "bytes": 1282,
+      "sha256": "67a75a0272df82700e8dfe43b94f64008fb8072006d3d02dcc062096c7f81ea2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0006_Layer-7.png",
+      "bytes": 994,
+      "sha256": "95c8c50c4aa880d510d0a781a39141755deb2c667055884bbc36107c00f2a622",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0007_Layer-8.png",
+      "bytes": 829,
+      "sha256": "612a40b111ac47c4d04e572d19369ef33e84ae78eef50b26bb02197c526b093a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/electro-shock/_0008_Layer-9.png",
+      "bytes": 558,
+      "sha256": "f8c61d19703e580d3b82c16aedeea991ec5cb334137c149fab602de55a57812c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0000_Layer-1.png",
+      "bytes": 402,
+      "sha256": "021c726289d5e3a7bb254f945c64f7330a38875b4ce062ad94081ccfc78d4954",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0001_Layer-2.png",
+      "bytes": 445,
+      "sha256": "5b0aa3284c44d9aefc9b8819ccae519177eeb1e3d8d736ba1a861c570e91d32b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0002_Layer-3.png",
+      "bytes": 448,
+      "sha256": "8f8a7b28cfdd720e1828dd2e4ae488a336ff5b86a89f55af58cffa1a448f8c36",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0003_Layer-4.png",
+      "bytes": 515,
+      "sha256": "4c5c2bda8aacd51d6bc0f9724e330ab8e3f8c9ac24dd09546b3d3ba561dc1985",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0004_Layer-5.png",
+      "bytes": 549,
+      "sha256": "2f52000ec0fe51a1eee0159b8403f41e02c7d816f0d72be8dc5a2e7b54404243",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0005_Layer-6.png",
+      "bytes": 378,
+      "sha256": "4b1574b469e3b1f9e8c1bb5da1dcb0584e6583aa794d4a24f0c7781fbd272150",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0006_Layer-7.png",
+      "bytes": 270,
+      "sha256": "8f5122989765482246fb71019f8de632cec917831a6b1a93cccae795f6e249c3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/enemy-death/_0007_Layer-8.png",
+      "bytes": 196,
+      "sha256": "80b5764b58816e7f5ea34514171649c717183d29802f1a488a0bcccab1bf9c75",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0000_Layer-1.png",
+      "bytes": 526,
+      "sha256": "425a7f1975718127668535b71cdaa68e59da81a0742862a1199205e8d4b1ff63",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0001_Layer-2.png",
+      "bytes": 486,
+      "sha256": "84c461537a98bb4de0bf8771c37b9fd98ebf91b838af372f26a98efe170ec1f3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0002_Layer-3.png",
+      "bytes": 365,
+      "sha256": "e766f79f9bf575be40d67a38f78e34a825def4a89ad91340048a83bdabfba59a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0003_Layer-4.png",
+      "bytes": 457,
+      "sha256": "7afae32fc1c0c414cf01ab1c174643843eafeae07e59020cf2ef784b9c5b351c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0004_Layer-5.png",
+      "bytes": 593,
+      "sha256": "bbc4f3dbaaa08ecfad9632cc6da6c877f4a47fa5d685c647359e9b3fc6c25c97",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0005_Layer-6.png",
+      "bytes": 623,
+      "sha256": "d4439ce5ae39d350f684858d2e78ab12d5d78744b4e53f54e8a6f7ce7d235fd7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0006_Layer-7.png",
+      "bytes": 633,
+      "sha256": "095e3862e734148c8275306b3b767c14e264c4ce66dde4987868f9c9d36b01c7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-field/_0007_Layer-8.png",
+      "bytes": 595,
+      "sha256": "87c6f0bdd09a886760a03a0b443ed91a44e2fbd3047851ae9b177196f3a23f7c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0000_Layer-1.png",
+      "bytes": 872,
+      "sha256": "bb0dd80cbd52b89b560baaa643b3ef35bea78f804a7e3fba493a307b5f2fe648",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0001_Layer-2.png",
+      "bytes": 521,
+      "sha256": "8203a6215e20cfc3bb4fa4bec8b3bf55ce0c5e544e9e2c67ed065efd419c2d1e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0002_Layer-3.png",
+      "bytes": 442,
+      "sha256": "13bea40053291f1f6a3cafb7942b0a2ee2b3831014be85a7615947c2b36e83c0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0003_Layer-4.png",
+      "bytes": 393,
+      "sha256": "88cf99f355df6d7ce223d6803b3eb9b08530ca130719490f79bbec35b3db4672",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0004_Layer-5.png",
+      "bytes": 349,
+      "sha256": "93f47237924d2d8403df00dffe1c53f47ab2ff8830cda5ccf606d6544aca5d6e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0005_Layer-6.png",
+      "bytes": 950,
+      "sha256": "6c1b7595ff5350f27a4d116bb874051df5ea3792c0881cd9a5117c6de0085c21",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0006_Layer-7.png",
+      "bytes": 895,
+      "sha256": "f0b1a63070c8f1585d9eb22e62d15a6dae75a57008cbda400ce1f421652dbfaf",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/energy-smack/_0007_Layer-8.png",
+      "bytes": 493,
+      "sha256": "402f95c05445c12cd98d9407972921825d8ccfab6fa9e3f0664a6fe61b2cbe5c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/fire-ball/_0000_Layer-1.png",
+      "bytes": 482,
+      "sha256": "7d5ed0f13fb2df59efb4da9c0660ce28cf97fb0dae94a79974ef6e3c66bd2911",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/fire-ball/_0001_Layer-2.png",
+      "bytes": 397,
+      "sha256": "ee94f46d7a5d03cc1fc24509ed68e211787d82654c60a383a27192197cb846e9",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/fire-ball/_0002_Layer-3.png",
+      "bytes": 411,
+      "sha256": "f7d1b0c21d918fb3ee2b97f99bdab13352c6bb4ede240f8f79d11d807adb107c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-circular/_0000_Layer-1.png",
+      "bytes": 361,
+      "sha256": "e2594c919bd3964824c9f752353c4c4a1da5e48e4ef3436f9a51eac1898e486b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-circular/_0001_Layer-2.png",
+      "bytes": 429,
+      "sha256": "b4934ae801ce37e005c36f67c167ecc802305ffff0505d5bde08c7a6d97ab264",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-circular/_0002_Layer-3.png",
+      "bytes": 533,
+      "sha256": "a2f8b063c46cffe571c35b136411af00bf87642d4906922ae07a981d2918554e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-circular/_0003_Layer-4.png",
+      "bytes": 488,
+      "sha256": "a852a1ae8ed47e51e435f5103533f872a520a4fa88488904f5fd084e209039ad",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-circular/_0004_Layer-5.png",
+      "bytes": 367,
+      "sha256": "917dd2c93527d966e12fa863c4631453ca11e520929add14810a4ea2ae79d973",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-circular/_0005_Layer-6.png",
+      "bytes": 361,
+      "sha256": "c344fcbe0ef9cd42e1515ec91d2b8d49aeff759f87456343cd335e854646aaf3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-horizontal/_0000_Layer-1.png",
+      "bytes": 342,
+      "sha256": "67488d762d684204a985748583472f1ee6c532c0cb26d9c7fa66dad5ca086964",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-horizontal/_0001_Layer-2.png",
+      "bytes": 420,
+      "sha256": "6d643d5d3875f739f87b9e7f9e3e60a4479582ec01a335cd48d647dbfddbcb4f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-horizontal/_0002_Layer-3.png",
+      "bytes": 424,
+      "sha256": "b53069f869f89e24b81e44f5de8acbbe2dc8d88a2c396c3a2af4ab50e1fb7cb2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-horizontal/_0003_Layer-4.png",
+      "bytes": 370,
+      "sha256": "e389ad10fb619a7930d6da822c90e81f7b92dce836972bf247a3b753e840f855",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-horizontal/_0004_Layer-5.png",
+      "bytes": 297,
+      "sha256": "9b447c612d9b94cda575b13215d2c404f62052212f5d1a10d318fea9ec476db4",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-upward/_0000_Layer-1.png",
+      "bytes": 343,
+      "sha256": "1b399e3f66f36b0f87ed621959061cdd072f8ef56823a34fc4697025d771a788",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-upward/_0001_Layer-2.png",
+      "bytes": 450,
+      "sha256": "ec197fde6c8d1e6985c89da01dedd67a9d98516729810dc7b4362fdf55ed6581",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-upward/_0002_Layer-3.png",
+      "bytes": 376,
+      "sha256": "e07b53e3718a1a8edfb874403b480b6874f4c40bb13ba48e7c18c50df21533e7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-upward/_0003_Layer-4.png",
+      "bytes": 321,
+      "sha256": "c20b265c5cedd2764eed6dcfa7fb51e3c40b9124176f102a40bc5bfed6eba089",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/sprites/slash-upward/_0004_Layer-5.png",
+      "bytes": 250,
+      "sha256": "13bbd2498375b54e2843ca820cac4ba5b3f46764c71cef19a955d5a536167d14",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/electro-shock.png",
+      "bytes": 7950,
+      "sha256": "01fb74db9b2bd9d03ee9a083093cd1389a22a3d3cdc1c2551c09e6aa47594b76",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/enemy-death.png",
+      "bytes": 1566,
+      "sha256": "65f006d56a714ebdd8513a8006481365a4d673f76e3396bdbb85602c002b0cbe",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/energy-shield.png",
+      "bytes": 2299,
+      "sha256": "babd0cbca25d7038a2a95b5bf08c1382308f4bb54710c62a86034a241a440fa9",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/energy-smack.png",
+      "bytes": 3105,
+      "sha256": "b402a65afff9c68a1a56f07813d00f4bf51c9ce09fa30a61a918215ea047c977",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/fire-ball.png",
+      "bytes": 905,
+      "sha256": "4229308a60966880dc5cd333d1737ea7102cd60c41f04e324b1862939c10c1b5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/slash-circular.png",
+      "bytes": 1460,
+      "sha256": "77e51590cac070d8d2e8ef2a82537621186b38a64846d22370d4a2f68cb61e41",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/slash-horizontal.png",
+      "bytes": 917,
+      "sha256": "523e982fffe509f4c7119740344032dc1c0106a8d293c774babd8bb5f51eb947",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PNG/spritesheets/slash-upward.png",
+      "bytes": 930,
+      "sha256": "9b518068fe5314d34f7e71f5f17225a2bb439560bc550fffe938326290fb4f25",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/electro-shock.psd",
+      "bytes": 111662,
+      "sha256": "e34e1ae7287f318bd229aad84e1be998c9c1cf68d8dc022ed8677151960c11f5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/enemy-death.psd",
+      "bytes": 63721,
+      "sha256": "43efb06bde514a74ed629de36bab742b21cbbd70d069c74e25bd95aea0121fde",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/energy-shield.psd",
+      "bytes": 62159,
+      "sha256": "411df6c3d27e31952f82e1ce37e284981cac042eda27b70a42ebd2fc04cef1c6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/energy-smack.psd",
+      "bytes": 74063,
+      "sha256": "828ff3f1be7ab0ba102e14eecc0306d2b9d7301084de8da3f37f729801bf4361",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/fire-ball.psd",
+      "bytes": 63266,
+      "sha256": "3d3e671cfe2328746528f9c371c0ccbf96803ed08704f4c1ee642dd454fa6293",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/slash-circular.psd",
+      "bytes": 64315,
+      "sha256": "c880c30fb7cc5cece199faa993af73089751fcd0ae7758af885363e96463d9a4",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/slash-horizontal.psd",
+      "bytes": 61422,
+      "sha256": "891e29ca524c4371a1379e06b838b25afabb722dd40f274cd2184b3787e26471",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-FX/PSD/slash-upward.psd",
+      "bytes": 64137,
+      "sha256": "b46fda0fbba2f61eb06e9f8d38896d3c5724878ce666c15de23740c53cb84a3f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/gifs/hurt.gif",
+      "bytes": 475,
+      "sha256": "a9110870630a35b157b165e769e2bb3255a80c881ab2a1ab731941f051e82de8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/gifs/idle.gif",
+      "bytes": 601,
+      "sha256": "58cd88aa3bfbfc844daaf8020629ff310e4eb8a96e9666994dc47c4a8f5785d2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/gifs/jump.gif",
+      "bytes": 459,
+      "sha256": "01bc1399ee1bf88b645456f3077659c183a89e4371344d7d295291505540ad44",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/gifs/run.gif",
+      "bytes": 825,
+      "sha256": "9aac58c098602b6b25b93a56ad4a64f06b33b2b5e12b1a0b5ffd92c684d03f48",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/gifs/tongue.gif",
+      "bytes": 825,
+      "sha256": "6fca2ec9e15ab10df8aa923786b28bbdfa7e64809472972c07348b2a261042cc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/gifs/walk.gif",
+      "bytes": 882,
+      "sha256": "998253e6b417b0517b2f3f850f1d2b431efa8874202bc3577a7a7b1e2677aa6f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/hurt/_0000_Layer-1.png",
+      "bytes": 467,
+      "sha256": "116caf1351a1fa282e570ae2644873209e6261aa7a7c04d542a1d11821dd68a0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/hurt/_0001_Layer-2.png",
+      "bytes": 435,
+      "sha256": "ea4d01e9ff179f154dc0c7ba788180d873a0c6a386408a1e323a5aa679c942c7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/hurt/_0002_Layer-3.png",
+      "bytes": 417,
+      "sha256": "d6da65b308c2eddbfc8e4189b10d689012f5cc3e1bf6c0f3c20b0dadde5ee25f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/idle/_0000_Layer-1.png",
+      "bytes": 459,
+      "sha256": "bb96351363a27ec2541d6f42deee08e760e4f83f87b80c2a0abdd1b0136a3c49",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/idle/_0001_Layer-2.png",
+      "bytes": 440,
+      "sha256": "22c84ca1bab75dca20b69f0036c3656381a3563738a341e08ebe9d856e2ae0ea",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/idle/_0002_Layer-3.png",
+      "bytes": 450,
+      "sha256": "27c02c82205ace07877f779d3bc3a5aeee2a6e90674920c16495b67b842cc129",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/idle/_0003_Layer-4.png",
+      "bytes": 432,
+      "sha256": "67b7dc6da2300a079f66a84611586806700ca9e3ec65ed35c080df8108870c0b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/jump/_0000_Layer-1.png",
+      "bytes": 472,
+      "sha256": "851b350e4521f68e4018912d248d5b654c4d8d197058a10071d0c9988f017832",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/jump/_0001_Layer-2.png",
+      "bytes": 409,
+      "sha256": "5fd39ddb6b2fa37eb882cacd40505261d174e3b0d4b5e5d5f581cccc05d48331",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/jump/_0002_Layer-3.png",
+      "bytes": 420,
+      "sha256": "6bf49c6e9b6e72c081320e443b1902e4d3c2df84a34652f73bea0b5a5a52a689",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/run/_0000_Layer-1.png",
+      "bytes": 453,
+      "sha256": "826669d3abdb4189c33ffa950b943ba16bcc9f2061719c96054fe98db1a5fa33",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/run/_0001_Layer-2.png",
+      "bytes": 413,
+      "sha256": "3a9f4fd087d1574e8412ba86da10e9fecbbc81444da37586dad0ebfd07d6f8f6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/run/_0002_Layer-3.png",
+      "bytes": 426,
+      "sha256": "e4ce9d9a0d354c1bcd1a464f9ca98d7c3bb8b624af662987f2dc9fb690a560cb",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/run/_0003_Layer-4.png",
+      "bytes": 426,
+      "sha256": "8ebd686e2e41e99859c2465f1507519ce08a1ec20caaa2e5f854c85e405c0ee8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/run/_0004_Layer-5.png",
+      "bytes": 408,
+      "sha256": "378d66715a90bc5f4dff35798cf3ed2302b6fb56765c266891e82384b38a36b3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/run/_0005_Layer-6.png",
+      "bytes": 417,
+      "sha256": "5936321a38d4bd0327c13182a5fe7a01022df5d42258fd69981a20d57c8be5af",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/tongue/_0000_Layer-1.png",
+      "bytes": 467,
+      "sha256": "116caf1351a1fa282e570ae2644873209e6261aa7a7c04d542a1d11821dd68a0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/tongue/_0001_Layer-2.png",
+      "bytes": 453,
+      "sha256": "a8ef65a7516482c916d430e4c6a0818b6b8048e9150a74b239f156d0cbfa2ad1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/tongue/_0002_Layer-3.png",
+      "bytes": 474,
+      "sha256": "c446477edbbfccc256bf2f9899c7e01af74d6e4dd0f44191b2a549c48cc3b429",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/tongue/_0003_Layer-4.png",
+      "bytes": 469,
+      "sha256": "e58eb34c630001f49138a7a4afa0ef39a2fce74bed7fc0322e9f2a63d8ad4a81",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/tongue/_0004_Layer-5.png",
+      "bytes": 447,
+      "sha256": "7b14b6abbb4abbf7f53f31a2f82372a2fbde4c13f0c929ead7fd1a46ecc3558e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/walk/_0000_Layer-1.png",
+      "bytes": 467,
+      "sha256": "116caf1351a1fa282e570ae2644873209e6261aa7a7c04d542a1d11821dd68a0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/walk/_0001_Layer-2.png",
+      "bytes": 452,
+      "sha256": "20261365e0fe00ee42d1f6fde867cec75e7acbb3603f9d6119d2df9dbbfa69de",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/walk/_0002_Layer-3.png",
+      "bytes": 467,
+      "sha256": "23c55ed0c46978be587f43d1497273c37323bbb5c1ae43380b8218571703a392",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/walk/_0003_Layer-4.png",
+      "bytes": 453,
+      "sha256": "5d31cdee87618281a7d8946e93a6e01f395c0b1dbc3a5c111ac3122402c66ad5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/walk/_0004_Layer-5.png",
+      "bytes": 450,
+      "sha256": "91cac2fcaefce0ee93a1df4fe08b692c2601d03822783572f83bc115b23222f4",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/sprites/walk/_0005_Layer-6.png",
+      "bytes": 460,
+      "sha256": "fa6956f413092b7748d40deb36e6442c016e99cce5689fc412ac169dd2b2c8f6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/spritesheets/hurt.png",
+      "bytes": 830,
+      "sha256": "e1197ae20529a366191b3ecc9b023c5e09a9ae89c57aa7d55e46b6dad721db76",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/spritesheets/idle.png",
+      "bytes": 845,
+      "sha256": "a9abead67021f7fb4cba30564db8a73d50c243e779eda40ae3d9eff702de325f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/spritesheets/jump.png",
+      "bytes": 869,
+      "sha256": "70247a2c207a6a20abe5a3d62ed1d3dd11651c782110527192967b0fa0f58656",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/spritesheets/run.png",
+      "bytes": 1143,
+      "sha256": "fe6a0038542e0a5f96eea4f50689d5cec7becd46bb228c5c24b29374fce32e59",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/spritesheets/tongue.png",
+      "bytes": 1073,
+      "sha256": "566716baf3364a426a96c8d646837a3484de35e3d76d805b13dce7799c7dcc03",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PNG/spritesheets/walk.png",
+      "bytes": 1203,
+      "sha256": "41940e7cebb89eff6319019150bb7f01d12f1041c25ee9b5fc276780f40a7c2e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PSD/hurt.psd",
+      "bytes": 66152,
+      "sha256": "9882da7bb8947c3a0862e0f6c50744f43031c2dc7499fd615b2c593a62a0d451",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PSD/idle.psd",
+      "bytes": 67466,
+      "sha256": "96fceed1cb96af59f5f8d6bfe6ab408417f2f9fb6fb8c097a661eefaa11567b1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PSD/jump.psd",
+      "bytes": 66917,
+      "sha256": "fdcb655a90aabbeeac5d5055cbe61e82c333700313090ab06c2a27eb1dad273e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PSD/run.psd",
+      "bytes": 65261,
+      "sha256": "bfd5515f9fa1f54705f5ee424e757718bf7f63d9c4f49cd79a94e29c1bf12580",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PSD/tongue.psd",
+      "bytes": 69523,
+      "sha256": "3eb86cb114a7bd34c892f6eddf324cd608752b6abc10cb020e22510ccbbc1f26",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-lizzard/PSD/walk.psd",
+      "bytes": 60230,
+      "sha256": "748a34fa5d2fe808f8013aac757f1620823939516e6c9d7e5dfae50d30cf23f6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/attack.gif",
+      "bytes": 665,
+      "sha256": "1a9bfc1867904701a1597a670181e24c2e388bef78037361214032689c8ca137",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/hurt.gif",
+      "bytes": 532,
+      "sha256": "3737ded9861c7774bda7c05dc8d9394416bcd6981afa9485fd264e712da500f1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/idle.gif",
+      "bytes": 705,
+      "sha256": "634b8ad0980db6bb39bc4d537324af11343084f9bfda8c3506e891b131d901ca",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/jump.gif",
+      "bytes": 1274,
+      "sha256": "6ee437144f3944f5ce4ab922a948780f612d9f234270fe39b14170180e21639d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/shoot.gif",
+      "bytes": 1120,
+      "sha256": "6726952940b3dfc2bf150bd140ef5197af3116c5097588a4adb2420a1eeff414",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/spring.gif",
+      "bytes": 673,
+      "sha256": "6ede668ecb53fd58d5d579b9d4c0da338c24aff59abe65144e6002d75ada269a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/gifs/walk.gif",
+      "bytes": 658,
+      "sha256": "bb5d5b38056b5b491555b5fbaf8aff085cd9c6dfe5dd9a98879e08fac23ad5b8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/attack/_0003_Layer-4.png",
+      "bytes": 333,
+      "sha256": "1fc56ae24becaf07b749e3a09d7ab5bace5e42ec942100b589538b5fa8108abf",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/hurt/_0000_Layer-1.png",
+      "bytes": 374,
+      "sha256": "92d3c4fc262e841498a39fbe672da8941b0ef84d3922b59d0822f924be69a0c5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/hurt/_0001_Layer-2.png",
+      "bytes": 352,
+      "sha256": "47bcca350a08a85f62c207ff9e7a974275894c7071a90e1860f2fa650d1f8542",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/hurt/_0002_Layer-3.png",
+      "bytes": 352,
+      "sha256": "87bd183b31c05d95a6c63d157dfe9d92a93c13e8fdcae0680c4742fb003b5a2d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/idle/_0000_Layer-1.png",
+      "bytes": 368,
+      "sha256": "203b4284eeb38b23b7fb4296f3c74fb447059a4f75440e002a9fb75f9a69bcda",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/idle/_0001_Layer-2.png",
+      "bytes": 370,
+      "sha256": "262f68c1b2ba6d1eb70dbad2154e13a46bd3b1d36790cc21f751fb034cc34c2f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/idle/_0002_Layer-3.png",
+      "bytes": 380,
+      "sha256": "e11e22c1c8c13f52a190a10084c0bd1df775be36f8ec57fa47d8aacdd190ab7f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/idle/_0003_Layer-4.png",
+      "bytes": 344,
+      "sha256": "f3924007873c0d652e27a21fccd083c9b2695243be1f388c80b3392341d90df6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/jump/_0000_Layer-1.png",
+      "bytes": 380,
+      "sha256": "2e1d1be8f97ff330e2d153339fd8dfe2cf21b2f8cc7d794e46a4c01b6f67c089",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/jump/_0001_Layer-2.png",
+      "bytes": 340,
+      "sha256": "f7a24046a07c71b78412815d6e6c7e9ddc550a8e1891b3929308c5b2d10d7a87",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/jump/_0002_Layer-3.png",
+      "bytes": 432,
+      "sha256": "2d69999279a39a3a3ba8d89c6b7b6104ca67ab916509656906419f113eb2ab18",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/jump/_0003_Layer-4.png",
+      "bytes": 435,
+      "sha256": "45463c1510ef05e6307c676251894d15119c75afd5b9e012810a6a6c7e24f2d6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/jump/_0004_Layer-5.png",
+      "bytes": 420,
+      "sha256": "871153430ae506b2e582f3d956b50badcf8ed74c62a480f5efb7e8a517161786",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/jump/_0005_Layer-6.png",
+      "bytes": 360,
+      "sha256": "ab56b428f5662af9014bb34a7862445c7e31a061aaee255e7596939168621e8d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/shoot/_0000_Layer-1.png",
+      "bytes": 374,
+      "sha256": "c3b1343f8247aaa5a1434e80a545a363e637d8c3ef84edef48fe59d524e1993c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/shoot/_0001_Layer-2.png",
+      "bytes": 353,
+      "sha256": "87d58e1a46da8cbc8674d6f95ef0184df43cf81b29ed413fa8f9d77b744bfe08",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/shoot/_0002_Layer-3.png",
+      "bytes": 340,
+      "sha256": "39877a6c248c5521ed789fc6c3e797244d2ebb782d90291d13e857082daa9ce6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/shoot/_0003_Layer-4.png",
+      "bytes": 421,
+      "sha256": "9080c7ae8fa8c20f23d96089a5612c48352fdfa567cca1a4171df6e6930ed9d8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/spit/_0000_Layer-2.png",
+      "bytes": 178,
+      "sha256": "5f14159e4b5c074e0f97a70a78bd87e9276e94c0777e766767d9ec084a508ba8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/spit/_0001_Layer-1.png",
+      "bytes": 186,
+      "sha256": "f5ee5101a2e3d2a96399423d99af9c85aa61763bde2d1af54563eda547528e60",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/spring/_0000_Layer-1.png",
+      "bytes": 313,
+      "sha256": "221b481cc7fcbe2715111227ffebf5d0bb39c77436e917ff54c6bd7b793b039c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/spring/_0001_Layer-2.png",
+      "bytes": 379,
+      "sha256": "24bd14f7b11847f717a8a884653a6af682fa877427676a55a0a4a664d9cb6d03",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/spring/_0002_Layer-3.png",
+      "bytes": 333,
+      "sha256": "9d75e1dbf75741b95e78cebff4ab9758db4639af67a452e55176b4ab883d7c2f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/walk/_0000_Layer-1.png",
+      "bytes": 346,
+      "sha256": "da2e28217432aa6ce383ee8743edb26c8f4e4ef97f863df06047ad4435c6fcd7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/walk/_0001_Layer-2.png",
+      "bytes": 326,
+      "sha256": "b2bfaebfd990e725d1196d697a38e6b8cb01287289e2003c07fdf8461add79b6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/walk/_0002_Layer-3.png",
+      "bytes": 335,
+      "sha256": "33aa428eeed6db8b1d88333157718da3dc76ece4d98b7b7d159b06836aedee5c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/sprites/walk/_0003_Layer-4.png",
+      "bytes": 312,
+      "sha256": "67981736ec958aebd55dbd2d73e5937bed9f9cca0871bd11ffc7a754af1b9064",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/attack.png",
+      "bytes": 333,
+      "sha256": "1fc56ae24becaf07b749e3a09d7ab5bace5e42ec942100b589538b5fa8108abf",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/hurt.png",
+      "bytes": 715,
+      "sha256": "bbad47d3d2220a45648bbb2917d4c41f72050dcc04fda6f79dcad81e6a83f85d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/idle.png",
+      "bytes": 733,
+      "sha256": "20f26954aeeb409d83a47a14e9e679c277140d0e7bf0a2803890c07e5c7fe6c5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/jump.png",
+      "bytes": 1317,
+      "sha256": "3b028631d6709ff8007594c2ff6827edda8dad20131c0fc6927b30ff131d9bce",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/shoot.png",
+      "bytes": 889,
+      "sha256": "92f026f5fb2c008633a13877a67a578592e0f4f4267f5d8ad4fa6fb873b747b0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/spit.png",
+      "bytes": 223,
+      "sha256": "6e4df818f17a926005de44fa68f077f4dbf38b083ad3d5bce9b9a40d452d1eec",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/spring.png",
+      "bytes": 669,
+      "sha256": "7ccf9f18ccdb56bf9d34ee054ff694adf34d321f2dfdb71a4eaa45d4f9b93b95",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PNG/spritesheets/walk.png",
+      "bytes": 688,
+      "sha256": "124c65ed67e4a19fe0412844bf31dd7f39338ad3d45e6499c88ce88aea6be90e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/attack.psd",
+      "bytes": 48077,
+      "sha256": "d1e7bbf6af39530f36c4b140882684bebaffd4d39eed45fb68852db1d3704879",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/hurt.psd",
+      "bytes": 46513,
+      "sha256": "be04b38a66b4c14d41cc8b948d5328e7cabaac0b7154543d92edc44fd961087d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/idle.psd",
+      "bytes": 46355,
+      "sha256": "a40230827c92648c40be2a7187a4e2a010466a758214de1fcf05a574b6a7466f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/jump.psd",
+      "bytes": 59297,
+      "sha256": "eabb0740a69f62d815625612755d26fb1bd98a0b50568cd079ea230e3b460b00",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/shoot.psd",
+      "bytes": 47902,
+      "sha256": "6570b270c6ee9c087b308e9e22502aa4570756494f179fa7f03d8d8182daa266",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/spring.psd",
+      "bytes": 49744,
+      "sha256": "3654976309193fcab249e3cb8389c74adb56701d467c11776528b37159114031",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/Grotto-escape-2-snake/PSD/walk.psd",
+      "bytes": 60643,
+      "sha256": "787f02bf8c15e65bd9551fb629b573896e60563d217cb6e6a04f9e0d596e1bed",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/GIFS/sunny-bunny-idle.gif",
+      "bytes": 2202,
+      "sha256": "6a0b52cab83d52bf5371cb0abf415100f89bac7860d194581535cdd0ce8f1a04",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/GIFS/sunny-bunny-jump.gif",
+      "bytes": 2816,
+      "sha256": "f0531e59b93fbad3134ea19dfea9b1cd166af345be275d0e6cf5c04018f02f34",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/GIFS/sunny-bunny-run.gif",
+      "bytes": 2575,
+      "sha256": "481cbe1cd85e200699df5a83288d6cdf3f5469640249eb10d8509a443397d832",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/idle/_0000_Layer-1.png",
+      "bytes": 1570,
+      "sha256": "f88e02a001b8433a9ee95ca88d24997d1fb01efcd5c5a9e1e9ea7176a2eb6a23",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/idle/_0001_Layer-2.png",
+      "bytes": 1520,
+      "sha256": "f28c2405eb3bcdc1736db9a434068d37303e0378fb5718dc68cc6363f62856c3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/idle/_0002_Layer-3.png",
+      "bytes": 1532,
+      "sha256": "9a7bf39841ceed6174790d9700d99058ea83af31e6ee466c8a1ad9bbfe46b38a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/idle/_0003_Layer-4.png",
+      "bytes": 1533,
+      "sha256": "472de92ca4515d53a69b70d39a645a940e0d393455c69cdeb4eb9df0ca1255b0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/jump/_0000_Layer-1.png",
+      "bytes": 1689,
+      "sha256": "a76568cb6e5fdbe2040efb3de49a14e37997261a4a533377f3c6c880c3b0e37a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/jump/_0001_Layer-2.png",
+      "bytes": 1628,
+      "sha256": "1d10885123eca0805ddfed2db569cee56889785ddf0c7b98102f86ba82805306",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/jump/_0002_Layer-3.png",
+      "bytes": 1657,
+      "sha256": "b78154b656a513c5157cadebb352fad8d2de0b1df70b7d0cdf611aae84c26ebc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/jump/_0003_Layer-4.png",
+      "bytes": 1735,
+      "sha256": "87cecfc8b70cca6ce9f730a2bd5fdaf197c0cd33d653dd4c2436aaf4de199046",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/jump/_0004_Layer-5.png",
+      "bytes": 1622,
+      "sha256": "c95a7dada1240af6311b6e998258cb455d7c3da25369187286a8c321d95cb272",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/run/_0000_Layer-1.png",
+      "bytes": 1633,
+      "sha256": "abb855cc6353b670fa999f6c2066c627057afcec2d6c7129280240b69874f0ed",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/run/_0001_Layer-2.png",
+      "bytes": 1479,
+      "sha256": "523a5c40874698cbb204a2a61bfe9b72a59d6c4412e0b7d2f2163dd01dfcb47e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/run/_0002_Layer-3.png",
+      "bytes": 1502,
+      "sha256": "3af5f63c9e9312ecb65dbdfddbd7105c6b408b974e3056cd72c38f56a3b1ebf6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/run/_0003_Layer-4.png",
+      "bytes": 1481,
+      "sha256": "4c40cabf0f85ca81b86b475b2e6a17c172d1aae79c4e51bd0e02540f21fab913",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/run/_0004_Layer-5.png",
+      "bytes": 1455,
+      "sha256": "8fdecac16868195960ad2ddd0116a50d78bc55a44dcdf9bd71c31009bfee711f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/layers/run/_0005_Layer-6.png",
+      "bytes": 1450,
+      "sha256": "bde7cd183cf6a06b808bdbe40194aa1e86046cb494aff7bf9834eef534d1383f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/sunny-bunny-idle.png",
+      "bytes": 2485,
+      "sha256": "e2fb4bb83242c3bc49b933b6836ce51b166cfd1fb7f265458b3ffa0cc0d20f51",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/sunny-bunny-jump.png",
+      "bytes": 3677,
+      "sha256": "b8a1f3d8be6093ed21f9f0be0c159c2ae3920a3796a6a98739c22569968cda4f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PNG/sunny-bunny-run.png",
+      "bytes": 3264,
+      "sha256": "984a859420033022529e4f34d24f081590e521f23018be22752921b280c75aae",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PSD/sunny-bunny-idle.psd",
+      "bytes": 152659,
+      "sha256": "1d5e5a268d41ae08367992499d8f8431fa0917d8bcec735983881ae0a0a76521",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PSD/sunny-bunny-jump.psd",
+      "bytes": 158348,
+      "sha256": "6d8fedfe4d82630b1bd83327e94a05d45ba707017e0d477bfb2b684b1751be28",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-bunny/PSD/sunny-bunny-run.psd",
+      "bytes": 160102,
+      "sha256": "40296c9107f4eace52304e8a34e9e8ef5df5f8f18246546e95d6eee02688bbe8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/GIFS/sunny-dragon-fly.gif",
+      "bytes": 16030,
+      "sha256": "41069d2d63a3ae7da2391af552e392c4119eca7803ebebd551c1dfa539c4411b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0000_Layer-1.png",
+      "bytes": 4054,
+      "sha256": "1f62fb1fda6f6dbf12f608ecd3541099cca50bc2a9e24cf60486f67d2c73ebc9",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0001_Layer-2.png",
+      "bytes": 3687,
+      "sha256": "a152c15c10ac3d513a8956294d1c7b069751070cd45932749c384ed498830a78",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0002_Layer-3.png",
+      "bytes": 3350,
+      "sha256": "65295d3bbac4c072c1656fc761c5218e2d57d46b75877561a4f8939d42fdbc68",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0003_Layer-4.png",
+      "bytes": 4070,
+      "sha256": "fc27fd760bd89fd28cb4b6cf3e4a0a61e5d6da3c4803f6de773c6ed6c812da6b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0004_Layer-5.png",
+      "bytes": 4303,
+      "sha256": "bc744b23a59a7d844c1c74e254df39a2a5fc1e9a1f86814227131c4b1e7a49f0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0005_Layer-6.png",
+      "bytes": 4026,
+      "sha256": "253e867348c9ff0b5df4f0f5974090f4dedaf9cd48515e9f4a0936b08eb6e12b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0006_Layer-7.png",
+      "bytes": 3759,
+      "sha256": "58c3bbc31e43f51e8bc4f5eb6c68e2d357d7711be979d839f6b669c91146a752",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0007_Layer-8.png",
+      "bytes": 3803,
+      "sha256": "1d6f2b16007ba74aa745553c10b559262d2c2aaec4c1ba27a2d0f68e3e6b4d9c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/sprites/_0008_Layer-9.png",
+      "bytes": 4235,
+      "sha256": "5279646bb5ebda5a75a088917115762255cf4633e948a342eb380a9b5843e71c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PNG/spritesheets/sunny-dragon-fly.png",
+      "bytes": 25150,
+      "sha256": "f5d520b0aeffd34b2545c9e0fbece30e5add88931510585a0532c123655ade9d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-dragon/PSD/sunny-dragon-fly.psd",
+      "bytes": 345988,
+      "sha256": "0782bb34120b0c86682c62a5a7046002bff4131dceb64c0498138e1dd4dbdfa1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/GIFS/sunny-froggy-jump.gif",
+      "bytes": 4203,
+      "sha256": "b61e0f3ae3ea81cc7203500141ab108971bcb4bb72769a545dd2253034973935",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/GIFS/sunny-froggy-taunting.gif",
+      "bytes": 2586,
+      "sha256": "b177c6f9f2fe9c7cfe7b023b2263f0fd420d2a5ae1c851e03c5b3fc2518138fb",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/GIFS/sunny-froggy-walk.gif",
+      "bytes": 3634,
+      "sha256": "544efcc8e1627792b76301688e48c8a6177fe1c376b355a949938013848ed79a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0000_Layer-1.png",
+      "bytes": 1824,
+      "sha256": "aca53276d4b16a57f331c9551c3de9add4ebfb3f13f6615082e34928c6c0ecd0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0001_Layer-2.png",
+      "bytes": 1653,
+      "sha256": "05fbbfd15ec945ab8a185d74d1149fe05d0ae31d2513ef31c8189ceefad21c00",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0002_Layer-3.png",
+      "bytes": 1853,
+      "sha256": "12660c05e9ad8b4f075bd38a38077caa3d6f39960ac2da0282d7af603afb2594",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0003_Layer-4.png",
+      "bytes": 1798,
+      "sha256": "7386351011a841f5bdd536ef80e978545c8f34edf6eeb07da5f3d46419c705ac",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0004_Layer-5.png",
+      "bytes": 1957,
+      "sha256": "533a240cde058e6865e2d94e8372c637c0f5e17dd21a6675abc3e33c4d6dae0c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0005_Layer-6.png",
+      "bytes": 2015,
+      "sha256": "d4b62d3f0a22d0f03db4a618b9473a6f257b6d01e07a1625ee5b2fbd63bfbb78",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/jumping/_0006_Layer-7.png",
+      "bytes": 1653,
+      "sha256": "7adf0835e90a88c7ada3e831ed419940958f1e0d91b217101f670fa4aa9a4568",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/taunting/_0000_Layer-1.png",
+      "bytes": 1826,
+      "sha256": "9dfaff56eb829bb571c84b8c0563437157fa69dfae97a9f00edf1bf97e353784",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/taunting/_0001_Layer-2.png",
+      "bytes": 1760,
+      "sha256": "8a5f3206010c28d8d7fe3880f4b16c13de6d75a322bf9384621a9b40730a8217",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/taunting/_0002_Layer-3.png",
+      "bytes": 1756,
+      "sha256": "2b37a141b31443d9f4fd17ec9c7e0fb8d2d292b8446e6a20ccae79964a9733a5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/taunting/_0003_Layer-4.png",
+      "bytes": 1760,
+      "sha256": "ba69817d5db1965f8436fdbecb77c6281eeacaae47614231a791f18f7214e30a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0000_Layer-1.png",
+      "bytes": 1595,
+      "sha256": "784196bce0ed297961fd403aed9b38e031abb24a50b88f8d47a13fcbecfdacac",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0001_Layer-2.png",
+      "bytes": 1528,
+      "sha256": "e8133ce9186f018a5f2027bc4a69bc3ee343e0dd33fa959d426d1e0e9fa2450c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0002_Layer-3.png",
+      "bytes": 1481,
+      "sha256": "22838d703b5ce334efc5a25a21f51e112a6a5175edcf69c0a63c2671f61f5e74",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0003_Layer-4.png",
+      "bytes": 1488,
+      "sha256": "646db12109fbf35caf0de2e877ff1f84c5215ff01f8d212f152b863fb7e4beca",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0004_Layer-5.png",
+      "bytes": 1554,
+      "sha256": "e561ba385eadc43003963ba03815fceb46c731e8295f096ea8db907b36fed546",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0005_Layer-6.png",
+      "bytes": 1572,
+      "sha256": "4d91a220559b07e8e0fafb6589bd487a962cbbc064bff46066afba0371019224",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0006_Layer-7.png",
+      "bytes": 1555,
+      "sha256": "1933899fb1f7721221fc715154deee9da451726c266b33de3b92562c87958bc0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0007_Layer-8.png",
+      "bytes": 1507,
+      "sha256": "7b5e3717598d61752a8ad33c0c0624c30fc8247caec3643447e8482376ab345d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0008_Layer-9.png",
+      "bytes": 1515,
+      "sha256": "0910fb3612395e3c878797da2690c90b2ce1b22c07eb2a729bd4ed1c0a77b0f1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/layers/walking/_0009_Layer-10.png",
+      "bytes": 1547,
+      "sha256": "3d934a52dbeae2b5c4c17ebada1c5a54c246cd2a39d12a60c4669ea35af8e3b7",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/sunny-froggy-jump.png",
+      "bytes": 5918,
+      "sha256": "962a0a49fcc83c294d33ae1b4bde3622c8a508e680671a0fbcd7ed854056b1eb",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/sunny-froggy-taunting.png",
+      "bytes": 3201,
+      "sha256": "129df687b82befc88067d079bde7755cffb3609e768551fbd4c3b424c6f92612",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PNG/sunny-froggy-walk.png",
+      "bytes": 4420,
+      "sha256": "d99c4ae793f997f3c7814c74f4e782621aa536ce5b2c88f799a2935516cefc7b",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PSD/sunny-froggy-jump.psd",
+      "bytes": 169445,
+      "sha256": "bb20ce99905f435df28dea99a4946512b9d3a8a2d41e12892233424211b7276a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PSD/sunny-froggy-taunting.psd",
+      "bytes": 102336,
+      "sha256": "b5744433a251b3dc9826f5efe7e9fcb51799e8c8aff8a606105aad12a8bc9d2a",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-froggy/PSD/sunny-froggy-walk.psd",
+      "bytes": 147052,
+      "sha256": "ef62103d374efea7c288cee928f9b4dab7edd22fd8e831418f61f698bd219e44",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/GIFS/gas.gif",
+      "bytes": 2037,
+      "sha256": "da6843f04dd469a0352fc369e4ca4016d2d1d687cfd345b89f7041d8767abde3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/GIFS/sunny-mushroom-breath-no-gas.gif",
+      "bytes": 2130,
+      "sha256": "ca91a6230544a416dcfdb7ab82e0b48ea9d7af5f8afb5413989db8b1ec5d8965",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/GIFS/sunny-mushroom-breath.gif",
+      "bytes": 3968,
+      "sha256": "ca8b344a5b691979fcc3c78e2a9b4e57b434576dc89a6cce295b647b1cf731c5",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/GIFS/sunny-mushroom-jump.gif",
+      "bytes": 4077,
+      "sha256": "be1f53a47d457b9c4ccc6cd5e4f8f73e9e12a0d8fb96e1555bb0c4e4a746bc63",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/GIFS/sunny-mushroom-walk.gif",
+      "bytes": 3218,
+      "sha256": "208516aea8891da7de207f15dacc838949fb71dfb209d2f6cfc12d31c53321e6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breath-no-gas/_0000_Layer-1.png",
+      "bytes": 1447,
+      "sha256": "5ea17eafc7611a6ece6ddc19dcce2c2314f00a2090698d4b5d5424437e0e9d50",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breath-no-gas/_0001_Layer-2.png",
+      "bytes": 1422,
+      "sha256": "a4cafa6a981fd56760d377c7207b2edc94ba1e4fb645edef3b23e1cd3781585e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breath-no-gas/_0002_Layer-3.png",
+      "bytes": 1417,
+      "sha256": "e022ab5261d170b1ff36f130f36fba5ff2d09930dcddb4f69f28d0338c377eb3",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breath-no-gas/_0003_Layer-4.png",
+      "bytes": 1420,
+      "sha256": "245a82c5232b56d919871fbdec6eb761378ab1af7d3519271366500c99493db1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0000_Layer-1.png",
+      "bytes": 1460,
+      "sha256": "91659e81b4f5f5fdeac98650fdf2f5ba4e242a32004384bd973f736249f61d7d",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0001_Layer-2.png",
+      "bytes": 1422,
+      "sha256": "89fd5bfef13c9b1fef4a029e4bb1ebbc0cc63579166e33a12c5570ef38c94425",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0002_Layer-3.png",
+      "bytes": 1522,
+      "sha256": "c3c06e0611043400ccbdbebc3c8b8865c574b4b5e01d6cf734fa51dbdaee5163",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0003_Layer-4.png",
+      "bytes": 1557,
+      "sha256": "679ea4ae288aa3135c5b1d2e07b8ba11a693c8f8f447d229476dea508a17224c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0004_Layer-5.png",
+      "bytes": 1582,
+      "sha256": "8a0ff472449718f9f43da4c5bd9e76137b6ed2efa8da26e19f913e86e9b969ec",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0005_Layer-6.png",
+      "bytes": 1655,
+      "sha256": "045d0833bd7d6d689e3fc20611168f910d3cb4c6172fbc5cd82f82f842b3a443",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0006_Layer-7.png",
+      "bytes": 1661,
+      "sha256": "df5637020c8a857216157085dbbfec5cdd5f142a87ed35047aeeb48b94544bcd",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0007_Layer-8.png",
+      "bytes": 1578,
+      "sha256": "2b0f14235c4d588f33a645f01d8ef2c69670e1494aba24ec63ada41cbb8d2b7c",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0008_Layer-9.png",
+      "bytes": 1411,
+      "sha256": "d4ac40ac2e3954d8ae595019eb1b429afcc59a7e947dbc9aa043870a1bc90886",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/breatth-attack/_0009_Layer-10.png",
+      "bytes": 1428,
+      "sha256": "0347d47764b3ce309e7ae3cacdb603a7dc4bb31bd0811738215cf43438d69578",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/gas-alone/_0000_Layer-1.png",
+      "bytes": 1156,
+      "sha256": "b20fbcfd1bbcf0945d7957f14b1f3def69743f467132809bdf3d588ac2779a98",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/gas-alone/_0001_Layer-2.png",
+      "bytes": 1176,
+      "sha256": "b0442d7deed97eb709356c56a600ba46705bbd4113e1027314a2e90367937a2e",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/gas-alone/_0002_Layer-3.png",
+      "bytes": 1232,
+      "sha256": "00706b3fecd4af2fd1b6b8ccc8edb5b58c42ca4f477015f57189d0178b57bdfc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/gas-alone/_0003_Layer-4.png",
+      "bytes": 1283,
+      "sha256": "8f23463e81f389812ec3964c5fd094f0d6cf1a59d0427712ed6784ea691031ba",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/gas-alone/_0004_Layer-5.png",
+      "bytes": 1275,
+      "sha256": "efde81b7aca6cb3ce52af19dab267f879a1b7879ba386d42be6040199da55cc6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/gas-alone/_0005_Layer-6.png",
+      "bytes": 1150,
+      "sha256": "390e107c1d1163fe599935ec551986369b59c173d6ee56e7bd7ec41b692a7104",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0000_1.png",
+      "bytes": 1689,
+      "sha256": "f324f5db00f3c3e2ac7f30089943b71fe463640adfe9fa95e3c4bae7bd6d487f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0001_2.png",
+      "bytes": 1577,
+      "sha256": "db76f8c1a932f6481062c9b58f14a1074b463dcb224072e5906f556146e164c2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0002_3.png",
+      "bytes": 1838,
+      "sha256": "a1eb010e64a7beb3838b1080b8656698f54f350f60ba730557c632cb4a145a85",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0003_4.png",
+      "bytes": 1496,
+      "sha256": "f84878de8e772cafaf6141964fcd7a058f1990cb88e9eb189fcac7601a5abd49",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0004_5.png",
+      "bytes": 1593,
+      "sha256": "c15225bd027e447a06b2abdd2e4d0d9de0154541c9d33446a3b40f744a54d2cb",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0005_6.png",
+      "bytes": 1658,
+      "sha256": "2b123efd7778e2ba1b229e2b6e295d36a0ab02f22d473daebec027f8c8bb6b21",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0006_7.png",
+      "bytes": 1615,
+      "sha256": "0ddc864f36eb4dd8b7ec30847a16482288ab9d512b1267cdf301bfc18164ab49",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0007_8.png",
+      "bytes": 1594,
+      "sha256": "cf1f731ade8f4b3f3694ac0f3fa2f9d7a107acae1fbcf42f9c7ebf02a07b3500",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/jump/_0008_9.png",
+      "bytes": 1687,
+      "sha256": "15f1adc66a0f7383e4945018a244dbdfad33f77c9855925a87f7dcd5adfda089",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0000_Layer-1.png",
+      "bytes": 1378,
+      "sha256": "a348b98b1cab00c987d8262985e390742107b5ec9ba573cf12e0b796cf6053e8",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0001_Layer-2.png",
+      "bytes": 1344,
+      "sha256": "210543fd010fcb0d0e6bae1576769a9951d7ca8b2f82d4837c02d3c73c6ed8d2",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0002_Layer-3.png",
+      "bytes": 1299,
+      "sha256": "b5b9f01004ae2dc72b0432febcac230c4b02d79d12ee1fb1dcbec1ae5c495a8f",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0003_Layer-4.png",
+      "bytes": 1308,
+      "sha256": "150c0ef0536870882633f6f6aaf1bbbc6116456a23b4bb890d6be71abffc1936",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0004_Layer-5.png",
+      "bytes": 1304,
+      "sha256": "e71426fd2cab726a22f13544f122cb8431f71e0979b29749a8441fce8effabde",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0005_Layer-6.png",
+      "bytes": 1343,
+      "sha256": "b3fd26c507a1531ec0ea8f101eca963fe8b25cd12c17968c8f9761a9496881f6",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0006_Layer-7.png",
+      "bytes": 1322,
+      "sha256": "c03a74559b11ffa484b70a794ebdaf1a2ec2dacf62899361a1022ca2c2483fdc",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0007_Layer-8.png",
+      "bytes": 1300,
+      "sha256": "d61a3cfc8b7c6493c7993edcb2073ee90bb2509ed57183ea6e98babd2fd71066",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0008_Layer-9.png",
+      "bytes": 1304,
+      "sha256": "d4d2f2cc0fa007e1d4c69e01ee84b5910bf5c68c4166f2b70e54d2598d0fef16",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/sprites/walking/0__0009_Layer-10.png",
+      "bytes": 1325,
+      "sha256": "d57d1b3f6d281619a876d0a83096a63dcb8261eb482421ce9018350d369f5192",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/spritesheets/gas-alone.png",
+      "bytes": 2131,
+      "sha256": "0934149009129ded4e76b91f211904276fe3121bb0d712d30b7588efa851cb63",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/spritesheets/sunny-mushroom-breath-no-gas.png",
+      "bytes": 2415,
+      "sha256": "05f4f869e9ef2a79bae15d489499da862c95c0be964a4a7c258259b9400e2294",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/spritesheets/sunny-mushroom-breath.png",
+      "bytes": 4051,
+      "sha256": "e80f138325216e74cb3761bce8e4ebba970c3045f7ac557d13797a34f426cce1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/spritesheets/sunny-mushroom-jump.png",
+      "bytes": 5016,
+      "sha256": "7e576b88ff4e4b73d33e9952971a7d17c4db55135dd8728d142d3c5694368976",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PNG/spritesheets/sunny-mushroom-walk.png",
+      "bytes": 4063,
+      "sha256": "68392d19c6144ad6a370f0ac288cc971434b4f191295458a26fb4d9a64366836",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PSD/sunny-mushroom-breath.psd",
+      "bytes": 115477,
+      "sha256": "5f90ca5837ca832c76aabf0d543a4ce6e204739e441baa73635737e889a6bae1",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PSD/sunny-mushroom-jump.psd",
+      "bytes": 166432,
+      "sha256": "234a98f740b4ac5e1978878fac9598be0806df82999f12797105080afd9bbd29",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/fantasy/Sprites/sunny-mushroom/PSD/sunny-mushroom-walk.psd",
+      "bytes": 115536,
+      "sha256": "c7411e384719596d53fb7bdb1c04ec472bb426b16967be9cb72b18a4388740a0",
+      "package_ids": [
+        "sideview-fantasy"
+      ]
+    },
+    {
+      "path": "public/assets/licenses/going-up/public-license.txt",
+      "bytes": 484,
+      "sha256": "86f69297d227354c339ca839a7efe172baf857674164cc4148dc159274be3f6c",
+      "package_ids": [
+        "going-up-music"
+      ]
+    },
+    {
+      "path": "public/assets/licenses/sunnyland/public-license.txt",
+      "bytes": 523,
+      "sha256": "46e3cd0513eebd3bf3fb8c821d215d845507b677511aee25ef6cc4e71b808b65",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/licenses/sunnyland-forest/public-license.txt",
+      "bytes": 520,
+      "sha256": "7491800df60cc6db28059197179d16adec4fcec3e318a27403421e9dbd752145",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/atlas/atlas-props.json",
+      "bytes": 4700,
+      "sha256": "1232ba057eca967d7032809d99e05427ff4f0a44338c996a5d2abbf5de290b15",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/atlas/atlas-props.png",
+      "bytes": 11116,
+      "sha256": "9d1bf4fd63f5bdafa5f254d234833fe376a6a1d547cf3d5b836d41a7497935a0",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/atlas/atlas-props.tps",
+      "bytes": 10010,
+      "sha256": "31256606f2dff89c970a723f5c522248063067b0a44ee3944715e811266d9539",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/atlas/atlas.json",
+      "bytes": 13591,
+      "sha256": "bb709a33f0afcd5eb2bb53bdabb21d8e61f81bbef6608dfa001d3705c65e61b7",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/atlas/atlas.png",
+      "bytes": 13921,
+      "sha256": "2199bc9fe38cb2ae4b1ef0f00f2bf5f27f5a15495ee0065b8e82ac8090c600e5",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/atlas/atlas.tps",
+      "bytes": 7113,
+      "sha256": "5562601054a1137219c332a943d4c59692fd3f21714c482fb55f154973b16365",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/environment/back.png",
+      "bytes": 8230,
+      "sha256": "1328860d2b4931a6f7200152319a80fb2ccc140035aaa21087fd14f5112f7165",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/environment/collision.png",
+      "bytes": 957,
+      "sha256": "14e89ee628f5f91fedb43d1d08cfaf3555f1ec5daa1443e8b4854d25c15faa5a",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/environment/middle.png",
+      "bytes": 6903,
+      "sha256": "ed6dda4bbee56ea91ced88848ede1b37ecab66504827060679e94988a5de241f",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/environment/tileset.png",
+      "bytes": 20258,
+      "sha256": "82ae192a9b895e33e06e2ed4073222d037a27427651dfc6daaf7c8e3e365609f",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/maps/map.json",
+      "bytes": 7585,
+      "sha256": "0d3c9b9acad702d1517bd825256fa0cbaff12c851827382b0260545495fdb995",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/sound/platformer_level03_loop.ogg",
+      "bytes": 1924325,
+      "sha256": "aba14c2c11a5471b4e8266f534015fe24ce505178d441b2aaa1ba9e71f8ba988",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/sprites/credits-text.png",
+      "bytes": 1536,
+      "sha256": "847f2b7ac3de006d68d9e4ef010531894fa632168be7287865a54f8db6df08bd",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/sprites/instructions.png",
+      "bytes": 3238,
+      "sha256": "b139a73d9606f0e4836908010556c8c9c717c8805debc751bc86803c08c25aa3",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/sprites/loading.png",
+      "bytes": 980,
+      "sha256": "d5f10023d02baa60ab6349ed262d7ecd280756795f952b959107d951ab674afb",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/sprites/press-enter-text.png",
+      "bytes": 1218,
+      "sha256": "76fd3684352f63ffc4275efb506d9295c503f44e1a2e74b346e814e3b18ff392",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-base/sprites/title-screen.png",
+      "bytes": 1550,
+      "sha256": "16283fa2ba4e410dc746b261060d05f66146e8c6f0657d685f9bae6256c922cf",
+      "package_ids": [
+        "sunnyland-base"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/atlas/atlas-props.json",
+      "bytes": 1870,
+      "sha256": "25020b2557a92a97bf62f7b4c4dd2b0e7adaf4279f281e1dfcdc4fec4b02d42b",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/atlas/atlas-props.png",
+      "bytes": 20388,
+      "sha256": "ec0da5122f3dd93f4ac5c4c2fda71f14d689639d5b09b86a2b888905e38c3a8a",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/atlas/atlas-props.tps",
+      "bytes": 8094,
+      "sha256": "d7c4b2b23cd39c932bc0b3a77d6e049abc66141bb8e7eeef2aaa38af872d8141",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/atlas/atlas.json",
+      "bytes": 18484,
+      "sha256": "d5dd9e7725440cd6efccdcec7ef56594232a5c12468d67971c570398a9b46b5a",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/atlas/atlas.png",
+      "bytes": 22542,
+      "sha256": "37da86dfac66256c53a10fa9cc2923c90952d424a4b5b89ce102ed91b7d4151a",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/atlas/atlas.tps",
+      "bytes": 7411,
+      "sha256": "8a68e4df38062291b70e88d701d77f8bf659e3176c709e7e4bf37b24f35b4e78",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/environment/background.png",
+      "bytes": 4365,
+      "sha256": "28714ce7e530abd0d22684358aa52254c566c6719a98aef7b63a8fbec61555ea",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/environment/collisions.png",
+      "bytes": 368,
+      "sha256": "83f278ed19c9678b76de442b8dcabdb5e4e048750abd27b06b3c7e3b55d4649a",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/environment/middleground.png",
+      "bytes": 15306,
+      "sha256": "ad4d74478d5f0de8ee932ea4eec22f63b0a750b260931e12c97ecb236e74df04",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/environment/tileset.png",
+      "bytes": 15369,
+      "sha256": "edf087287e73c019847947e28818e44213a4bcf01424276a0516b24cdff7aded",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/maps/map.json",
+      "bytes": 41054,
+      "sha256": "4a046f95afe76c225bdf0e40b1c59d0beb08346414f128267d1c6a45ffcd0253",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/carrot.mp3",
+      "bytes": 4223,
+      "sha256": "c035393b98635551f9f410db91389cd5f2f350e21c9dd83a6b588cdda84c65ec",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/carrot.ogg",
+      "bytes": 6530,
+      "sha256": "f87c294fabfafd5e722a8010b5a2db643cb085642700fac50151118663016872",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/chest.mp3",
+      "bytes": 13306,
+      "sha256": "3dc66d68e4164ea93f8f487ef160fb9b16648aee147199795764280e9c747be5",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/chest.ogg",
+      "bytes": 12405,
+      "sha256": "d663ba83169bbedae56dcafe4262efa11155542905cf2977d2bc257491a6e562",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/enchanted_forest_loop.ogg",
+      "bytes": 1448449,
+      "sha256": "1b026cc8dcea4729abea2dd4bb9e0bf2360e236eeb734e9599d6ca1c69ff8525",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/enchanted_forest.mp3",
+      "bytes": 1519259,
+      "sha256": "f030eb5910aa7a12f230e88d815718f938bdca4be12703bda4864896f2d3910e",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/enemy-death.mp3",
+      "bytes": 4434,
+      "sha256": "7e543670810825b46042c231286f4cc32658d5d09b7656244b218979997e61d1",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/enemy-death.ogg",
+      "bytes": 6143,
+      "sha256": "45a9889ed50d1b8daafb89b1278b7687964850bd794d5947b774597984177139",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/hurt.mp3",
+      "bytes": 5111,
+      "sha256": "1b7938b535db811d968345a90142c60ce1f3b8a8029402c757e45acdc2ab28f4",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/hurt.ogg",
+      "bytes": 7389,
+      "sha256": "dcea7efb4bff68b9ff3dca3e36988bec0e3bdfffcbecccd8802e10b5e6e82a75",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/jump.mp3",
+      "bytes": 7666,
+      "sha256": "12217e6badd7919a87902e7af1bbfea344df976bbf4500b6fb7e00a9ae17b52e",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/jump.ogg",
+      "bytes": 9361,
+      "sha256": "7021932691b36f0b00bc6fbf39801c9f16db109be6ce8717423332aa3f9f64e9",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/star.mp3",
+      "bytes": 3754,
+      "sha256": "0749ed8b6f24cd2aae25e4f056aa916ec4992a0e33d22e7cf1e1dc8f8310fe81",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/star.ogg",
+      "bytes": 7096,
+      "sha256": "4954c49bd27394815d135a288859cfa07299687467e04aefb2ed5baa5e260a4b",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/wavs/carrot.wav",
+      "bytes": 22168,
+      "sha256": "8e462670da999b8c77b62feb0699e1dc584314280208a27b4a4804aa294acc01",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/wavs/chest.wav",
+      "bytes": 162622,
+      "sha256": "d12250845d5ef768d491bdcecd3a22fc47e6b27924df7e7dfabfc8e37c40cf87",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/wavs/enemy-death.wav",
+      "bytes": 21326,
+      "sha256": "85a7a2105b9b176a75e1c7b4f454a1ad84073d3e7d7240eeab9af47983da0817",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/wavs/hurt.wav",
+      "bytes": 30100,
+      "sha256": "6f9384ddf62a16bb3a0408f1af8ed90fde082fb17fa518785b6b49a0f1921344",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/wavs/jump.wav",
+      "bytes": 39342,
+      "sha256": "eca9dadea4f17372e0960d5e937fe52f607066f74d6cbaa842ed0e074b64c413",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sound/wavs/star.wav",
+      "bytes": 23254,
+      "sha256": "892de679df81610d4f58ea4848ba932fae9ec3ee9a34c25cc27d5fda76b31234",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/credits-text.png",
+      "bytes": 1664,
+      "sha256": "17d0231339e2202d3a7ab104c639a7440c0e2399e17b5f466f12167ff5bc3d84",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/game-over.png",
+      "bytes": 3439,
+      "sha256": "d25cfe55878ae5358017aa63326420f737453c9d6690eeb7113641ba793fc2b3",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/hud.png",
+      "bytes": 659,
+      "sha256": "61d212e4b02a2e5552792ae3f5899038285ea1799a61db419950aafb4cf5347b",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/instructions.png",
+      "bytes": 3355,
+      "sha256": "a8d15c228f52cf0fb588c430acd2ff30ab23a2c5d690060ff1770fc9e0036e20",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/loading.png",
+      "bytes": 980,
+      "sha256": "d5f10023d02baa60ab6349ed262d7ecd280756795f952b959107d951ab674afb",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/press-enter-text.png",
+      "bytes": 1211,
+      "sha256": "6ee49f024c3c2a1b3aec978d253f446835917ad38a71e232eb9a39665c41a93c",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    },
+    {
+      "path": "public/assets/sunnyland-forest/sprites/title-screen.png",
+      "bytes": 1908,
+      "sha256": "020d6eac23319f71dd0dbf8b64697b6066fa9a97c45920399e7c73f0cb13b951",
+      "package_ids": [
+        "sunnyland-forest"
+      ]
+    }
+  ]
+}
