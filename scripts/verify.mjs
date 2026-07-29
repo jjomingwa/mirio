@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { Buffer } from "node:buffer";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -20,6 +18,7 @@ import {
   computeTaskContractHash,
   verifyManifestIntegrity,
 } from "./lib/integrity.mjs";
+import { validateSchemaDocument } from "./lib/schema-validator.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const NPM = process.platform === "win32" ? "npm.cmd" : "npm";
@@ -159,6 +158,7 @@ function hash(value) {
 
 const SOURCE_EXCLUDED_PREFIXES = [
   ".cache/",
+  ".goal/backlog.json",
   ".goal/evidence/",
   "coverage/",
   "dist/",
@@ -461,7 +461,18 @@ function validateEvidenceManifest(manifest) {
     "evidence.schema.json",
   );
   const schema = JSON.parse(readFileSync(schemaPath, "utf8"));
-  const errors = validateJsonSchema(manifest, schema, schema);
+  const auditedErrors = validateSchemaDocument({
+    schema,
+    value: manifest,
+    document: path.relative(ROOT, schemaPath),
+  }).map(
+    (error) =>
+      `${error.instancePath || "$"} [${error.keyword}] ${error.message}`,
+  );
+  const errors = [
+    ...auditedErrors,
+    ...validateJsonSchema(manifest, schema, schema),
+  ];
   if (errors.length > 0) {
     throw new Error(
       `Evidence manifest does not match ${path.relative(ROOT, schemaPath)}:\n${errors.map((error) => `- ${error}`).join("\n")}`,
@@ -496,9 +507,6 @@ export function buildEvidenceManifest({
     created_at_utc: startedAt.toISOString(),
     commit_sha: commitSha,
     dirty_worktree: dirtyWorktree,
-    profile,
-    task_id: task.id,
-    target_gate: task.target_gate,
     task_contract_sha256: computeTaskContractHash(task),
     gate_contract_sha256: computeGateContractHash(gate),
     source_state: {

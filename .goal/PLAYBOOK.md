@@ -150,10 +150,11 @@ npm run goal:validate
 npm run goal:status
 npm run goal:next
 npm run goal -- start --task Q-002-CROWN-MAX
-npm run goal -- submit --task Q-002-CROWN-MAX --evidence .goal/evidence/runs/<run-id>/manifest.json
-npm run goal -- review --task Q-002-CROWN-MAX --type self --result PASS --evidence .goal/evidence/runs/<run-id>/manifest.json --note "<acceptance review>"
-npm run goal -- review --task Q-002-CROWN-MAX --type independent --result PASS --evidence .goal/evidence/runs/<run-id>/manifest.json --note "<adversarial review>"
+npm run goal -- submit --task Q-002-CROWN-MAX --evidence .goal/evidence/runs/<run-id>/manifest.json --implementer-session <session-id>
+npm run goal -- review --task Q-002-CROWN-MAX --type self --record .goal/evidence/reviews/<self-review>.json
+npm run goal -- review --task Q-002-CROWN-MAX --type independent --record .goal/evidence/reviews/<external-review>.json
 npm run goal -- complete --task Q-002-CROWN-MAX
+npm run goal -- invalidate --task Q-002-CROWN-MAX --reason "<evidence defect>"
 npm run goal -- block --task Q-002-CROWN-MAX --reason "<external blocker>"
 ```
 
@@ -174,6 +175,16 @@ Do not run `npm install`, `npm ci`, `npx playwright install`, network research, 
 or publishing commands without user approval. A missing Playwright browser is a blocker, not
 a test PASS. After the same browser strategy fails twice, do not run it a third time without
 user direction.
+
+Self-review records must contain one evidence-backed verdict per acceptance check and conform
+to `.goal/schemas/review.schema.json`. Independent review records must be produced outside the
+implementer session, conform to `.goal/schemas/external-review.schema.json`, bind the submitted
+manifest and task contract, and carry an Ed25519 signature verifiable by a reviewer public key
+from `GOAL_REVIEW_TRUST_STORE`. The trust store must be a JSON file outside the mutable checkout
+with the shape `{ "version": 1, "keys": { "<key-id>": "<public-key-pem>" } }`; it must be
+provided for every independent review and completion revalidation. The Goal CLI never accepts a
+trust key alongside the review record. It derives the overall verdict from the per-check results;
+inline or bulk PASS arguments are rejected.
 
 ## Stop conditions
 

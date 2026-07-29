@@ -1,20 +1,32 @@
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import {
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
-// @ts-expect-error The verification harness is intentionally implemented in JavaScript.
-import {
+const verificationModulePath = "../scripts/verify.mjs";
+const {
   buildEvidenceManifest,
   loadVerificationContext,
   parseVerificationArguments,
-} from "../scripts/verify.mjs";
-// @ts-expect-error The audited harness module is intentionally implemented in JavaScript.
-import {
-  computeGateContractHash,
-  computeTaskContractHash,
-} from "../scripts/lib/integrity.mjs";
+} = await import(verificationModulePath);
+const integrityModulePath = "../scripts/lib/integrity.mjs";
+const { computeGateContractHash, computeTaskContractHash } = await import(
+  integrityModulePath
+);
+const schemaValidatorModulePath = "../scripts/lib/schema-validator.mjs";
+const { validateSchemaDocument } = await import(schemaValidatorModulePath);
 
 const temporaryRoots: string[] = [];
+const repositoryRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "..",
+);
 
 function createHarnessFixture(items: object[]) {
   const root = mkdtempSync(path.join(tmpdir(), "crowntrail-verify-"));
@@ -187,9 +199,6 @@ describe("bound verification manifest", () => {
     });
 
     expect(manifest).toMatchObject({
-      profile: "fast",
-      task_id: task.id,
-      target_gate: "G3",
       backlog_item_id: task.id,
       gate_id: "G3",
       task_contract_sha256: computeTaskContractHash(task),
@@ -218,5 +227,19 @@ describe("bound verification manifest", () => {
         },
       ],
     });
+
+    const evidenceSchema = JSON.parse(
+      readFileSync(
+        path.join(repositoryRoot, ".goal", "schemas", "evidence.schema.json"),
+        "utf8",
+      ),
+    );
+    expect(
+      validateSchemaDocument({
+        schema: evidenceSchema,
+        value: manifest,
+        document: "generated evidence manifest",
+      }),
+    ).toEqual([]);
   });
 });

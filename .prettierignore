@@ -6,6 +6,7 @@ test-results/
 public/assets/
 downloads/
 .cache/
+.goal/backlog.json
 .goal/evidence/
 .goal/asset-inventory.json
 output/

@@ -95,6 +95,7 @@ const canonicalDocuments = [
 const standaloneSchemas = [
   "./schemas/evidence.schema.json",
   "./schemas/review.schema.json",
+  "./schemas/external-review.schema.json",
   "./schemas/content-matrix.schema.json",
   "./schemas/funnel.schema.json",
 ];

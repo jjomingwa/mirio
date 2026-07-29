@@ -1,14 +1,28 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  computeTaskContractHash,
+  hashFileBytes,
+  loadManifestFromFile,
+  resolveRepoRegularFile,
+  verifyManifestIntegrity,
+} from "./lib/integrity.mjs";
+import {
+  deriveReviewVerdict,
+  verifyExternalReview,
+} from "./lib/review-integrity.mjs";
+import { validateSchemaDocument } from "./lib/schema-validator.mjs";
+import { deriveGateStatus, deriveGoalStatus } from "./lib/status-integrity.mjs";
+import { invalidateCompletedItem } from "./lib/lifecycle-integrity.mjs";
+import { loadExternalTrustStore } from "./lib/reviewer-trust.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GOAL_DIR = path.join(ROOT, ".goal");
 const BACKLOG_PATH = path.join(GOAL_DIR, "backlog.json");
-const REVIEW_DIR = path.join(GOAL_DIR, "evidence", "reviews");
 
 function fail(message, code = 1) {
   console.error(`ERROR: ${message}`);
@@ -29,6 +43,17 @@ function readJson(relativePath) {
 
 function writeJson(absolutePath, value) {
   writeFileSync(absolutePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+}
+
+function externalTrustStore() {
+  try {
+    return loadExternalTrustStore({
+      root: ROOT,
+      configuredPath: process.env.GOAL_REVIEW_TRUST_STORE,
+    });
+  } catch (error) {
+    fail(error.message);
+  }
 }
 
 function parseArguments(argv) {
@@ -159,12 +184,272 @@ function requireTask(options) {
   return id;
 }
 
+function formatIntegrityIssues(issues) {
+  return issues
+    .map((entry) => {
+      const location = entry.path ?? entry.instancePath ?? "$";
+      const code = entry.code ?? entry.keyword ?? "INVALID";
+      return `${location} [${code}] ${entry.message}`;
+    })
+    .join("\n");
+}
+
+function validateDocument(relativeSchemaPath, value, document) {
+  const schema = readJson(relativeSchemaPath);
+  const issues = validateSchemaDocument({ schema, value, document });
+  if (issues.length > 0) {
+    fail(
+      `${document} does not match ${relativeSchemaPath}:\n${formatIntegrityIssues(issues)}`,
+    );
+  }
+}
+
+function inspectTaskManifest(reference, item) {
+  const issues = [];
+  const loaded = loadManifestFromFile(ROOT, reference);
+  issues.push(...loaded.issues);
+  if (!loaded.manifest) return { ok: false, issues };
+
+  const schema = readJson(".goal/schemas/evidence.schema.json");
+  issues.push(
+    ...validateSchemaDocument({
+      schema,
+      value: loaded.manifest,
+      document: reference,
+    }),
+  );
+  const gate = getGates(readJson(".goal/gates.json")).find(
+    (candidate) => candidate.id === item.target_gate,
+  );
+  if (!gate) {
+    issues.push({
+      code: "TARGET_GATE_MISSING",
+      path: "$.gate_id",
+      message: `${item.id} targets missing gate ${item.target_gate}.`,
+    });
+  } else {
+    issues.push(
+      ...verifyManifestIntegrity({
+        root: ROOT,
+        manifest: loaded.manifest,
+        task: item,
+        gate,
+      }),
+    );
+  }
+  if (loaded.manifest.status === "FAIL") {
+    issues.push({
+      code: "MANIFEST_FAILED",
+      path: "$.status",
+      message: "A failed verification manifest cannot be submitted.",
+    });
+  }
+  const resolved = resolveRepoRegularFile(ROOT, reference, "$.manifest");
+  issues.push(...resolved.issues);
+  return {
+    ok: issues.length === 0 && Boolean(resolved.absolutePath),
+    issues,
+    manifest: loaded.manifest,
+    reference: resolved.relativePath ?? reference,
+    sha256: resolved.absolutePath ? hashFileBytes(resolved.absolutePath) : null,
+  };
+}
+
+function verifyTaskManifest(reference, item) {
+  const result = inspectTaskManifest(reference, item);
+  if (!result.ok) {
+    fail(
+      `Evidence manifest integrity failed:\n${formatIntegrityIssues(result.issues)}`,
+    );
+  }
+  return result;
+}
+
+function readEvidenceJson(reference, schemaPath, documentLabel) {
+  const resolved = resolveRepoRegularFile(ROOT, reference, "$.record");
+  if (resolved.issues.length > 0 || !resolved.absolutePath) {
+    fail(
+      `${documentLabel} path failed:\n${formatIntegrityIssues(resolved.issues)}`,
+    );
+  }
+  let value;
+  try {
+    value = JSON.parse(readFileSync(resolved.absolutePath, "utf8"));
+  } catch (error) {
+    fail(`${documentLabel} is invalid JSON: ${error.message}`);
+  }
+  validateDocument(schemaPath, value, documentLabel);
+  return { value, reference: resolved.relativePath };
+}
+
+function validateAcceptanceResults(record, item) {
+  const results = record.acceptance_results ?? [];
+  const expected = item.acceptance_checks ?? [];
+  if (
+    results.length !== expected.length ||
+    results.some((result, index) => result.acceptance_check !== expected[index])
+  ) {
+    fail(
+      "Review must contain exactly one ordered result for every acceptance check.",
+    );
+  }
+  for (const [index, result] of results.entries()) {
+    if (result.status !== "PASS") continue;
+    for (const evidenceId of result.evidence_ids ?? []) {
+      const resolved = resolveRepoRegularFile(
+        ROOT,
+        evidenceId,
+        `$.acceptance_results[${index}].evidence_ids`,
+      );
+      if (resolved.issues.length > 0) {
+        fail(
+          `Review acceptance evidence is invalid:\n${formatIntegrityIssues(resolved.issues)}`,
+        );
+      }
+    }
+  }
+  const verdict = deriveReviewVerdict(results);
+  if (record.verdict !== verdict) {
+    fail(
+      `Review verdict ${record.verdict} does not match per-acceptance verdict ${verdict}.`,
+    );
+  }
+  if (
+    verdict === "PASS" &&
+    ((record.missing_evidence ?? []).length > 0 ||
+      (record.blocking_findings ?? []).length > 0)
+  ) {
+    fail("A PASS review cannot contain missing evidence or blocking findings.");
+  }
+  return verdict;
+}
+
+function validateAcceptanceEvidencePaths(record) {
+  for (const [index, result] of (record.acceptance_results ?? []).entries()) {
+    if (result.status !== "PASS") continue;
+    for (const evidenceId of result.evidence_ids ?? []) {
+      const resolved = resolveRepoRegularFile(
+        ROOT,
+        evidenceId,
+        `$.acceptance_results[${index}].evidence_ids`,
+      );
+      if (resolved.issues.length > 0) {
+        fail(
+          `Review acceptance evidence is invalid:\n${formatIntegrityIssues(resolved.issues)}`,
+        );
+      }
+    }
+  }
+}
+
+function verifySelfReviewRecord(reference, item) {
+  const record = readEvidenceJson(
+    reference,
+    ".goal/schemas/review.schema.json",
+    "Self-review record",
+  );
+  if (
+    record.value.backlog_item_id !== item.id ||
+    record.value.reviewer_role !== "implementer_self_review" ||
+    record.value.independent_of_implementer !== false
+  ) {
+    fail("Self-review identity or task binding is invalid.");
+  }
+  return { ...record, verdict: validateAcceptanceResults(record.value, item) };
+}
+
+function externalTaskContract(item) {
+  return {
+    id: item.id,
+    targetGate: item.target_gate,
+    acceptanceChecks: item.acceptance_checks ?? [],
+    taskContractSha256: computeTaskContractHash(item),
+  };
+}
+
+function previousExternalIds(item) {
+  const reviewIds = new Set();
+  const receiptIds = new Set();
+  for (const review of item.reviews ?? []) {
+    if (review.type !== "independent") continue;
+    const resolved = resolveRepoRegularFile(ROOT, review.record, "$.record");
+    if (resolved.issues.length > 0 || !resolved.absolutePath) continue;
+    try {
+      const record = JSON.parse(readFileSync(resolved.absolutePath, "utf8"));
+      reviewIds.add(record.review_id);
+      receiptIds.add(record.receipt_id);
+    } catch {
+      // Invalid historical records are rejected when completion re-verifies them.
+    }
+  }
+  return { reviewIds, receiptIds };
+}
+
+function verifyIndependentReviewRecord({
+  recordReference,
+  item,
+  includePreviousIds,
+  trustStore = externalTrustStore(),
+}) {
+  const manifest = verifyTaskManifest(item.verification_manifest, item);
+  const record = readEvidenceJson(
+    recordReference,
+    ".goal/schemas/external-review.schema.json",
+    "Independent-review record",
+  );
+  validateAcceptanceEvidencePaths(record.value);
+  const previous = includePreviousIds
+    ? previousExternalIds(item)
+    : { reviewIds: new Set(), receiptIds: new Set() };
+  const verification = verifyExternalReview({
+    record: record.value,
+    task: externalTaskContract(item),
+    implementerSessionId: item.implementer_session_id,
+    expectedSourceFingerprint:
+      manifest.manifest.source_state.fingerprint_sha256,
+    expectedEvidenceBundleSha256: manifest.sha256,
+    trustedKeys: trustStore.trustedKeys,
+    seenReviewIds: previous.reviewIds,
+    seenReceiptIds: previous.receiptIds,
+  });
+  if (!verification.ok) {
+    fail(
+      `Independent-review integrity failed:\n${formatIntegrityIssues(verification.issues)}`,
+    );
+  }
+  return {
+    ...record,
+    trustStorePath: trustStore.path,
+    verdict: verification.verdict,
+    reviewer: record.value.reviewer,
+    receiptId: record.value.receipt_id,
+  };
+}
+
 function statusCommand() {
   const goal = readJson(".goal/goal.json");
   const gates = getGates(readJson(".goal/gates.json"));
   const backlog = readJson(".goal/backlog.json");
   const items = getItems(backlog);
   const holes = collectDecisionHoles(goal);
+  const verifiedEvidenceIds = new Set();
+  for (const item of items) {
+    const references = new Set([
+      ...(item.evidence_ids ?? []),
+      ...(item.verification_manifest ? [item.verification_manifest] : []),
+    ]);
+    for (const reference of references) {
+      if (!/^\.goal\/evidence\/runs\/[^/]+\/manifest\.json$/.test(reference))
+        continue;
+      const inspected = inspectTaskManifest(reference, item);
+      if (inspected.ok) verifiedEvidenceIds.add(inspected.reference);
+    }
+  }
+  const proofStatus = deriveGoalStatus({
+    gates,
+    decisionHoles: holes,
+    verifiedEvidenceIds,
+  });
   const counts = Object.fromEntries(
     ["ready", "active", "blocked", "review", "done"].map((status) => [
       status,
@@ -175,12 +460,12 @@ function statusCommand() {
   console.log(
     `Goal: ${goal.title ?? goal.objective ?? "Premium commercial release"}`,
   );
-  console.log(`Proof status: ${goal.status ?? "UNKNOWN"}`);
+  console.log(`Proof status: ${proofStatus}`);
   console.log(`Decision holes: ${holes.length ? holes.join(", ") : "none"}`);
   console.log("Gates:");
   for (const gate of gates) {
     console.log(
-      `  ${gate.id}: ${gate.status ?? "UNKNOWN"} - ${gate.name ?? gate.title ?? ""}`,
+      `  ${gate.id}: ${deriveGateStatus(gate, verifiedEvidenceIds)} - ${gate.name ?? gate.title ?? ""}`,
     );
   }
   console.log(
@@ -242,100 +527,112 @@ function startCommand(options) {
 function submitCommand(options) {
   const id = requireTask(options);
   const evidence = resolveEvidence(options.evidence);
-  if (!evidence.length)
-    fail("Submission requires --evidence <repo-path[,repo-path]>.");
+  if (evidence.length !== 1)
+    fail("Submission requires exactly one --evidence run manifest.");
+  const implementerSessionId = String(
+    options["implementer-session"] ?? options.implementersession ?? "",
+  ).trim();
+  if (!implementerSessionId) {
+    fail("Submission requires --implementer-session <session-id>.");
+  }
   const backlog = readJson(".goal/backlog.json");
   const item = findItem(backlog, id);
   if (item.status !== "active") fail(`${id} must be active before submission.`);
+  const verified = verifyTaskManifest(evidence[0], item);
 
-  item.evidence_ids = [...new Set([...(item.evidence_ids ?? []), ...evidence])];
+  item.evidence_ids = [verified.reference];
+  item.verification_manifest = verified.reference;
+  item.source_fingerprint_sha256 =
+    verified.manifest.source_state.fingerprint_sha256;
+  item.evidence_bundle_sha256 = verified.sha256;
+  item.implementer_session_id = implementerSessionId;
+  item.reviews = [];
   item.status = "review";
   item.submitted_at = new Date().toISOString();
   writeJson(BACKLOG_PATH, backlog);
   console.log(`REVIEW: ${id}`);
-  console.log(`Evidence: ${evidence.join(", ")}`);
+  console.log(`Evidence: ${verified.reference}`);
 }
 
 function reviewCommand(options) {
   const id = requireTask(options);
   const type = String(options.type ?? options.reviewtype ?? "").toLowerCase();
-  const result = String(options.result ?? "").toUpperCase();
   if (!["self", "independent"].includes(type))
     fail("--type must be self or independent.");
-  if (!["PASS", "FAIL", "UNKNOWN"].includes(result))
-    fail("--result must be PASS, FAIL, or UNKNOWN.");
-  const evidence = resolveEvidence(options.evidence);
-  if (result === "PASS" && evidence.length === 0)
-    fail("A PASS review requires --evidence.");
+  if (options.result || options.evidence || options.note) {
+    fail(
+      "Inline verdicts are disabled. Supply a per-acceptance --record instead.",
+    );
+  }
+  if (options["public-key"] || options.publickey) {
+    fail(
+      "Independent reviewer keys must be pre-bound in the submitted source inventory.",
+    );
+  }
+  const recordReference = String(options.record ?? "").trim();
+  if (!recordReference) fail("Review requires --record <repo-path>.");
+  const trustStore = type === "independent" ? externalTrustStore() : null;
 
   const backlog = readJson(".goal/backlog.json");
   const item = findItem(backlog, id);
-  if (!["active", "review"].includes(item.status))
-    fail(`${id} is not ready for review.`);
-  if (
-    type === "independent" &&
-    !(item.reviews ?? []).some((review) => review.type === "self")
-  ) {
-    fail("Independent review requires a recorded self-review first.");
+  if (item.status !== "review") fail(`${id} must be submitted before review.`);
+  if (!item.verification_manifest) {
+    fail(`${id} has no verified submission manifest.`);
   }
 
-  const review = {
-    version: 1,
-    review_id: `${id}-${type}-${Date.now()}`,
-    created_at_utc: new Date().toISOString(),
-    backlog_item_id: id,
-    reviewer_role:
-      type === "self" ? "implementer_self_review" : "independent_agent",
-    independent_of_implementer: type === "independent",
-    verdict: result,
-    acceptance_results: (item.acceptance_checks ?? []).map(
-      (acceptanceCheck) => ({
-        acceptance_check: acceptanceCheck,
-        status: result,
-        evidence_ids: evidence,
-        notes: options.note ?? "",
-      }),
-    ),
-    counterexamples: options.counterexample
-      ? [String(options.counterexample)]
-      : [],
-    missing_evidence:
-      result === "UNKNOWN"
-        ? [String(options.missing ?? "Review evidence is incomplete.")]
-        : [],
-    blocking_findings:
-      result === "FAIL"
-        ? [String(options.finding ?? "Acceptance evidence failed.")]
-        : [],
-    non_blocking_findings: [],
-    evidence_ids: evidence,
-  };
-  mkdirSync(REVIEW_DIR, { recursive: true });
-  const stamp = review.created_at_utc.replaceAll(":", "-").replaceAll(".", "-");
-  const reviewPath = path.join(REVIEW_DIR, `${stamp}-${id}-${type}.json`);
-  writeJson(reviewPath, review);
-  const relativeReviewPath = path
-    .relative(ROOT, reviewPath)
-    .replaceAll(path.sep, "/");
-
-  item.reviews = [
-    ...(item.reviews ?? []),
-    {
+  let verifiedReview;
+  let reviewEntry;
+  if (type === "self") {
+    verifiedReview = verifySelfReviewRecord(recordReference, item);
+    reviewEntry = {
       type,
-      result,
-      record: relativeReviewPath,
-      created_at: review.created_at_utc,
-    },
-  ];
+      result: verifiedReview.verdict,
+      record: verifiedReview.reference,
+      created_at: verifiedReview.value.created_at_utc,
+    };
+  } else {
+    const selfPass = (item.reviews ?? []).some(
+      (review) => review.type === "self" && review.result === "PASS",
+    );
+    if (!selfPass) {
+      fail("Independent review requires a recorded self-review PASS first.");
+    }
+    verifiedReview = verifyIndependentReviewRecord({
+      recordReference,
+      item,
+      includePreviousIds: true,
+      trustStore,
+    });
+    reviewEntry = {
+      type,
+      result: verifiedReview.verdict,
+      record: verifiedReview.reference,
+      trust_key_id: verifiedReview.value.provenance.key_id,
+      reviewer_id: verifiedReview.reviewer.reviewer_id,
+      reviewer_session_id: verifiedReview.reviewer.session_id,
+      receipt_id: verifiedReview.receiptId,
+      created_at: verifiedReview.value.created_at_utc,
+    };
+  }
+
+  if (
+    type === "independent" &&
+    verifiedReview.reviewer.session_id === item.implementer_session_id
+  ) {
+    fail("Independent reviewer session must differ from the implementer.");
+  }
+
+  item.reviews = [...(item.reviews ?? []), reviewEntry];
   item.evidence_ids = [
-    ...new Set([...(item.evidence_ids ?? []), ...evidence, relativeReviewPath]),
+    ...new Set([...(item.evidence_ids ?? []), verifiedReview.reference]),
   ];
-  item.status = result === "FAIL" ? "active" : "review";
+  item.status = verifiedReview.verdict === "FAIL" ? "active" : "review";
   writeJson(BACKLOG_PATH, backlog);
 
-  console.log(`${result}: ${id} ${type} review`);
-  console.log(`Record: ${relativeReviewPath}`);
-  if (result === "UNKNOWN") console.log("UNKNOWN is not completion evidence.");
+  console.log(`${verifiedReview.verdict}: ${id} ${type} review`);
+  console.log(`Record: ${verifiedReview.reference}`);
+  if (verifiedReview.verdict === "UNKNOWN")
+    console.log("UNKNOWN is not completion evidence.");
 }
 
 function completeCommand(options) {
@@ -347,19 +644,29 @@ function completeCommand(options) {
   const item = findItem(backlog, id);
   if (item.status !== "review")
     fail(`${id} must be in review before completion.`);
+  verifyTaskManifest(item.verification_manifest, item);
   const reviews = item.reviews ?? [];
-  if (
-    !reviews.some(
-      (review) => review.type === "self" && review.result === "PASS",
-    )
-  ) {
+  const selfReview = [...reviews]
+    .reverse()
+    .find((review) => review.type === "self");
+  if (!selfReview) {
     fail("Missing self-review PASS.");
   }
-  if (
-    !reviews.some(
-      (review) => review.type === "independent" && review.result === "PASS",
-    )
-  ) {
+  const verifiedSelf = verifySelfReviewRecord(selfReview.record, item);
+  if (verifiedSelf.verdict !== "PASS") fail("Missing self-review PASS.");
+
+  const independentReview = [...reviews]
+    .reverse()
+    .find((review) => review.type === "independent");
+  if (!independentReview) {
+    fail("Missing independent-review PASS.");
+  }
+  const verifiedIndependent = verifyIndependentReviewRecord({
+    recordReference: independentReview.record,
+    item,
+    includePreviousIds: false,
+  });
+  if (verifiedIndependent.verdict !== "PASS") {
     fail("Missing independent-review PASS.");
   }
   if ((item.human_checks ?? []).length > 0 && humanEvidence.length === 0) {
@@ -379,6 +686,23 @@ function completeCommand(options) {
   item.completed_at = new Date().toISOString();
   writeJson(BACKLOG_PATH, backlog);
   console.log(`DONE: ${id}`);
+}
+
+function invalidateCommand(options) {
+  const id = requireTask(options);
+  const reason = String(options.reason ?? "").trim();
+  if (!reason) fail("Invalidation requires --reason <evidence defect>.");
+
+  const backlog = readJson(".goal/backlog.json");
+  const item = findItem(backlog, id);
+  try {
+    invalidateCompletedItem(item, { reason, at: new Date().toISOString() });
+  } catch (error) {
+    fail(`${id}: ${error.message}`);
+  }
+  writeJson(BACKLOG_PATH, backlog);
+  console.log(`INVALIDATED: ${id}`);
+  console.log(`Reason: ${reason}`);
 }
 
 function blockCommand(options) {
@@ -420,14 +744,17 @@ function helpCommand() {
   npm run goal -- status
   npm run goal -- next
   npm run goal -- start [--task Q-001]
-  npm run goal -- submit --task Q-001 --evidence <path[,path]>
-  npm run goal -- review --task Q-001 --type self|independent --result PASS|FAIL|UNKNOWN --evidence <path[,path]> [--note text]
+  npm run goal -- submit --task Q-001 --evidence <run-manifest> --implementer-session <id>
+  npm run goal -- review --task Q-001 --type self --record <self-review.json>
+  npm run goal -- review --task Q-001 --type independent --record <external-review.json>
   npm run goal -- complete --task Q-001 [--human-evidence <path[,path]>]
+  npm run goal -- invalidate --task Q-001 --reason "<evidence defect>"
   npm run goal -- block --task Q-001 --reason <exact external dependency>
   npm run goal -- verify --gate G2|G3|G4|G5|G6
 
-Rules: one active task; no PASS without evidence; independent review follows self-review;
-human checks need human evidence; missing product decisions never become implicit assumptions.`);
+Rules: one active task; no inline or bulk PASS; independent review follows self-review
+and requires an externally signed record; human checks need human evidence; missing product
+decisions never become implicit assumptions.`);
 }
 
 const { command, options } = parseArguments(process.argv.slice(2));
@@ -450,6 +777,9 @@ switch (command) {
     break;
   case "complete":
     completeCommand(options);
+    break;
+  case "invalidate":
+    invalidateCommand(options);
     break;
   case "block":
     blockCommand(options);

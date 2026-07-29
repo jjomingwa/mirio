@@ -14,6 +14,8 @@
     "environment",
     "gate_id",
     "backlog_item_id",
+    "task_contract_sha256",
+    "gate_contract_sha256",
     "status",
     "commands",
     "artifacts",
@@ -139,6 +141,14 @@
     "backlog_item_id": {
       "type": ["string", "null"],
       "pattern": "^Q-[0-9]{3}-[A-Z0-9-]+$"
+    },
+    "task_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "gate_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
     },
     "status": {
       "enum": ["PASS", "FAIL", "UNKNOWN"]

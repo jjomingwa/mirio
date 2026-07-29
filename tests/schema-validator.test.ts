@@ -1,11 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-// @ts-expect-error The audited harness module is intentionally implemented in JavaScript.
-import {
-  DIALECT,
-  preflightSchema,
-  validateSchemaDocument,
-} from "../scripts/lib/schema-validator.mjs";
+const schemaValidatorModulePath = "../scripts/lib/schema-validator.mjs";
+const { DIALECT, preflightSchema, validateSchemaDocument } = await import(
+  schemaValidatorModulePath
+);
 
 const schema = (properties: Record<string, unknown>) => ({
   $schema: DIALECT,

@@ -1,4 +1,7 @@
 import { generateKeyPairSync, sign } from "node:crypto";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 const reviewIntegrityModulePath = "../scripts/lib/review-integrity.mjs";
 const {
@@ -9,6 +12,13 @@ const {
   taskContractHash,
   verifyExternalReview,
 } = await import(reviewIntegrityModulePath);
+const schemaValidatorModulePath = "../scripts/lib/schema-validator.mjs";
+const { validateSchemaDocument } = await import(schemaValidatorModulePath);
+
+const repositoryRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "..",
+);
 
 type ReviewStatus = "PASS" | "FAIL" | "UNKNOWN";
 
@@ -24,6 +34,7 @@ interface ReviewRecord {
   version: number;
   review_id: string;
   receipt_id: string;
+  created_at_utc: string;
   backlog_item_id: string;
   target_gate: string;
   task_contract_sha256: string;
@@ -38,8 +49,10 @@ interface ReviewRecord {
   };
   verdict: ReviewStatus;
   acceptance_results: AcceptanceResult[];
+  counterexamples: string[];
   missing_evidence: string[];
   blocking_findings: string[];
+  non_blocking_findings: string[];
   provenance: {
     algorithm: string;
     key_id: string;
@@ -80,6 +93,7 @@ function makeHarness() {
       version: 2,
       review_id: "review-1",
       receipt_id: "receipt-1",
+      created_at_utc: "2026-07-29T00:00:00.000Z",
       backlog_item_id: task.id,
       target_gate: task.targetGate,
       task_contract_sha256: task.taskContractSha256,
@@ -100,8 +114,10 @@ function makeHarness() {
         evidence_ids: [`evidence-${index + 1}`],
         notes: "",
       })),
+      counterexamples: [],
       missing_evidence: [],
       blocking_findings: [],
+      non_blocking_findings: [],
       provenance: {
         algorithm: "Ed25519",
         key_id: keyId,
@@ -153,6 +169,30 @@ describe("external review integrity", () => {
 
     expect(result).toMatchObject({ ok: true, verdict: "PASS" });
     expect(result.issues).toEqual([]);
+  });
+
+  it("produces a schema-valid external review record", () => {
+    const harness = makeHarness();
+    const record = harness.signRecord();
+    const schema = JSON.parse(
+      readFileSync(
+        path.join(
+          repositoryRoot,
+          ".goal",
+          "schemas",
+          "external-review.schema.json",
+        ),
+        "utf8",
+      ),
+    );
+
+    expect(
+      validateSchemaDocument({
+        schema,
+        value: record,
+        document: "external review fixture",
+      }),
+    ).toEqual([]);
   });
 
   it("rejects an untrusted key", () => {

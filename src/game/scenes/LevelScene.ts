@@ -11,6 +11,11 @@ import {
 } from "../systems/FiniteEffectRegistry";
 import { InputController } from "../systems/InputController";
 import { planHorizontalMovement } from "../systems/HorizontalMovement";
+import {
+  advanceCrownRush,
+  createCrownRushState,
+  type CrownRushState,
+} from "../systems/CrownRush";
 
 interface SceneData {
   nodeId: string;
@@ -45,6 +50,8 @@ export class LevelScene extends Phaser.Scene {
   private paused = false;
   private defeatedEnemies = new WeakSet<Phaser.Physics.Arcade.Sprite>();
   private enemyPopEffects?: FiniteEffectRegistry;
+  private crownRush: CrownRushState = createCrownRushState();
+  private crownRushDirection: -1 | 1 = 1;
 
   constructor() {
     super("Level");
@@ -66,6 +73,8 @@ export class LevelScene extends Phaser.Scene {
     this.completing = false;
     this.paused = false;
     this.defeatedEnemies = new WeakSet<Phaser.Physics.Arcade.Sprite>();
+    this.crownRush = createCrownRushState();
+    this.crownRushDirection = 1;
   }
 
   create(): void {
@@ -105,6 +114,9 @@ export class LevelScene extends Phaser.Scene {
     this.createPlayer();
     this.createCheckpointAndGoals();
     this.controller = new InputController(this);
+    useGameStore
+      .getState()
+      .setToast("CROWN RUSH: move, then press SHIFT or X to burst forward.");
 
     this.physics.add.collider(this.player, this.platforms);
     this.physics.add.collider(this.player, this.movingPlatforms);
@@ -146,17 +158,42 @@ export class LevelScene extends Phaser.Scene {
 
     const direction: -1 | 0 | 1 =
       input.left === input.right ? 0 : input.left ? -1 : 1;
-    const motion = planHorizontalMovement(
-      direction,
-      body.velocity.x,
+    const wasRushing = this.crownRush.phase === "rushing";
+    const rush = advanceCrownRush(this.crownRush, {
+      now: time,
       grounded,
-      input.run,
-    );
-    body
-      .setVelocityX(motion.velocityX)
-      .setAccelerationX(motion.accelerationX)
-      .setDragX(motion.dragX)
-      .setMaxVelocity(motion.maxSpeed, 760);
+      pressed: input.runPressed,
+      direction,
+    });
+    this.crownRush = rush.state;
+    if (rush.activation) {
+      this.crownRushDirection = rush.activation.direction;
+      this.player.setTint(0xffdf72);
+      audioDirector.playSfx("jump", 55);
+    }
+    if (wasRushing && this.crownRush.phase !== "rushing") {
+      this.player.clearTint();
+    }
+
+    if (this.crownRush.phase === "rushing") {
+      body
+        .setVelocityX(this.crownRushDirection * 390)
+        .setAccelerationX(0)
+        .setDragX(0)
+        .setMaxVelocity(390, 760);
+    } else {
+      const motion = planHorizontalMovement(
+        direction,
+        body.velocity.x,
+        grounded,
+        input.run,
+      );
+      body
+        .setVelocityX(motion.velocityX)
+        .setAccelerationX(motion.accelerationX)
+        .setDragX(motion.dragX)
+        .setMaxVelocity(motion.maxSpeed, 760);
+    }
     if (direction !== 0) this.player.setFlipX(direction < 0);
 
     if (
@@ -469,11 +506,11 @@ export class LevelScene extends Phaser.Scene {
     const enemyBody = enemy.body as Phaser.Physics.Arcade.Body;
     const stomping =
       playerBody.velocity.y > 80 && playerBody.bottom <= enemyBody.center.y + 8;
-    if (stomping) {
+    if (stomping || this.crownRush.phase === "rushing") {
       if (this.defeatedEnemies.has(enemy)) return;
       this.defeatedEnemies.add(enemy);
       enemy.disableBody(true, true);
-      playerBody.setVelocityY(-285);
+      if (stomping) playerBody.setVelocityY(-285);
       audioDirector.playSfx("stomp", 90);
       this.createEnemyPop(enemy.x, enemy.y);
     } else {

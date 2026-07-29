@@ -9,8 +9,8 @@ import {
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
-// @ts-expect-error The audited harness module is intentionally implemented in JavaScript.
-import {
+const integrityModulePath = "../scripts/lib/integrity.mjs";
+const {
   canonicalJson,
   computeGateContractHash,
   computeSourceInventoryFingerprint,
@@ -21,7 +21,7 @@ import {
   sha256,
   verifyManifestIntegrity,
   verifySourceInventory,
-} from "../scripts/lib/integrity.mjs";
+} = await import(integrityModulePath);
 
 const temporaryRoots: string[] = [];
 
@@ -161,6 +161,26 @@ describe("canonical contracts", () => {
   it("canonicalizes object structure independently of insertion order", () => {
     expect(canonicalJson({ z: 1, a: { y: 2, x: 3 } })).toBe(
       canonicalJson({ a: { x: 3, y: 2 }, z: 1 }),
+    );
+  });
+
+  it("uses the source inventory producer's ordinal path order", () => {
+    const files = [
+      { path: "a.ts", kind: "file", size_bytes: 1, sha256: "a".repeat(64) },
+      { path: "B.ts", kind: "file", size_bytes: 1, sha256: "b".repeat(64) },
+    ];
+    const canonicalInput = [...files]
+      .sort((left, right) =>
+        left.path < right.path ? -1 : left.path > right.path ? 1 : 0,
+      )
+      .map(
+        (entry) =>
+          `${entry.path}\0${entry.kind}\0${entry.size_bytes}\0${entry.sha256}\n`,
+      )
+      .join("");
+
+    expect(computeSourceInventoryFingerprint(files)).toBe(
+      sha256(canonicalInput),
     );
   });
 

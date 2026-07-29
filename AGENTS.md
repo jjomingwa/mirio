@@ -101,6 +101,55 @@ Subjective quality, visual and audio cohesion, control feel, accessibility in re
 willingness to pay, and audience fit require human/player evidence. Commercial IP and asset
 license sufficiency require qualified human review before release.
 
+## 구현 플랜 관리
+
+중간 규모 이상의 기능 추가, 구조 변경, 다중 파일 수정, 마이그레이션 또는 위험도가
+있는 작업은 구현 전에 번호가 지정된 플랜 문서를 작성한다.
+
+### 저장 위치와 번호
+
+- 플랜 문서는 `docs/plans/`에 저장한다. 저장소에 일관되게 사용 중인 기존 플랜
+  위치가 있다면 해당 위치를 우선한다.
+- 파일명 형식은 `PLAN-NNN-slug.md`이며 전체 저장소 기준으로 순차 증가한다.
+- 완료, 취소, 보관 여부와 관계없이 기존 번호를 재사용하거나 재배정하지 않는다.
+- 새 플랜 작성 전 `docs/plans/README.md`와 기존 플랜 파일을 확인하고 가장 큰
+  번호의 다음 번호를 사용한다.
+
+### 플랜 작성
+
+플랜 작성자는 다음을 수행한다.
+
+1. 사용자 요청을 구체적인 목표와 범위로 해석한다.
+2. 현재 저장소의 관련 코드와 문서를 실제로 조사한다.
+3. 완료 조건을 검증 가능한 형태로 작성한다.
+4. 수정 예상 파일, 구현 순서, 위험 요소와 테스트 방법을 기록한다.
+5. 추측과 확인된 사실을 구분한다.
+6. `docs/plans/README.md` 인덱스를 갱신한다.
+7. 사용자가 구현까지 명시적으로 요청하지 않은 경우 플랜 작성 후 코드 구현을
+   시작하지 않는다.
+
+번호 플랜은 사람과 에이전트가 구현 범위와 결정을 추적하기 위한 문서이며 작업을
+활성화하거나 코드 변경을 승인하지 않는다. 자율 게임 작업의 선택과 상태는 계속
+`.goal/backlog.json`과 Goal Harness가 결정한다. 두 체계가 같은 작업을 다룬다면
+플랜에 관련 backlog item을 기록하고, 범위나 상태가 충돌할 경우 구현을 멈추고
+사용자에게 확인한다.
+
+### 구현 중
+
+- 작업 완료 시 진행 체크박스를 갱신한다.
+- 계획과 실제 구현이 달라지면 문서를 실제 상태에 맞게 수정한다.
+- 중요한 설계 결정은 결정 기록에 남긴다.
+- 예상하지 못한 문제는 위험 요소나 발견 사항으로 기록한다.
+- 범위 밖 작업을 임의로 구현하지 않고 후속 작업 또는 새 플랜 후보로 기록한다.
+- 실제 수정 파일을 플랜에 기록한다.
+
+### 완료 상태
+
+- 코드 작성만 끝났다면 `Implemented`로 표시한다.
+- 완료 조건과 테스트까지 통과했다면 `Verified`로 표시한다.
+- 검증되지 않은 작업을 `Verified`로 표시하지 않는다.
+- 완료 후 관련 브랜치, 커밋, PR 및 실제 테스트 결과를 기록한다.
+
 ## Ask-first triggers
 
 Ask the user immediately when any of these are true:

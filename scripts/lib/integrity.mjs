@@ -290,7 +290,9 @@ export function verifyArtifacts(root, artifacts, issuePath = "$.artifacts") {
 
 export function computeSourceInventoryFingerprint(files) {
   const canonicalInput = [...files]
-    .sort((left, right) => left.path.localeCompare(right.path, "en"))
+    .sort((left, right) =>
+      left.path < right.path ? -1 : left.path > right.path ? 1 : 0,
+    )
     .map(
       (entry) =>
         `${entry.path}\0${entry.kind}\0${entry.size_bytes}\0${entry.sha256}\n`,

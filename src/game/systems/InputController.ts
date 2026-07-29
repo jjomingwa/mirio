@@ -11,6 +11,7 @@ export interface InputSnapshot {
   right: boolean;
   down: boolean;
   run: boolean;
+  runPressed: boolean;
   jumpHeld: boolean;
   jumpPressed: boolean;
 }
@@ -19,6 +20,7 @@ export class InputController {
   private keys: Record<string, Phaser.Input.Keyboard.Key>;
   private touch = new Map<TouchAction, boolean>();
   private previousJump = false;
+  private previousRun = false;
 
   constructor(private readonly scene: Phaser.Scene) {
     this.keys = (scene.input.keyboard?.addKeys({
@@ -57,6 +59,10 @@ export class InputController {
       buttonJump ||
       this.touch.get("jump") === true;
 
+    const run =
+      this.isDown("run", "runAlt") ||
+      Boolean(pad?.buttons[2]?.pressed) ||
+      this.touch.get("run") === true;
     const snapshot: InputSnapshot = {
       left:
         this.isDown("left", "leftAlt") ||
@@ -70,15 +76,14 @@ export class InputController {
         this.isDown("down", "downAlt") ||
         vertical > 0.45 ||
         this.touch.get("down") === true,
-      run:
-        this.isDown("run", "runAlt") ||
-        Boolean(pad?.buttons[2]?.pressed) ||
-        this.touch.get("run") === true,
+      run,
+      runPressed: run && !this.previousRun,
       jumpHeld,
       jumpPressed: jumpHeld && !this.previousJump,
     };
 
     this.previousJump = jumpHeld;
+    this.previousRun = run;
     return snapshot;
   }
 

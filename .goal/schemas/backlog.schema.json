@@ -124,6 +124,40 @@
           "type": "string",
           "format": "date-time"
         },
+        "verification_manifest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_fingerprint_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "evidence_bundle_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "implementer_session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "invalidations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["reason", "invalidated_at"],
+            "properties": {
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "invalidated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        },
         "reviews": {
           "type": "array",
           "items": {
@@ -144,6 +178,26 @@
               "created_at": {
                 "type": "string",
                 "format": "date-time"
+              },
+              "public_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "trust_key_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reviewer_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reviewer_session_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "receipt_id": {
+                "type": "string",
+                "minLength": 1
               }
             }
           }

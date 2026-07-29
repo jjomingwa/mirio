@@ -131,7 +131,10 @@
         "Repeated completion cannot double count a crown.",
         "Malformed or oversized saved values recover without exceeding the maximum."
       ],
-      "verification_commands": ["npm test", "npm run build"],
+      "verification_commands": [
+        "npm test",
+        "npm run build"
+      ],
       "human_checks": [],
       "risks": [
         "A migration fix could discard legitimate existing progress if not tested."
@@ -192,7 +195,10 @@
         "Both major secret branches preserve their exclusive route semantics.",
         "The final stage is unique, reachable, and transitions to the ending."
       ],
-      "verification_commands": ["npm test", "npm run build"],
+      "verification_commands": [
+        "npm test",
+        "npm run build"
+      ],
       "human_checks": [],
       "risks": [
         "Data-only reachability can miss scene-state transition defects."
@@ -268,7 +274,7 @@
       "priority": 40,
       "title": "Expand E2E to real campaign and input critical paths",
       "target_gate": "G3",
-      "status": "ready",
+      "status": "blocked",
       "problem_evidence": [
         "Existing smoke coverage stops at the first course and settings/restart checks.",
         "Retained Playwright evidence failed because the Chromium executable was missing."
@@ -281,7 +287,9 @@
         "Assert no unexpected console errors or failed required asset requests.",
         "Capture trace and screenshots for failures and release checkpoints."
       ],
-      "dependencies": ["Q-003-CASTLE-ROUTING"],
+      "dependencies": [
+        "Q-003-CASTLE-ROUTING"
+      ],
       "acceptance_checks": [
         "Critical progression runs in a real browser without test-only state injection.",
         "Desktop and mobile-profile runs produce current traces.",
@@ -289,7 +297,10 @@
         "Pause, restart, settings, save reload, and representative input paths are covered.",
         "A missing browser is reported as BLOCKED or FAIL, never PASS."
       ],
-      "verification_commands": ["npm run test:e2e", "npm run build"],
+      "verification_commands": [
+        "npm run test:e2e",
+        "npm run build"
+      ],
       "human_checks": [
         "Review release-checkpoint screenshots for clipping, unreadable UI, and misleading states.",
         "Exercise a real gamepad and touch-capable device."
@@ -298,8 +309,11 @@
         "Playwright browser installation requires user approval.",
         "Automated keyboard events cannot prove physical controller feel."
       ],
-      "blockers": [],
-      "evidence_ids": []
+      "blockers": [
+        "User reprioritized gameplay development over release-grade browser evidence."
+      ],
+      "evidence_ids": [],
+      "blocked_at": "2026-07-29T11:16:03.611Z"
     },
     {
       "id": "Q-006-PREMIUM-VERTICAL-SLICE",
@@ -372,7 +386,9 @@
         "Collect at least 400 eligible unique visits and calculate observed and Wilson rates.",
         "Audit refunds and retained purchases separately at day 14."
       ],
-      "dependencies": ["Q-006-PREMIUM-VERTICAL-SLICE"],
+      "dependencies": [
+        "Q-006-PREMIUM-VERTICAL-SLICE"
+      ],
       "acceptance_checks": [
         "Every denominator member completed the demo, used the completion CTA, and produced a tracked Steam UTM visit at an eligible price.",
         "Every numerator member has an authoritative attributable paid purchase within 72 hours.",
@@ -406,7 +422,7 @@
       "priority": 2,
       "title": "Make harness evidence and independent review non-forgeable",
       "target_gate": "G1",
-      "status": "active",
+      "status": "blocked",
       "problem_evidence": [
         "validate-goal currently parses schemas without applying their constraints.",
         "goal completion accepts any existing repository path as evidence.",
@@ -442,9 +458,46 @@
         "Strict evidence binding can invalidate earlier dirty-worktree review records.",
         "A partial JSON Schema implementation can appear strict while silently ignoring unsupported keywords."
       ],
-      "blockers": [],
-      "evidence_ids": [],
-      "started_at": "2026-07-28T05:49:19.100Z"
+      "blockers": [
+        "User reprioritized local personal playability over commercial evidence-harness work."
+      ],
+      "evidence_ids": [
+        ".goal/evidence/runs/2026-07-29T11-05-02-793Z-fast/manifest.json",
+        ".goal/evidence/reviews/2026-07-29T11-06-00-000Z-Q-008-self.json",
+        ".goal/evidence/reviews/2026-07-29T11-10-59-372Z-Q-008-independent-fail.json"
+      ],
+      "started_at": "2026-07-28T05:49:19.100Z",
+      "verification_manifest": ".goal/evidence/runs/2026-07-29T11-05-02-793Z-fast/manifest.json",
+      "source_fingerprint_sha256": "07e0e38d09ce204ef97ea67c6ac305b7bc7e26e5ac029829aab58082a948b0e2",
+      "evidence_bundle_sha256": "5e515088537ec5509828332b5590f7fde10e5281bf0f15c915bb9318d43cd3a9",
+      "implementer_session_id": "codex-root-019fad2e-b380-7411-82a7-36fdd7897b2b",
+      "reviews": [
+        {
+          "type": "self",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-29T11-06-00-000Z-Q-008-self.json",
+          "created_at": "2026-07-29T11:06:00.000Z"
+        },
+        {
+          "type": "independent",
+          "result": "FAIL",
+          "record": ".goal/evidence/reviews/2026-07-29T11-10-59-372Z-Q-008-independent-fail.json",
+          "trust_key_id": "q008-independent-reviewer-20260729",
+          "reviewer_id": "codex-q008-independent-adversarial-reviewer",
+          "reviewer_session_id": "codex-q008-independent-review-session-019fad2e-b380-7411-82a7-36fdd7897b2b",
+          "receipt_id": "q008-codex-independent-receipt-20260729T111500Z",
+          "created_at": "2026-07-29T11:10:59.372Z"
+        }
+      ],
+      "submitted_at": "2026-07-29T11:05:37.558Z",
+      "human_evidence_ids": [],
+      "invalidations": [
+        {
+          "reason": "Independent review trusted a public key inside the mutable checkout rather than an external trust store.",
+          "invalidated_at": "2026-07-29T11:01:37.518Z"
+        }
+      ],
+      "blocked_at": "2026-07-29T11:16:02.365Z"
     },
     {
       "id": "Q-009-HARNESS-LIFECYCLE",
@@ -469,7 +522,9 @@
         "Execute the active item's exact verification command set and stop on permission, authentication, or repeated-strategy boundaries.",
         "Capture browser versions and enumerate screenshot, trace, video, console, and network artifacts for browser profiles."
       ],
-      "dependencies": ["Q-008-HARNESS-EVIDENCE-INTEGRITY"],
+      "dependencies": [
+        "Q-008-HARNESS-EVIDENCE-INTEGRITY"
+      ],
       "acceptance_checks": [
         "At most one item across active and review can exist, and illegal transitions fail without mutation.",
         "The selected highest-priority eligible item cannot be bypassed without schema-valid preemption evidence.",
@@ -498,7 +553,7 @@
       "priority": 41,
       "title": "Prototype a distinctive signature gameplay hook",
       "target_gate": "G4",
-      "status": "ready",
+      "status": "active",
       "problem_evidence": [
         "The premium audit found no implemented and captured interaction that distinguishes Crowntrail Kingdom from a conventional platformer.",
         "The current premium-slice contract asks for distinct mechanics but does not isolate a small prototype that can prove whether one mechanic is readable, expressive, and reusable."
@@ -535,7 +590,8 @@
         "Any third-party asset promoted from prototype to shipping remains subject to the manifest and qualified license review tracked by Q-001-IP-LICENSE."
       ],
       "blockers": [],
-      "evidence_ids": []
+      "evidence_ids": [],
+      "started_at": "2026-07-29T11:16:06.926Z"
     },
     {
       "id": "Q-011-AUTHORED-WORLD-GRAMMAR",
@@ -555,7 +611,9 @@
         "Add validators and fixtures that distinguish structural gameplay changes from palette, seed, roster, and scalar-difficulty changes.",
         "Exclude full-campaign authoring, audience targeting, store presentation, and asset acquisition."
       ],
-      "dependencies": ["Q-010-SIGNATURE-HOOK-PROTOTYPE"],
+      "dependencies": [
+        "Q-010-SIGNATURE-HOOK-PROTOTYPE"
+      ],
       "acceptance_checks": [
         "A versioned grammar names each world verb, compatible hazard or enemy role, escalation rule, secret rule, and prohibited repetition.",
         "Automated validation rejects a route missing any required setup, development, twist, optional discovery, or payoff beat.",
@@ -599,7 +657,9 @@
         "Add deterministic phase, damage-bound, defeat, restart, pause, and object-lifetime tests.",
         "Exclude additional bosses, final-campaign balance, store footage, and unreviewed third-party asset shipping."
       ],
-      "dependencies": ["Q-011-AUTHORED-WORLD-GRAMMAR"],
+      "dependencies": [
+        "Q-011-AUTHORED-WORLD-GRAMMAR"
+      ],
       "acceptance_checks": [
         "The boss state machine has no unreachable required phase, illegal transition, or soft-locking terminal state.",
         "Automated tests prove bounded health and damage, deterministic phase thresholds, valid defeat progression, and clean pause, death, and restart recovery.",
