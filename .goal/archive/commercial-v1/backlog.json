@@ -1,0 +1,768 @@
+{
+  "$schema": "./schemas/backlog.schema.json",
+  "version": 1,
+  "items": [
+    {
+      "id": "Q-000-BASELINE",
+      "priority": 1,
+      "title": "Establish a reproducible repository baseline",
+      "target_gate": "G1",
+      "status": "blocked",
+      "problem_evidence": [
+        "Current repository state has no baseline commit.",
+        "Goal contract and command evidence have not yet been tied to a commit SHA."
+      ],
+      "hypothesis": "A committed, validated baseline will make every later diff and verification result attributable and reversible.",
+      "expected_metric_delta": "G1 evidence completeness increases from unknown to auditable.",
+      "scope": [
+        "Validate goal JSON and cross-references.",
+        "Reconcile documented paths and executable commands.",
+        "Create a baseline commit only when the parent task or user authorizes commit scope."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "All .goal JSON files parse.",
+        "Gate, rubric, backlog, dependency, and schema identifiers are internally consistent.",
+        "A commit SHA and dirty state can be recorded for subsequent evidence."
+      ],
+      "verification_commands": [
+        "git status --short --branch",
+        "git rev-parse --verify HEAD"
+      ],
+      "human_checks": [
+        "Confirm baseline commit scope preserves all user-owned work."
+      ],
+      "risks": [
+        "Accidentally omitting user-owned untracked files from the baseline."
+      ],
+      "blockers": [
+        "The repository has no commit and this task does not authorize creating one; user approval is required for baseline commit scope."
+      ],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-001-IP-LICENSE",
+      "priority": 5,
+      "title": "Remove third-party identity risk and prove asset licensing",
+      "target_gate": "G4",
+      "status": "blocked",
+      "problem_evidence": [
+        "Repository text claims an independent identity while using Nintendo-associated boss names.",
+        "The asset record describes an older Patreon-only notice and a later CC0 re-release without a complete hashed shipping manifest."
+      ],
+      "hypothesis": "Original naming plus a file-level license manifest will remove a release-blocking trust and legal risk.",
+      "expected_metric_delta": "G4 commercial-readiness findings decrease to zero after qualified review.",
+      "scope": [
+        "Replace Nintendo-associated names in runtime and commercial-facing text with original names.",
+        "Inventory every shipped third-party asset with creator, source, license, commercial-use basis, local proof, and SHA-256.",
+        "Resolve contradictory license notices through qualified human review."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "No prohibited or unresolved Nintendo-associated names remain in shipped runtime or commercial-facing material.",
+        "Every shipped third-party asset maps to exactly one reviewed manifest entry and local/source proof.",
+        "License conflicts are resolved or the affected asset is removed.",
+        "Required attribution and notice text is complete."
+      ],
+      "verification_commands": [
+        "rg -n \"Bowser|Junior Koopa|Mario|Nintendo\" src public README.md docs THIRD_PARTY_ASSETS.md -S",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Qualified commercial IP and asset-license review.",
+        "Review original replacement names for product identity and audience clarity."
+      ],
+      "risks": [
+        "Text search cannot prove legal sufficiency.",
+        "An archived license conflict may require replacing assets rather than documenting them."
+      ],
+      "blockers": [
+        "Qualified commercial IP/license review and preserved governing source records are required before release."
+      ],
+      "evidence_ids": [
+        ".goal/asset-inventory.json",
+        ".goal/research/asset-license-review-2026-07-28.md",
+        ".goal/evidence/runs/2026-07-28T03-38-16-503Z-fast/manifest.json",
+        "README.md",
+        "THIRD_PARTY_ASSETS.md",
+        ".goal/evidence/reviews/2026-07-28T03-41-00-733Z-Q-001-IP-LICENSE-self.json",
+        ".goal/assets.json",
+        "src/App.tsx",
+        ".goal/evidence/reviews/2026-07-28T03-48-38-848Z-Q-001-IP-LICENSE-independent.json"
+      ],
+      "started_at": "2026-07-28T03:15:53.827Z",
+      "submitted_at": "2026-07-28T03:39:47.790Z",
+      "reviews": [
+        {
+          "type": "self",
+          "result": "UNKNOWN",
+          "record": ".goal/evidence/reviews/2026-07-28T03-41-00-733Z-Q-001-IP-LICENSE-self.json",
+          "created_at": "2026-07-28T03:41:00.733Z"
+        },
+        {
+          "type": "independent",
+          "result": "FAIL",
+          "record": ".goal/evidence/reviews/2026-07-28T03-48-38-848Z-Q-001-IP-LICENSE-independent.json",
+          "created_at": "2026-07-28T03:48:38.848Z"
+        }
+      ],
+      "blocked_at": "2026-07-28T03:48:49.923Z"
+    },
+    {
+      "id": "Q-002-CROWN-MAX",
+      "priority": 10,
+      "title": "Enforce the 162-crown campaign maximum",
+      "target_gate": "G2",
+      "status": "done",
+      "problem_evidence": [
+        "The campaign advertises three crown pieces per 54 stages, but current evidence does not prove every save and completion path is bounded to 162."
+      ],
+      "hypothesis": "Centralized crown normalization and invariant tests will prevent duplicate, malformed, or repeated completions from inflating progress.",
+      "expected_metric_delta": "Crown total invariant failures become zero across valid and malformed saves.",
+      "scope": [
+        "Define the authoritative campaign crown maximum.",
+        "Normalize per-stage crown indexes and aggregate totals.",
+        "Test repeated completion, malformed save, duplicate index, and maximum-bound cases."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "Total crowns are always an integer from 0 through 162.",
+        "Each stage stores only unique indexes 0, 1, and 2.",
+        "Repeated completion cannot double count a crown.",
+        "Malformed or oversized saved values recover without exceeding the maximum."
+      ],
+      "verification_commands": ["npm test", "npm run build"],
+      "human_checks": [],
+      "risks": [
+        "A migration fix could discard legitimate existing progress if not tested."
+      ],
+      "blockers": [],
+      "evidence_ids": [
+        ".goal/evidence/runs/2026-07-28T04-02-03-083Z-fast/manifest.json",
+        ".goal/evidence/reviews/2026-07-28T04-08-53-346Z-Q-002-CROWN-MAX-self.json",
+        ".goal/evidence/runs/2026-07-28T04-31-14-452Z-fast/manifest.json",
+        ".goal/evidence/reviews/2026-07-28T04-32-55-847Z-Q-002-CROWN-MAX-self.json",
+        ".goal/evidence/reviews/2026-07-28T04-35-24-317Z-Q-002-CROWN-MAX-independent.json"
+      ],
+      "started_at": "2026-07-28T03:56:43.683Z",
+      "submitted_at": "2026-07-28T04:03:36.423Z",
+      "reviews": [
+        {
+          "type": "self",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-28T04-08-53-346Z-Q-002-CROWN-MAX-self.json",
+          "created_at": "2026-07-28T04:08:53.346Z"
+        },
+        {
+          "type": "self",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-28T04-32-55-847Z-Q-002-CROWN-MAX-self.json",
+          "created_at": "2026-07-28T04:32:55.847Z"
+        },
+        {
+          "type": "independent",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-28T04-35-24-317Z-Q-002-CROWN-MAX-independent.json",
+          "created_at": "2026-07-28T04:35:24.317Z"
+        }
+      ],
+      "human_evidence_ids": [],
+      "completed_at": "2026-07-28T04:35:41.274Z"
+    },
+    {
+      "id": "Q-003-CASTLE-ROUTING",
+      "priority": 20,
+      "title": "Prove castle, fortress, and final-stage routing",
+      "target_gate": "G2",
+      "status": "done",
+      "problem_evidence": [
+        "Current graph tests cover major branches and final reachability but do not prove every boss-stage transition and world handoff."
+      ],
+      "hypothesis": "Full graph transition tests will prevent soft locks, wrong-world launches, and inaccessible castle or final content.",
+      "expected_metric_delta": "Unverified boss and world-transition routes decrease to zero.",
+      "scope": [
+        "Enumerate fortress, castle, final, normal-exit, and secret-exit transitions.",
+        "Test every world handoff and final ending route.",
+        "Test return-to-map state after boss completion."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "Every fortress, castle, and final node launches the intended scene.",
+        "Every non-final boss completion unlocks and selects the correct next progression.",
+        "Both major secret branches preserve their exclusive route semantics.",
+        "The final stage is unique, reachable, and transitions to the ending."
+      ],
+      "verification_commands": ["npm test", "npm run build"],
+      "human_checks": [],
+      "risks": [
+        "Data-only reachability can miss scene-state transition defects."
+      ],
+      "blockers": [],
+      "evidence_ids": [
+        ".goal/evidence/runs/2026-07-28T04-44-48-268Z-fast/manifest.json",
+        ".goal/evidence/reviews/2026-07-28T04-47-44-731Z-Q-003-CASTLE-ROUTING-self.json",
+        ".goal/evidence/reviews/2026-07-28T04-57-33-319Z-Q-003-CASTLE-ROUTING-independent.json"
+      ],
+      "started_at": "2026-07-28T04:36:47.669Z",
+      "submitted_at": "2026-07-28T04:47:16.285Z",
+      "reviews": [
+        {
+          "type": "self",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-28T04-47-44-731Z-Q-003-CASTLE-ROUTING-self.json",
+          "created_at": "2026-07-28T04:47:44.731Z"
+        },
+        {
+          "type": "independent",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-28T04-57-33-319Z-Q-003-CASTLE-ROUTING-independent.json",
+          "created_at": "2026-07-28T04:57:33.319Z"
+        }
+      ],
+      "human_evidence_ids": [],
+      "completed_at": "2026-07-28T04:58:46.116Z"
+    },
+    {
+      "id": "Q-004-ENEMY-POP-LIFETIME",
+      "priority": 30,
+      "title": "Bound enemy defeat effect lifetime",
+      "target_gate": "G3",
+      "status": "blocked",
+      "problem_evidence": [
+        "The enemy defeat effect is intended to self-destroy, but no runtime evidence proves animation completion and scene shutdown always release it."
+      ],
+      "hypothesis": "A lifecycle-safe defeat effect and repeated-kill runtime test will prevent permanent visuals and object accumulation.",
+      "expected_metric_delta": "Active enemy-pop objects return to zero after their defined lifetime.",
+      "scope": [
+        "Verify and harden animation-complete and scene-shutdown cleanup.",
+        "Verify defeat sound and score/progression effects occur once.",
+        "Add repeated-kill object-count coverage."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "Each enemy-pop effect has a documented finite maximum lifetime.",
+        "The effect is destroyed after animation completion and on scene shutdown.",
+        "Repeated enemy defeats do not grow retained sprite, listener, timer, or body counts.",
+        "One defeat produces at most one defeat sound and one gameplay reward."
+      ],
+      "verification_commands": [
+        "npm test",
+        "npm run test:e2e",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Watch a repeated-kill capture for permanent or visually truncated effects."
+      ],
+      "risks": [
+        "The existing Playwright browser may be unavailable and require approved installation."
+      ],
+      "blockers": [
+        "Scoped code checks pass, but completion requires a fresh G3 browser run and human repeated-kill capture. The prior E2E strategy failed twice; a third run must wait for the distinct SceneReady/scene-run-token remediation and explicit user direction."
+      ],
+      "evidence_ids": [],
+      "started_at": "2026-07-28T05:00:21.633Z",
+      "blocked_at": "2026-07-28T05:48:53.161Z"
+    },
+    {
+      "id": "Q-005-E2E-CRITICAL-PATH",
+      "priority": 40,
+      "title": "Expand E2E to real campaign and input critical paths",
+      "target_gate": "G3",
+      "status": "blocked",
+      "problem_evidence": [
+        "Existing smoke coverage stops at the first course and settings/restart checks.",
+        "Retained Playwright evidence failed because the Chromium executable was missing."
+      ],
+      "hypothesis": "Real-browser critical-path coverage with traces and console/network assertions will expose progression and presentation defects before player testing.",
+      "expected_metric_delta": "G3 critical-flow and runtime requirements gain current reproducible evidence.",
+      "scope": [
+        "Cover opening, map, course completion, boss, next world, save reload, final stage, and ending.",
+        "Cover representative desktop and narrow viewports.",
+        "Assert no unexpected console errors or failed required asset requests.",
+        "Capture trace and screenshots for failures and release checkpoints."
+      ],
+      "dependencies": ["Q-003-CASTLE-ROUTING"],
+      "acceptance_checks": [
+        "Critical progression runs in a real browser without test-only state injection.",
+        "Desktop and mobile-profile runs produce current traces.",
+        "Unexpected console errors and required-asset request failures fail the run.",
+        "Pause, restart, settings, save reload, and representative input paths are covered.",
+        "A missing browser is reported as BLOCKED or FAIL, never PASS."
+      ],
+      "verification_commands": ["npm run test:e2e", "npm run build"],
+      "human_checks": [
+        "Review release-checkpoint screenshots for clipping, unreadable UI, and misleading states.",
+        "Exercise a real gamepad and touch-capable device."
+      ],
+      "risks": [
+        "Playwright browser installation requires user approval.",
+        "Automated keyboard events cannot prove physical controller feel."
+      ],
+      "blockers": [
+        "User reprioritized gameplay development over release-grade browser evidence."
+      ],
+      "evidence_ids": [],
+      "blocked_at": "2026-07-29T11:16:03.611Z"
+    },
+    {
+      "id": "Q-006-PREMIUM-VERTICAL-SLICE",
+      "priority": 50,
+      "title": "Build and evaluate a premium vertical-slice content matrix",
+      "target_gate": "G4",
+      "status": "ready",
+      "problem_evidence": [
+        "Current stage data and generation primarily vary theme, pace, seed, roster, and difficulty.",
+        "No evidence maps one representative slice from narrative hook through boss resolution against the premium rubric."
+      ],
+      "hypothesis": "An authored representative slice with distinct mechanics, encounters, presentation, and boss escalation will reveal whether the planned price has a credible product foundation.",
+      "expected_metric_delta": "R1 through R5 receive reviewable evidence and reach at least premium-candidate quality before full-campaign scaling.",
+      "scope": [
+        "Create a content matrix for narrative hook, world identity, course beats, mechanics, enemy behaviors, exploration, secret route, boss escalation, audio, visual motion, save flow, and accessibility.",
+        "Implement one coherent representative slice before multiplying content across all worlds.",
+        "Capture a complete unedited playthrough and reviewer evidence."
+      ],
+      "dependencies": [
+        "Q-001-IP-LICENSE",
+        "Q-004-ENEMY-POP-LIFETIME",
+        "Q-005-E2E-CRITICAL-PATH",
+        "Q-010-SIGNATURE-HOOK-PROTOTYPE",
+        "Q-011-AUTHORED-WORLD-GRAMMAR",
+        "Q-012-WORLD-BOSS-IDENTITY",
+        "Q-013-MEANINGFUL-REWARD-LOOP",
+        "Q-014-AUDIOVISUAL-NARRATIVE-BIBLE"
+      ],
+      "acceptance_checks": [
+        "Every content-matrix row names its player purpose, implementation evidence, automated check where possible, and human review evidence.",
+        "The slice includes at least three mechanically distinct course beats rather than palette-only variation.",
+        "At least two enemy behaviors create different player decisions and are not tint-only variants.",
+        "Boss escalation is mechanically and visually tied to the slice's world identity.",
+        "Music, SFX, background motion, effects, UI, onboarding, save flow, and accessibility form one coherent captured experience.",
+        "Independent reviewers score all applicable R1-R5 dimensions and list counterexamples."
+      ],
+      "verification_commands": [
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build",
+        "npm run test:e2e"
+      ],
+      "human_checks": [
+        "Independent premium-quality rubric review.",
+        "Unedited playthrough review for pacing, readability, novelty, and cohesion."
+      ],
+      "risks": [
+        "More content can hide a weak core loop instead of improving it.",
+        "Implementer scoring cannot prove premium quality."
+      ],
+      "blockers": [],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-007-STORE-FUNNEL",
+      "priority": 90,
+      "title": "Run the preregistered demo-to-Steam purchase funnel",
+      "target_gate": "G6",
+      "status": "blocked",
+      "problem_evidence": [
+        "No target audience definition, Steam attribution feasibility evidence, or external purchase cohort currently exists."
+      ],
+      "hypothesis": "A locked, deduplicated demo-complete CTA cohort will measure rather than speculate about USD 20+ purchase conversion.",
+      "expected_metric_delta": "G6 changes from UNKNOWN only when authoritative external evidence satisfies or contradicts the preregistered rule.",
+      "scope": [
+        "Obtain user-approved audience criteria.",
+        "Confirm Steam UTM and paid-purchase attribution feasibility.",
+        "Lock exclusions, deduplication, price exposure, and analysis before data collection.",
+        "Collect at least 400 eligible unique visits and calculate observed and Wilson rates.",
+        "Audit refunds and retained purchases separately at day 14."
+      ],
+      "dependencies": ["Q-006-PREMIUM-VERTICAL-SLICE"],
+      "acceptance_checks": [
+        "Every denominator member completed the demo, used the completion CTA, and produced a tracked Steam UTM visit at an eligible price.",
+        "Every numerator member has an authoritative attributable paid purchase within 72 hours.",
+        "The cohort has at least 400 unique eligible members and is deduplicated under the locked protocol.",
+        "At n=400 there are at least 220 purchases; at larger n the observed rate is at least 0.55.",
+        "The independently reproduced two-sided Wilson 95% lower bound is at least 0.50 for PASS.",
+        "Day-14 refunds and retained purchases are reported separately without rewriting the 72-hour result."
+      ],
+      "verification_commands": [],
+      "human_checks": [
+        "User approves target audience and cohort protocol.",
+        "Authorized Steam data owner verifies source provenance and attribution limits.",
+        "Independent analyst reproduces the Wilson calculation and day-14 audit."
+      ],
+      "risks": [
+        "Steam may not expose the user-level attribution needed for the requested 72-hour definition.",
+        "Biased or incentivized traffic can invalidate the conversion claim.",
+        "Purchase intent or wishlist data cannot substitute for paid purchases."
+      ],
+      "blockers": [
+        "target.store is NEEDS_USER_DECISION",
+        "target.operating_system is NEEDS_USER_DECISION",
+        "target.primary_audience is NEEDS_USER_DECISION",
+        "Steam attribution feasibility is UNKNOWN",
+        "External account and cohort collection require user authorization"
+      ],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-008-HARNESS-EVIDENCE-INTEGRITY",
+      "priority": 2,
+      "title": "Make harness evidence and independent review non-forgeable",
+      "target_gate": "G1",
+      "status": "blocked",
+      "problem_evidence": [
+        "validate-goal currently parses schemas without applying their constraints.",
+        "goal completion accepts any existing repository path as evidence.",
+        "The goal CLI can label an implementer-generated bulk verdict as an independent-agent review.",
+        "Status output echoes stored JSON without reconciling stale evidence, hashes, child requirements, or Git/source state."
+      ],
+      "hypothesis": "Schema-enforced contracts, artifact hash verification, task-bound evidence, and externally produced per-check reviews will prevent a low-capability agent from manufacturing PASS.",
+      "expected_metric_delta": "Known false-PASS paths in schema, evidence, status, and independent review audits decrease to zero.",
+      "scope": [
+        "Apply every canonical JSON schema and relational gate invariant during harness validation.",
+        "Validate evidence manifests, command coverage, task/gate binding, source fingerprint, inventory hash, and artifact hashes at submit, review, status, and completion.",
+        "Require independent reviews to be supplied as separately produced schema-valid records with reviewer/session provenance and per-acceptance verdicts.",
+        "Reconcile stored gate status against child requirements and current evidence, downgrading stale or incomplete claims to UNKNOWN."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "A schema-invalid canonical document makes validation fail with an exact JSON path.",
+        "Missing, edited, task-mismatched, gate-mismatched, command-incomplete, or source-stale evidence cannot complete a work item.",
+        "The implementer CLI cannot fabricate an independent identity or bulk-PASS acceptance checks.",
+        "Every independent PASS record has external reviewer provenance and one evidence-backed verdict per acceptance check.",
+        "Status derives gate and goal truth from current child requirements and verified evidence rather than echoing stored PASS.",
+        "Regression fixtures prove each previously identified false-PASS path is rejected."
+      ],
+      "verification_commands": [
+        "npm run goal:validate",
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [],
+      "risks": [
+        "Strict evidence binding can invalidate earlier dirty-worktree review records.",
+        "A partial JSON Schema implementation can appear strict while silently ignoring unsupported keywords."
+      ],
+      "blockers": [
+        "User reprioritized local personal playability over commercial evidence-harness work."
+      ],
+      "evidence_ids": [
+        ".goal/evidence/runs/2026-07-29T11-05-02-793Z-fast/manifest.json",
+        ".goal/evidence/reviews/2026-07-29T11-06-00-000Z-Q-008-self.json",
+        ".goal/evidence/reviews/2026-07-29T11-10-59-372Z-Q-008-independent-fail.json"
+      ],
+      "started_at": "2026-07-28T05:49:19.100Z",
+      "verification_manifest": ".goal/evidence/runs/2026-07-29T11-05-02-793Z-fast/manifest.json",
+      "source_fingerprint_sha256": "07e0e38d09ce204ef97ea67c6ac305b7bc7e26e5ac029829aab58082a948b0e2",
+      "evidence_bundle_sha256": "5e515088537ec5509828332b5590f7fde10e5281bf0f15c915bb9318d43cd3a9",
+      "implementer_session_id": "codex-root-019fad2e-b380-7411-82a7-36fdd7897b2b",
+      "reviews": [
+        {
+          "type": "self",
+          "result": "PASS",
+          "record": ".goal/evidence/reviews/2026-07-29T11-06-00-000Z-Q-008-self.json",
+          "created_at": "2026-07-29T11:06:00.000Z"
+        },
+        {
+          "type": "independent",
+          "result": "FAIL",
+          "record": ".goal/evidence/reviews/2026-07-29T11-10-59-372Z-Q-008-independent-fail.json",
+          "trust_key_id": "q008-independent-reviewer-20260729",
+          "reviewer_id": "codex-q008-independent-adversarial-reviewer",
+          "reviewer_session_id": "codex-q008-independent-review-session-019fad2e-b380-7411-82a7-36fdd7897b2b",
+          "receipt_id": "q008-codex-independent-receipt-20260729T111500Z",
+          "created_at": "2026-07-29T11:10:59.372Z"
+        }
+      ],
+      "submitted_at": "2026-07-29T11:05:37.558Z",
+      "human_evidence_ids": [],
+      "invalidations": [
+        {
+          "reason": "Independent review trusted a public key inside the mutable checkout rather than an external trust store.",
+          "invalidated_at": "2026-07-29T11:01:37.518Z"
+        }
+      ],
+      "blocked_at": "2026-07-29T11:16:02.365Z"
+    },
+    {
+      "id": "Q-009-HARNESS-LIFECYCLE",
+      "priority": 3,
+      "title": "Make low-capability lifecycle and command execution deterministic",
+      "target_gate": "G1",
+      "status": "ready",
+      "problem_evidence": [
+        "A review item does not occupy the single-work slot, allowing ambiguous active plus review state.",
+        "Explicit start can bypass queue priority and gate state.",
+        "Retry and unblock transitions are missing or contradict the playbook.",
+        "Playbook examples contain a completed task ID and invalid unquoted PowerShell placeholders.",
+        "Browser verification does not execute the active item's complete verification contract or capture browser/runtime artifacts."
+      ],
+      "hypothesis": "A state-machine-enforced queue and copy-safe emitted commands will let a low-capability agent progress without guessing or silently under-verifying.",
+      "expected_metric_delta": "Illegal lifecycle transitions, ambiguous work slots, and copy-paste command failures decrease to zero.",
+      "scope": [
+        "Treat active and review as one exclusive lifecycle slot and enforce selected-task starts unless a recorded critical preemption exists.",
+        "Add explicit retry, ready, and unblock transitions with named reasons.",
+        "Emit concrete PowerShell-safe commands using the selected task and generated manifest paths.",
+        "Separate immutable task-contract fingerprinting from mutable lifecycle metadata.",
+        "Execute the active item's exact verification command set and stop on permission, authentication, or repeated-strategy boundaries.",
+        "Capture browser versions and enumerate screenshot, trace, video, console, and network artifacts for browser profiles."
+      ],
+      "dependencies": ["Q-008-HARNESS-EVIDENCE-INTEGRITY"],
+      "acceptance_checks": [
+        "At most one item across active and review can exist, and illegal transitions fail without mutation.",
+        "The selected highest-priority eligible item cannot be bypassed without schema-valid preemption evidence.",
+        "Retry and unblock commands return items to the correct explicit state without editing JSON manually.",
+        "Every playbook command is valid PowerShell and uses values emitted by the preceding command.",
+        "Verification runs exactly the active item's declared commands and stops at an ask-first boundary.",
+        "Browser evidence records real browser/OS versions and hashes every retained runtime artifact."
+      ],
+      "verification_commands": [
+        "npm run goal:validate",
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [],
+      "risks": [
+        "State-machine changes can strand existing review records without an explicit migration.",
+        "Browser artifact collection remains blocked until a third E2E strategy is user-approved."
+      ],
+      "blockers": [],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-010-SIGNATURE-HOOK-PROTOTYPE",
+      "priority": 41,
+      "title": "Prototype a distinctive signature gameplay hook",
+      "target_gate": "G4",
+      "status": "active",
+      "problem_evidence": [
+        "The premium audit found no implemented and captured interaction that distinguishes Crowntrail Kingdom from a conventional platformer.",
+        "The current premium-slice contract asks for distinct mechanics but does not isolate a small prototype that can prove whether one mechanic is readable, expressive, and reusable."
+      ],
+      "hypothesis": "A bounded prototype that teaches one signature action, combines it with traversal and combat, and records deterministic outcomes will be falsified unless independent reviewers can identify the action and explain the decisions it creates without prompting.",
+      "expected_metric_delta": "R1, R3, and R5 gain attributable evidence for one memorable mechanic before full-slice production.",
+      "scope": [
+        "Define one signature action with explicit inputs, state transitions, failure recovery, accessibility behavior, and interaction rules.",
+        "Implement a single prototype sequence that teaches the action and reuses it once for traversal and once for an encounter decision.",
+        "Add deterministic fixtures and tests for activation, cancellation, cooldown or resource bounds, pause and restart recovery, and save-independent reset behavior.",
+        "Exclude campaign-wide rollout, store claims, external telemetry, and new third-party asset acquisition."
+      ],
+      "dependencies": [],
+      "acceptance_checks": [
+        "One documented state contract enumerates every legal signature-action transition and recovery path.",
+        "Automated tests cover activation, cancellation, repeated input, boundary values, pause, restart, and invalid-state rejection.",
+        "A deterministic prototype fixture exercises the same action in at least one traversal decision and one encounter decision.",
+        "The prototype introduces no unbounded scene objects, permanent effects, or progression mutation outside its declared fixture.",
+        "An unprompted independent human review records whether the action, its purpose, and its differentiating decision are identifiable; missing or ambiguous identification is UNKNOWN or FAIL, never PASS."
+      ],
+      "verification_commands": [
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Independent play review for control feel, readability, memorability, and whether the hook creates a real decision rather than a cosmetic flourish.",
+        "Accessibility review of the hook's input demand, motion, flash, audio dependence, and failure feedback."
+      ],
+      "risks": [
+        "A novel-looking action may still be shallow or frustrating in play.",
+        "Prototype-specific scripting may not generalize to authored stages.",
+        "Any third-party asset promoted from prototype to shipping remains subject to the manifest and qualified license review tracked by Q-001-IP-LICENSE."
+      ],
+      "blockers": [],
+      "evidence_ids": [],
+      "started_at": "2026-07-29T11:16:06.926Z"
+    },
+    {
+      "id": "Q-011-AUTHORED-WORLD-GRAMMAR",
+      "priority": 42,
+      "title": "Define and prove an authored world gameplay grammar",
+      "target_gate": "G4",
+      "status": "ready",
+      "problem_evidence": [
+        "Stage differentiation currently relies primarily on theme, pace, seed, roster, and difficulty variation.",
+        "The premium audit found no explicit authored grammar connecting world identity to recurring verbs, escalation beats, secrets, and encounter composition."
+      ],
+      "hypothesis": "A machine-checkable world grammar with authored setup, development, twist, and payoff beats will be falsified if generated fixtures can satisfy it through palette, seed, roster, or numeric difficulty changes alone.",
+      "expected_metric_delta": "R2 and R3 gain reviewable evidence that one world produces materially different play and coherent pacing.",
+      "scope": [
+        "Define one representative world's verbs, hazards, encounter rules, exploration affordances, secret logic, escalation order, and forbidden repetition.",
+        "Author one short route containing setup, development, twist, optional discovery, and payoff beats governed by that grammar.",
+        "Add validators and fixtures that distinguish structural gameplay changes from palette, seed, roster, and scalar-difficulty changes.",
+        "Exclude full-campaign authoring, audience targeting, store presentation, and asset acquisition."
+      ],
+      "dependencies": ["Q-010-SIGNATURE-HOOK-PROTOTYPE"],
+      "acceptance_checks": [
+        "A versioned grammar names each world verb, compatible hazard or enemy role, escalation rule, secret rule, and prohibited repetition.",
+        "Automated validation rejects a route missing any required setup, development, twist, optional discovery, or payoff beat.",
+        "A negative fixture that changes only palette, seed, roster, or numeric difficulty fails the material-differentiation check.",
+        "Graph and completion tests prove the authored main route and secret route are reachable and return valid progression state.",
+        "Independent human review records whether the beats feel materially distinct, legible, and paced as one world identity; automation alone cannot pass those claims."
+      ],
+      "verification_commands": [
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Independent play review for pacing, novelty, route readability, and whether authored decisions remain distinct after visual presentation is hidden or normalized.",
+        "Design review for whether the grammar is reusable without turning later stages into repetition."
+      ],
+      "risks": [
+        "A rigid validator can reward checklist compliance while producing dull levels.",
+        "The authored route may overfit the signature hook and leave too little room for later worlds.",
+        "Any third-party asset promoted from prototype to shipping remains subject to the manifest and qualified license review tracked by Q-001-IP-LICENSE."
+      ],
+      "blockers": [],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-012-WORLD-BOSS-IDENTITY",
+      "priority": 43,
+      "title": "Create a world-specific boss identity and escalation",
+      "target_gate": "G4",
+      "status": "ready",
+      "problem_evidence": [
+        "G4 and the premium rubric require boss progression to express world identity, but no current evidence isolates a world-specific boss contract or phase progression.",
+        "The premium audit could not verify that a boss asks decisions materially different from ordinary traversal and enemy encounters."
+      ],
+      "hypothesis": "A boss built from the authored world's verbs with distinct telegraph, response, escalation, and recovery phases will be falsified if its logic remains beatable by generic repetition or reviewers cannot connect its decisions to the world grammar.",
+      "expected_metric_delta": "R1, R2, and R4 gain bounded evidence for readable boss decisions, escalation, and world-specific presentation.",
+      "scope": [
+        "Specify one boss's phase state machine, attack telegraphs, player responses, damage windows, escalation triggers, failure recovery, and accessibility variants.",
+        "Implement a representative encounter that recombines the world's signature verb and at least two authored grammar elements.",
+        "Add deterministic phase, damage-bound, defeat, restart, pause, and object-lifetime tests.",
+        "Exclude additional bosses, final-campaign balance, store footage, and unreviewed third-party asset shipping."
+      ],
+      "dependencies": ["Q-011-AUTHORED-WORLD-GRAMMAR"],
+      "acceptance_checks": [
+        "The boss state machine has no unreachable required phase, illegal transition, or soft-locking terminal state.",
+        "Automated tests prove bounded health and damage, deterministic phase thresholds, valid defeat progression, and clean pause, death, and restart recovery.",
+        "At least two attacks require different player responses, and a negative fixture using one repeated response cannot satisfy every attack contract.",
+        "Runtime object-lifetime checks show spawned hazards, effects, and listeners return to baseline after defeat and restart.",
+        "Independent human review records telegraph readability, control attribution, escalation, audiovisual cohesion, and the connection to world identity."
+      ],
+      "verification_commands": [
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Independent boss play review for fairness, telegraph readability, response variety, escalation, and memorability.",
+        "Accessibility review for reduced motion, reduced flash, audio-independent telegraphs, and input demands."
+      ],
+      "risks": [
+        "A mechanically distinct boss can still feel unfair if timing and telegraphs are weak.",
+        "Boss-specific code may duplicate systems instead of exercising reusable encounter contracts.",
+        "Any third-party visual or audio asset promoted to shipping remains subject to the manifest and qualified license review tracked by Q-001-IP-LICENSE."
+      ],
+      "blockers": [],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-013-MEANINGFUL-REWARD-LOOP",
+      "priority": 44,
+      "title": "Prototype a meaningful reward and replay loop",
+      "target_gate": "G4",
+      "status": "ready",
+      "problem_evidence": [
+        "Crown totals are now bounded, but bounded collection alone does not prove that rewards alter play, support mastery, or justify replay.",
+        "The premium audit found no captured earn, preview, claim, apply, persist, and replay loop with a player-visible consequence."
+      ],
+      "hypothesis": "A reward loop that converts optional mastery into a bounded, previewable gameplay choice will be falsified if the reward is cosmetic-only, mandatory grinding, duplicable, or does not change a later route decision.",
+      "expected_metric_delta": "R3 gains attributable evidence for pacing and replay value while G2 save-integrity invariants remain intact.",
+      "scope": [
+        "Implement one vertical-slice reward loop covering discovery, progress feedback, preview, claim, application, persistence, and replay use.",
+        "Tie the reward to an optional mastery objective and one later route or encounter choice without paywall, monetization, or campaign-wide economy work.",
+        "Add normalization, idempotency, migration, duplicate-claim, reset, and corrupted-save tests.",
+        "Exclude store entitlements, external services, audience-specific tuning, and broad content scaling."
+      ],
+      "dependencies": [
+        "Q-010-SIGNATURE-HOOK-PROTOTYPE",
+        "Q-011-AUTHORED-WORLD-GRAMMAR"
+      ],
+      "acceptance_checks": [
+        "A documented reward state machine covers locked, progress, available, claimed, applied, and recovered states with no duplicate grant path.",
+        "Automated tests prove optional progress is bounded, claims are idempotent, malformed saves normalize safely, and restart or reload preserves only legitimate state.",
+        "One deterministic replay fixture proves the applied reward enables a different valid route or encounter decision without being required for main-route completion.",
+        "A negative fixture for a cosmetic-only or numerically inflated reward fails the meaningful-consequence contract.",
+        "Independent human review records whether the reward is understandable, desirable, proportionate, and meaningfully changes replay decisions without feeling like padding."
+      ],
+      "verification_commands": [
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Independent play review for reward clarity, anticipation, pacing, replay motivation, and perceived grind.",
+        "Save-flow review using fresh, partial, completed, malformed, and migrated progress states."
+      ],
+      "risks": [
+        "A reward can become mandatory in practice even when the main route is technically completable without it.",
+        "Persistence changes can invalidate legitimate saves or create duplicate grants.",
+        "Any third-party reward presentation asset promoted to shipping remains subject to the manifest and qualified license review tracked by Q-001-IP-LICENSE."
+      ],
+      "blockers": [],
+      "evidence_ids": []
+    },
+    {
+      "id": "Q-014-AUDIOVISUAL-NARRATIVE-BIBLE",
+      "priority": 45,
+      "title": "Codify the audiovisual and narrative identity bible",
+      "target_gate": "G4",
+      "status": "ready",
+      "problem_evidence": [
+        "The premium audit found no single source of truth connecting premise, world arc, visual motifs, motion language, music, sound cues, UI feedback, and accessibility alternatives.",
+        "Without explicit rules, individually polished assets can remain stylistically incompatible or communicate contradictory gameplay information."
+      ],
+      "hypothesis": "A versioned identity bible tied to executable cue mappings and representative fixtures will be falsified if independent reviewers cannot match narrative beats, visual language, and audio cues consistently or if critical information depends on one inaccessible channel.",
+      "expected_metric_delta": "R4 and R5 gain auditable cohesion evidence, and Q-006 receives a bounded presentation contract instead of an aspirational style target.",
+      "scope": [
+        "Define the premise, player motivation, world arc, tone boundaries, visual motifs, palette roles, silhouette rules, motion language, music states, SFX families, UI feedback, and accessibility alternatives for the representative slice.",
+        "Map each setup, escalation, secret, boss, reward, failure, and resolution beat to named visual, motion, music, SFX, text, and non-audio cues.",
+        "Implement machine-readable cue identifiers and representative fixtures that fail on missing, orphaned, contradictory, or single-channel critical cues.",
+        "Exclude store copy, localized campaign-wide production, external asset acquisition, and any claim of qualified license clearance."
+      ],
+      "dependencies": [
+        "Q-010-SIGNATURE-HOOK-PROTOTYPE",
+        "Q-011-AUTHORED-WORLD-GRAMMAR",
+        "Q-012-WORLD-BOSS-IDENTITY",
+        "Q-013-MEANINGFUL-REWARD-LOOP"
+      ],
+      "acceptance_checks": [
+        "Every representative-slice beat maps to a unique narrative purpose and named visual, motion, audio, UI, and accessibility cue contract.",
+        "Automated validation rejects missing assets or cue identifiers, orphaned mappings, contradictory state assignments, and critical information carried only by color, motion, or audio.",
+        "Representative fixtures cover onboarding, traversal, encounter, secret, boss, reward, failure, pause, and resolution states.",
+        "Reduced-motion, reduced-flash, muted-audio, and narrow-viewport variants retain every critical gameplay cue in the declared contract.",
+        "Independent qualified human review records cohesion, legibility, tone, originality, and whether the slice communicates one recognizable identity; implementer review alone cannot pass these claims.",
+        "Every proposed shipped third-party asset remains explicitly unresolved until its source, creator, commercial-use basis, local proof, hash, and qualified license review exist."
+      ],
+      "verification_commands": [
+        "npm run format:check",
+        "npm run lint",
+        "npm test",
+        "npm run build"
+      ],
+      "human_checks": [
+        "Independent art-direction, audio, and narrative review against representative captured states.",
+        "Accessibility review with reduced motion, reduced flash, muted audio, high-contrast needs, and narrow viewport.",
+        "Qualified commercial license review before any third-party bible reference becomes a shipped asset."
+      ],
+      "risks": [
+        "A style bible can become aspirational documentation that is not enforced by runtime behavior.",
+        "Over-constraining motifs and cue families can make authored content repetitive.",
+        "References or prototype assets may be mistaken for shipping clearance; Q-001-IP-LICENSE remains the release authority for third-party assets."
+      ],
+      "blockers": [],
+      "evidence_ids": []
+    }
+  ]
+}

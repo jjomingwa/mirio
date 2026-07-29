@@ -1,0 +1,104 @@
+{
+  "version": 2,
+  "namespace": "crowntrail-v2",
+  "created_at": "2026-07-29",
+  "assets": [
+    {
+      "key": "goldenwind-background",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/goldenwind-background.png",
+      "size_bytes": 2270158,
+      "sha256": "adc40efc657751a0c2a1882b224ecef5e91f419ef065695f145d2b0c08ca0697",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Original Goldenwind Forest environment key art"
+    },
+    {
+      "key": "v2-player",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/player.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Player fox sprite sheet"
+    },
+    {
+      "key": "v2-enemies",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/enemies.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Enemies sprite sheet"
+    },
+    {
+      "key": "v2-targets",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/targets.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Rush targets sprite sheet"
+    },
+    {
+      "key": "v2-tileset",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/tileset.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Goldenwind Forest tileset"
+    },
+    {
+      "key": "v2-bg-forest-back",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/bg-forest-back.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Parallax background layer 1"
+    },
+    {
+      "key": "v2-bg-forest-mid",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/bg-forest-mid.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Parallax background layer 2"
+    },
+    {
+      "key": "v2-bg-forest-front",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/bg-forest-front.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Parallax background layer 3"
+    },
+    {
+      "key": "v2-ui-logo",
+      "type": "image",
+      "runtime_path": "assets/crowntrail-v2/logo.png",
+      "size_bytes": 67,
+      "sha256": "74de9c0dd8ea7c2e88293bff09440d517f742c102aa0d20d0bafeefca679ffc3",
+      "license": "Original Crowntrail Kingdom v2 License",
+      "description": "Crowntrail Kingdom logo"
+    },
+    {
+      "key": "v2-sfx-jump",
+      "type": "audio-config",
+      "runtime_path": "assets/crowntrail-v2/sfx-jump.json",
+      "size_bytes": 27,
+      "sha256": "33f6568d0d7c98da9b8bbed30ec9359dd89f59b4d3f12bd2caf7dc7f397e7df2",
+      "license": "Original Crowntrail Kingdom v2 License"
+    },
+    {
+      "key": "v2-sfx-rush",
+      "type": "audio-config",
+      "runtime_path": "assets/crowntrail-v2/sfx-rush.json",
+      "size_bytes": 31,
+      "sha256": "e946faf766e9a45f5e2f706300bed8697c476d7e77068a2f3151a9163190469b",
+      "license": "Original Crowntrail Kingdom v2 License"
+    }
+  ]
+}

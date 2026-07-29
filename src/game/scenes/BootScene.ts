@@ -12,6 +12,11 @@ export class BootScene extends Phaser.Scene {
   }
 
   preload(): void {
+    this.load.json("v2-manifest", "/assets/crowntrail-v2/manifest.json");
+    this.load.image(
+      "goldenwind-background",
+      "/assets/crowntrail-v2/goldenwind-background.png",
+    );
     this.load.atlas(
       "sunny",
       `${BASE}/atlas/atlas.png`,

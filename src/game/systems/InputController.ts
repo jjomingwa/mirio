@@ -14,6 +14,11 @@ export interface InputSnapshot {
   runPressed: boolean;
   jumpHeld: boolean;
   jumpPressed: boolean;
+  moveX: number;
+  aimX: number;
+  aimY: number;
+  rushHeld: boolean;
+  rushReleased: boolean;
 }
 
 export class InputController {
@@ -21,6 +26,7 @@ export class InputController {
   private touch = new Map<TouchAction, boolean>();
   private previousJump = false;
   private previousRun = false;
+  private previousRush = false;
 
   constructor(private readonly scene: Phaser.Scene) {
     this.keys = (scene.input.keyboard?.addKeys({
@@ -28,6 +34,8 @@ export class InputController {
       leftAlt: Phaser.Input.Keyboard.KeyCodes.A,
       right: Phaser.Input.Keyboard.KeyCodes.RIGHT,
       rightAlt: Phaser.Input.Keyboard.KeyCodes.D,
+      up: Phaser.Input.Keyboard.KeyCodes.UP,
+      upAlt: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.DOWN,
       downAlt: Phaser.Input.Keyboard.KeyCodes.S,
       jump: Phaser.Input.Keyboard.KeyCodes.SPACE,
@@ -51,8 +59,8 @@ export class InputController {
 
   read(): InputSnapshot {
     const pad = this.scene.input.gamepad?.getPad(0);
-    const horizontal = pad?.axes[0]?.getValue() ?? 0;
-    const vertical = pad?.axes[1]?.getValue() ?? 0;
+    const padX = pad?.axes[0]?.getValue() ?? 0;
+    const padY = pad?.axes[1]?.getValue() ?? 0;
     const buttonJump = Boolean(pad?.buttons[0]?.pressed);
     const jumpHeld =
       this.isDown("jump", "jumpAlt", "jumpAlt2") ||
@@ -63,27 +71,66 @@ export class InputController {
       this.isDown("run", "runAlt") ||
       Boolean(pad?.buttons[2]?.pressed) ||
       this.touch.get("run") === true;
+
+    const left =
+      this.isDown("left", "leftAlt") ||
+      padX < -0.3 ||
+      this.touch.get("left") === true;
+    const right =
+      this.isDown("right", "rightAlt") ||
+      padX > 0.3 ||
+      this.touch.get("right") === true;
+    const up =
+      this.isDown("up", "upAlt") ||
+      padY < -0.45 ||
+      this.touch.get("jump") === true;
+    const down =
+      this.isDown("down", "downAlt") ||
+      padY > 0.45 ||
+      this.touch.get("down") === true;
+
+    const moveX = left === right ? 0 : left ? -1 : 1;
+
+    let aimX = 0;
+    let aimY = 0;
+
+    if (Math.hypot(padX, padY) > 0.3) {
+      aimX = padX;
+      aimY = padY;
+    } else {
+      if (left) aimX -= 1;
+      if (right) aimX += 1;
+      if (up) aimY -= 1;
+      if (down) aimY += 1;
+    }
+
+    const aimMag = Math.hypot(aimX, aimY);
+    if (aimMag > 0) {
+      aimX /= aimMag;
+      aimY /= aimMag;
+    }
+
+    const rushHeld = run;
+    const rushReleased = !rushHeld && this.previousRush;
+
     const snapshot: InputSnapshot = {
-      left:
-        this.isDown("left", "leftAlt") ||
-        horizontal < -0.3 ||
-        this.touch.get("left") === true,
-      right:
-        this.isDown("right", "rightAlt") ||
-        horizontal > 0.3 ||
-        this.touch.get("right") === true,
-      down:
-        this.isDown("down", "downAlt") ||
-        vertical > 0.45 ||
-        this.touch.get("down") === true,
+      left,
+      right,
+      down,
       run,
       runPressed: run && !this.previousRun,
       jumpHeld,
       jumpPressed: jumpHeld && !this.previousJump,
+      moveX,
+      aimX,
+      aimY,
+      rushHeld,
+      rushReleased,
     };
 
     this.previousJump = jumpHeld;
     this.previousRun = run;
+    this.previousRush = rushHeld;
     return snapshot;
   }
 

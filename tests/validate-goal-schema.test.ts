@@ -82,16 +82,16 @@ describe("goal schema integration", () => {
     const result = runValidator();
 
     expect(result.status).toBe(0);
-    expect(result.stdout).toContain("DECISION_HOLES 5");
+    expect(result.stdout).toContain("DECISION_HOLES 0");
     expect(result.stdout).toContain(
-      "HARNESS PASS (7 gates, 15 backlog items, 8 rubric dimensions)",
+      "HARNESS PASS (6 gates, 5 backlog items, 7 rubric dimensions)",
     );
     expect(result.stderr).toBe("");
   });
 
   it("fails a canonical schema violation with an exact JSON path", () => {
     mutateJson("goal.json", (goal) => {
-      goal.version = 2;
+      goal.version = 3;
     });
 
     const result = runValidator();

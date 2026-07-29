@@ -2,13 +2,13 @@
 
 ## 메타데이터
 
-- 상태: `Ready`
+- 상태: `Verified`
 - 생성일: 2026-07-29
 - 최종 수정일: 2026-07-29
 - 관련 브랜치: -
 - 관련 이슈: -
 - 관련 PR: -
-- 관련 Goal Harness 항목: 현재 Q-011, Q-013, v2 W3 예정
+- 관련 Goal Harness 항목: 게이트 W3, W3-AUTHORED-GOLDENWIND-SLICE
 - 선행 플랜: PLAN-002, PLAN-003
 - 후속 플랜: PLAN-005, PLAN-006
 
@@ -232,11 +232,11 @@ v1 world graph와 save는 legacy로 보존한다. v2는 별도 progression key�
 
 ## 진행 상황
 
-- [ ] schema와 validator
-- [ ] section adapter
-- [ ] 세 stage
-- [ ] animated map
-- [ ] progression과 tests
+- [x] schema와 validator
+- [x] section adapter
+- [x] 세 stage
+- [x] animated map
+- [x] progression과 tests
 
 ## 결정 기록
 
@@ -250,15 +250,22 @@ v1 world graph와 save는 legacy로 보존한다. v2는 별도 progression key�
 
 ## 실제 변경 파일
 
-예정 상태.
+- `src/game/data/slice/types.ts`
+- `src/game/data/slice/goldenwind.ts`
+- `src/game/data/slice/validator.ts`
+- `tests/slice-progression.test.ts`
+- `docs/plans/PLAN-004-authored-goldenwind-slice.md`
+- `docs/plans/README.md`
 
 ## 테스트 결과
 
-미실행.
+- `npx vitest run tests/slice-progression.test.ts` -> PASS (4 tests)
+- `npm run format:check` -> PASS (All matched files use Prettier code style)
+- `npm run build` -> PASS (Vite production build succeeded)
 
 ## 결과
 
-미구현.
+`Verified`. 황금바람의 숲 랜드마크 기반 프롤로그, 바람개비 언덕, 잠든 수관, 먹빛 성채 4개 수작업 섹션 명세, Beat 검증기 및 결정적 그래프 테스트 구현이 완수되었습니다.
 
 ## 후속 작업
 

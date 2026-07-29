@@ -49,9 +49,9 @@
 | 번호                                               | 제목                                | 상태       | 생성일     | 관련 브랜치 | 관련 PR |
 | -------------------------------------------------- | ----------------------------------- | ---------- | ---------- | ----------- | ------- |
 | [PLAN-000](PLAN-000-no-implementation-request.md)  | 구현 요청 미정                      | Superseded | 2026-07-29 | -           | -       |
-| [PLAN-001](PLAN-001-premium-web-slice-contract.md) | 프리미엄 웹 수직 슬라이스 목표 계약 | Ready      | 2026-07-29 | -           | -       |
-| [PLAN-002](PLAN-002-crown-rush-v2.md)              | 연쇄 왕관 질주 v2                   | Ready      | 2026-07-29 | -           | -       |
-| [PLAN-003](PLAN-003-original-art-ui-audio.md)      | 오리지널 아트·UI·오디오 재구축      | Ready      | 2026-07-29 | -           | -       |
-| [PLAN-004](PLAN-004-authored-goldenwind-slice.md)  | 황금바람의 숲 수작업 월드           | Ready      | 2026-07-29 | -           | -       |
-| [PLAN-005](PLAN-005-boss-ending-save.md)           | 부서진 왕좌 보스·엔딩·저장          | Ready      | 2026-07-29 | -           | -       |
-| [PLAN-006](PLAN-006-browser-quality-gate.md)       | 브라우저 품질 게이트와 최종 폴리시  | Ready      | 2026-07-29 | -           | -       |
+| [PLAN-001](PLAN-001-premium-web-slice-contract.md) | 프리미엄 웹 수직 슬라이스 목표 계약 | Verified   | 2026-07-29 | -           | -       |
+| [PLAN-002](PLAN-002-crown-rush-v2.md)              | 연쇄 왕관 질주 v2                   | Verified   | 2026-07-29 | -           | -       |
+| [PLAN-003](PLAN-003-original-art-ui-audio.md)      | 오리지널 아트·UI·오디오 재구축      | Verified   | 2026-07-29 | -           | -       |
+| [PLAN-004](PLAN-004-authored-goldenwind-slice.md)  | 황금바람의 숲 수작업 월드           | Verified   | 2026-07-29 | -           | -       |
+| [PLAN-005](PLAN-005-boss-ending-save.md)           | 부서진 왕좌 보스·엔딩·저장          | Verified   | 2026-07-29 | -           | -       |
+| [PLAN-006](PLAN-006-browser-quality-gate.md)       | 브라우저 품질 게이트와 최종 폴리시  | Verified   | 2026-07-29 | -           | -       |

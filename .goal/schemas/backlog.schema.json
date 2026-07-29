@@ -10,7 +10,7 @@
       "type": "string"
     },
     "version": {
-      "const": 1
+      "const": 2
     },
     "items": {
       "type": "array",
@@ -52,7 +52,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^Q-[0-9]{3}-[A-Z0-9-]+$"
+          "pattern": "^(W[0-5]-[A-Z0-9-]+|Q-[0-9]{3}-[A-Z0-9-]+)$"
         },
         "priority": {
           "type": "integer",
@@ -64,7 +64,7 @@
         },
         "target_gate": {
           "type": "string",
-          "pattern": "^G[0-6]$"
+          "pattern": "^W[0-5]$"
         },
         "status": {
           "enum": ["ready", "active", "blocked", "review", "done"]

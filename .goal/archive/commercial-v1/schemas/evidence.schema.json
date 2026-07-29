@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence.schema.json",
+  "title": "Crowntrail evidence manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "run_id",
+    "created_at_utc",
+    "commit_sha",
+    "dirty_worktree",
+    "source_state",
+    "environment",
+    "gate_id",
+    "backlog_item_id",
+    "task_contract_sha256",
+    "gate_contract_sha256",
+    "status",
+    "commands",
+    "artifacts",
+    "requirement_results",
+    "self_review_id",
+    "independent_review_id"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "commit_sha": {
+      "type": "string",
+      "pattern": "^(NO_COMMIT|[0-9a-fA-F]{40})$"
+    },
+    "dirty_worktree": {
+      "type": "boolean"
+    },
+    "source_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "fingerprint_sha256",
+        "post_run_fingerprint_sha256",
+        "stable_during_run",
+        "inventory_reference",
+        "inventory_sha256",
+        "included_file_count",
+        "included_total_bytes",
+        "selection_command",
+        "explicit_excluded_prefixes",
+        "explicit_excluded_suffixes"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "fingerprint_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "post_run_fingerprint_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "stable_during_run": {
+          "type": "boolean"
+        },
+        "inventory_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inventory_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "included_file_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "included_total_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "selection_command": {
+          "const": "git ls-files --cached --others --exclude-standard -z"
+        },
+        "explicit_excluded_prefixes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "explicit_excluded_suffixes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operating_system", "node_version", "browser_versions"],
+      "properties": {
+        "operating_system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "node_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "browser_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "gate_id": {
+      "type": ["string", "null"],
+      "pattern": "^G[0-6]$"
+    },
+    "backlog_item_id": {
+      "type": ["string", "null"],
+      "pattern": "^Q-[0-9]{3}-[A-Z0-9-]+$"
+    },
+    "task_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "gate_contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "status": {
+      "enum": ["PASS", "FAIL", "UNKNOWN"]
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["command", "exit_code", "duration_ms", "output_reference"],
+        "properties": {
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "duration_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "output_reference": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "reference", "sha256"],
+        "properties": {
+          "kind": {
+            "enum": [
+              "log",
+              "report",
+              "screenshot",
+              "video",
+              "trace",
+              "dataset",
+              "license",
+              "other"
+            ]
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{64}$"
+          }
+        }
+      }
+    },
+    "requirement_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/requirement_result"
+      }
+    },
+    "self_review_id": {
+      "type": ["string", "null"]
+    },
+    "independent_review_id": {
+      "type": ["string", "null"]
+    },
+    "external_cohort_id": {
+      "type": ["string", "null"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "PASS"
+          }
+        },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "commands": {
+            "minItems": 1
+          },
+          "independent_review_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "requirement_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirement_id", "status", "evidence_ids", "notes"],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": ["PASS", "FAIL", "UNKNOWN"]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "PASS"
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

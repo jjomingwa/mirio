@@ -5,9 +5,12 @@ import { EndingScene } from "./scenes/EndingScene";
 import { IntroScene } from "./scenes/IntroScene";
 import { LevelScene } from "./scenes/LevelScene";
 import { WorldMapScene } from "./scenes/WorldMapScene";
+import { GoldenwindLevelScene } from "./scenes/GoldenwindLevelScene";
+import { GoldenwindBossScene } from "./scenes/GoldenwindBossScene";
+import { GoldenwindEndingScene } from "./scenes/GoldenwindEndingScene";
 
-export const GAME_WIDTH = 480;
-export const GAME_HEIGHT = 270;
+export const GAME_WIDTH = 640;
+export const GAME_HEIGHT = 360;
 
 export function createGame(parent: HTMLElement): Phaser.Game {
   return new Phaser.Game({
@@ -43,6 +46,9 @@ export function createGame(parent: HTMLElement): Phaser.Game {
       BootScene,
       IntroScene,
       WorldMapScene,
+      GoldenwindLevelScene,
+      GoldenwindBossScene,
+      GoldenwindEndingScene,
       LevelScene,
       BossScene,
       EndingScene,

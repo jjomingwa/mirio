@@ -16,7 +16,7 @@
       "type": "string"
     },
     "version": {
-      "const": 1
+      "const": 2
     },
     "status_values": {
       "const": ["PASS", "FAIL", "UNKNOWN"]
@@ -26,8 +26,8 @@
     },
     "gates": {
       "type": "array",
-      "minItems": 7,
-      "maxItems": 7,
+      "minItems": 6,
+      "maxItems": 6,
       "items": {
         "$ref": "#/$defs/gate"
       }
@@ -51,7 +51,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^G[0-6]-R[1-9][0-9]*$"
+          "pattern": "^W[0-5]-R[1-9][0-9]*$"
         },
         "description": {
           "type": "string",
@@ -115,7 +115,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^G[0-6]$"
+          "pattern": "^W[0-5]$"
         },
         "name": {
           "type": "string",

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "assets.schema.json",
+  "title": "Crowntrail shipped asset provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "policy", "packages"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "policy": {
+      "type": "object"
+    },
+    "packages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "runtime_paths",
+          "source",
+          "local_license_files",
+          "required_credit",
+          "commercial_status",
+          "review_evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runtime_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source": {
+            "type": "string",
+            "format": "uri"
+          },
+          "local_license_files": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "supplemental_files": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required_credit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "commercial_status": {
+            "enum": ["NEEDS_HUMAN_REVIEW", "APPROVED", "REJECTED"]
+          },
+          "review_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

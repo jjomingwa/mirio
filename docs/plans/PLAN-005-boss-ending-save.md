@@ -2,13 +2,13 @@
 
 ## 메타데이터
 
-- 상태: `Ready`
+- 상태: `Verified`
 - 생성일: 2026-07-29
 - 최종 수정일: 2026-07-29
 - 관련 브랜치: -
 - 관련 이슈: -
 - 관련 PR: -
-- 관련 Goal Harness 항목: 현재 Q-012, Q-013, v2 W3 예정
+- 관련 Goal Harness 항목: 게이트 W3, W3-BOSS-ENDING-SAVE
 - 선행 플랜: PLAN-003, PLAN-004
 - 후속 플랜: PLAN-006
 
@@ -225,11 +225,11 @@ node, crown total은 변환하지 않는다.
 
 ## 진행 상황
 
-- [ ] boss machine
-- [ ] three phases
-- [ ] save v2
-- [ ] ending variants
-- [ ] lifecycle와 tests
+- [x] boss machine
+- [x] three phases
+- [x] save v2
+- [x] ending variants
+- [x] lifecycle와 tests
 
 ## 결정 기록
 
@@ -242,15 +242,22 @@ node, crown total은 변환하지 않는다.
 
 ## 실제 변경 파일
 
-예정 상태.
+- `src/game/systems/BossEncounterMachine.ts`
+- `src/game/state/sliceSave.ts`
+- `tests/boss-encounter.test.ts`
+- `tests/slice-save.test.ts`
+- `docs/plans/PLAN-005-boss-ending-save.md`
+- `docs/plans/README.md`
 
 ## 테스트 결과
 
-미실행.
+- `npx vitest run tests/boss-encounter.test.ts tests/slice-save.test.ts` -> PASS (6 tests)
+- `npm run format:check` -> PASS (All matched files use Prettier code style)
+- `npm run build` -> PASS (Vite production build succeeded)
 
 ## 결과
 
-미구현.
+`Verified`. 부서진 왕좌 먹빛 파수관 3단계 순수 상태 머신, 6단계 봉인 타격, 격리된 SliceSaveV2 스키마 및 단위 테스트가 구현 완료되었습니다.
 
 ## 후속 작업
 

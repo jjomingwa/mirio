@@ -1,0 +1,160 @@
+{
+  "$schema": "./schemas/rubric.schema.json",
+  "version": 1,
+  "title": "Premium USD 24.99 quality rubric",
+  "status": "UNPROVEN",
+  "scale": {
+    "minimum": 0,
+    "maximum": 5,
+    "anchors": [
+      {
+        "score": 0,
+        "meaning": "Broken, absent, or unusable."
+      },
+      {
+        "score": 1,
+        "meaning": "Rough prototype with dominant blockers."
+      },
+      {
+        "score": 2,
+        "meaning": "Functional but visibly incomplete or inconsistent."
+      },
+      {
+        "score": 3,
+        "meaning": "Solid baseline indie quality with material shortcomings."
+      },
+      {
+        "score": 4,
+        "meaning": "Cohesive premium release quality for the intended audience."
+      },
+      {
+        "score": 5,
+        "meaning": "Distinctive, highly polished, and class-leading for its scope."
+      }
+    ]
+  },
+  "pass_policy": {
+    "minimum_weighted_percent": 85,
+    "minimum_score_for_any_dimension": 3,
+    "minimum_score_for_core_feel": 4,
+    "minimum_score_for_world_differentiation": 4,
+    "critical_findings_allowed": 0,
+    "independent_review_required": true,
+    "subjective_dimensions_require_human_evidence": true,
+    "missing_score_result": "UNKNOWN"
+  },
+  "dimensions": [
+    {
+      "id": "R1",
+      "name": "Core control feel and readability",
+      "weight": 20,
+      "human_evidence_required": true,
+      "criteria": [
+        "Movement is predictable, responsive, and expressive.",
+        "Damage, hazards, goals, and enemy intentions are readable.",
+        "Difficulty failures feel attributable to player decisions rather than ambiguity."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R2",
+      "name": "World and stage differentiation",
+      "weight": 20,
+      "human_evidence_required": true,
+      "criteria": [
+        "Worlds introduce materially different mechanics and decisions.",
+        "Enemy behavior and encounter composition vary meaningfully.",
+        "Boss progression expresses the world's identity rather than reusing one fight."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R3",
+      "name": "Content value, pacing, and replayability",
+      "weight": 15,
+      "human_evidence_required": true,
+      "criteria": [
+        "The opening, learning curve, escalation, secrets, and ending form a coherent arc.",
+        "Campaign length and authored variety justify the planned price.",
+        "Optional goals and routes add meaningful replay value without padding."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R4",
+      "name": "Visual, animation, and audio cohesion",
+      "weight": 15,
+      "human_evidence_required": true,
+      "criteria": [
+        "Backgrounds, characters, effects, UI, and animation share a coherent art direction.",
+        "Music and sound reinforce world identity, action, and feedback.",
+        "No placeholder, permanently retained, missing, or visibly incompatible asset remains."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R5",
+      "name": "Onboarding, narrative, and product identity",
+      "weight": 10,
+      "human_evidence_required": true,
+      "criteria": [
+        "The premise, player goal, controls, and stakes are clear without external explanation.",
+        "The product has a memorable identity distinct from its references.",
+        "Store-facing names and claims match the shipped experience."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R6",
+      "name": "Stability, performance, and save integrity",
+      "weight": 10,
+      "human_evidence_required": false,
+      "criteria": [
+        "Representative sessions complete without crash, soft lock, leak, or progression loss.",
+        "Frame pacing, loading, input processing, and asset delivery remain acceptable on the target class of hardware.",
+        "Save validation and migration preserve bounded, legitimate progress."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R7",
+      "name": "Accessibility and input coverage",
+      "weight": 5,
+      "human_evidence_required": true,
+      "criteria": [
+        "Keyboard, gamepad, and touch behavior are usable where claimed.",
+        "Reduced motion, reduced flash, volume, pause, and readable UI settings work in practice.",
+        "Critical information is not conveyed by a single inaccessible cue."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    },
+    {
+      "id": "R8",
+      "name": "Commercial, IP, and asset readiness",
+      "weight": 5,
+      "human_evidence_required": true,
+      "criteria": [
+        "Product identity avoids unlicensed or confusing third-party names and presentation.",
+        "Every shipped asset has a traceable commercial-use basis.",
+        "Required attribution, notices, price claims, and store disclosures are complete."
+      ],
+      "current_score": null,
+      "status": "UNKNOWN",
+      "evidence_ids": []
+    }
+  ]
+}

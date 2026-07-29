@@ -115,6 +115,15 @@ button {
   font-size: clamp(12px, 1.45vw, 17px);
   line-height: 1.75;
 }
+.title-copy {
+  font-size: 0;
+}
+.title-copy::after {
+  content: "A focused pixel-action slice through the Goldenwind Forest.";
+  display: block;
+  font-size: clamp(12px, 1.45vw, 17px);
+  line-height: 1.75;
+}
 .continue-summary {
   display: flex;
   gap: 16px;

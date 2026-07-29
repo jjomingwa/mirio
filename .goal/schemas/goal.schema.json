@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "goal.schema.json",
-  "title": "Crowntrail commercial goal contract",
+  "title": "Crowntrail web slice goal contract",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -11,11 +11,9 @@
     "title",
     "objective",
     "status",
-    "target",
-    "price_policy",
-    "conversion_contract",
-    "day_14_audit",
-    "work_authorization",
+    "delivery_target",
+    "experience_contract",
+    "acceptance_authority",
     "truth_policy"
   ],
   "properties": {
@@ -23,7 +21,7 @@
       "type": "string"
     },
     "version": {
-      "const": 1
+      "const": 2
     },
     "id": {
       "type": "string",
@@ -40,193 +38,82 @@
     "status": {
       "enum": ["UNPROVEN", "PROVEN"]
     },
-    "target": {
+    "delivery_target": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "store",
-        "operating_system",
-        "primary_audience",
-        "audience_inclusion_criteria",
-        "audience_exclusion_criteria"
+        "platform",
+        "input",
+        "target_audience",
+        "estimated_playtime_minutes"
       ],
       "properties": {
         "store": {
-          "enum": ["Steam", "NEEDS_USER_DECISION"]
-        },
-        "operating_system": {
-          "enum": ["Windows", "NEEDS_USER_DECISION"]
-        },
-        "primary_audience": {
           "type": "string",
           "minLength": 1
         },
-        "audience_inclusion_criteria": {
+        "platform": {
           "type": "string",
           "minLength": 1
         },
-        "audience_exclusion_criteria": {
-          "type": "string",
-          "minLength": 1
-        }
-      }
-    },
-    "price_policy": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "currency",
-        "floor",
-        "planned_test_price",
-        "maximum_launch_discount_percent",
-        "minimum_discounted_launch_price",
-        "count_only_price_exposures_at_or_above_floor"
-      ],
-      "properties": {
-        "currency": {
-          "const": "USD"
-        },
-        "floor": {
-          "const": 20
-        },
-        "planned_test_price": {
-          "const": 24.99
-        },
-        "maximum_launch_discount_percent": {
-          "const": 15
-        },
-        "minimum_discounted_launch_price": {
-          "type": "number",
-          "minimum": 20
-        },
-        "count_only_price_exposures_at_or_above_floor": {
-          "const": true
-        }
-      }
-    },
-    "conversion_contract": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id",
-        "start_event",
-        "cta_event",
-        "denominator_event",
-        "numerator_event",
-        "attribution_window_hours",
-        "unit",
-        "minimum_sample_size",
-        "minimum_purchases_at_minimum_sample",
-        "minimum_observed_rate",
-        "confidence_method",
-        "minimum_wilson_lower_bound",
-        "deduplication_required",
-        "cohort_definition_must_be_locked_before_collection",
-        "status"
-      ],
-      "properties": {
-        "id": {
-          "const": "demo-complete-steam-utm-to-paid-72h"
-        },
-        "start_event": {
-          "const": "demo_complete"
-        },
-        "cta_event": {
-          "const": "demo_complete_purchase_cta"
-        },
-        "denominator_event": {
-          "const": "tracked_steam_utm_visit_from_demo_complete_cta"
-        },
-        "numerator_event": {
-          "const": "attributed_paid_purchase_within_72_hours"
-        },
-        "attribution_window_hours": {
-          "const": 72
-        },
-        "unit": {
-          "const": "unique_eligible_player"
-        },
-        "minimum_sample_size": {
-          "const": 400
-        },
-        "minimum_purchases_at_minimum_sample": {
-          "const": 220
-        },
-        "minimum_observed_rate": {
-          "const": 0.55
-        },
-        "confidence_method": {
-          "const": "two_sided_wilson_95"
-        },
-        "minimum_wilson_lower_bound": {
-          "const": 0.5
-        },
-        "deduplication_required": {
-          "const": true
-        },
-        "cohort_definition_must_be_locked_before_collection": {
-          "const": true
-        },
-        "status": {
-          "enum": ["UNPROVEN", "PROVEN"]
-        }
-      }
-    },
-    "day_14_audit": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "separate_from_72_hour_conversion",
-        "audit_day",
-        "metrics",
-        "reporting_required",
-        "status"
-      ],
-      "properties": {
-        "separate_from_72_hour_conversion": {
-          "const": true
-        },
-        "audit_day": {
-          "const": 14
-        },
-        "metrics": {
+        "input": {
           "type": "array",
-          "minItems": 4,
+          "minItems": 1,
           "uniqueItems": true,
           "items": {
-            "enum": [
-              "refund_count",
-              "refund_rate",
-              "retained_purchase_count",
-              "retained_purchase_rate"
-            ]
+            "type": "string"
           }
         },
-        "reporting_required": {
-          "const": true
+        "target_audience": {
+          "type": "string",
+          "minLength": 1
         },
-        "status": {
-          "enum": ["UNPROVEN", "PROVEN"]
+        "estimated_playtime_minutes": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },
-    "work_authorization": {
+    "experience_contract": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "platform_independent_gates_allowed_while_audience_unknown",
-        "audience_dependent_gates_blocked_until_decision",
-        "network_install_publish_and_external_accounts_require_approval"
+        "core_mechanic",
+        "handcrafted_world",
+        "boss_fight_and_ending",
+        "save_system"
       ],
       "properties": {
-        "platform_independent_gates_allowed_while_audience_unknown": {
-          "const": ["G1", "G2", "G3", "G4"]
+        "core_mechanic": {
+          "type": "string",
+          "minLength": 1
         },
-        "audience_dependent_gates_blocked_until_decision": {
-          "const": ["G5", "G6"]
+        "handcrafted_world": {
+          "type": "string",
+          "minLength": 1
         },
-        "network_install_publish_and_external_accounts_require_approval": {
+        "boss_fight_and_ending": {
+          "type": "string",
+          "minLength": 1
+        },
+        "save_system": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "acceptance_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user_acceptance_required", "automated_test_authority"],
+      "properties": {
+        "user_acceptance_required": {
           "const": true
+        },
+        "automated_test_authority": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },
@@ -237,8 +124,6 @@
         "allowed_evidence_statuses",
         "no_evidence_status",
         "self_review_can_complete_goal",
-        "automated_tests_can_prove_market_conversion",
-        "g5_can_substitute_for_g6",
         "all_required_gates_must_pass"
       ],
       "properties": {
@@ -249,12 +134,6 @@
           "const": "UNKNOWN"
         },
         "self_review_can_complete_goal": {
-          "const": false
-        },
-        "automated_tests_can_prove_market_conversion": {
-          "const": false
-        },
-        "g5_can_substitute_for_g6": {
           "const": false
         },
         "all_required_gates_must_pass": {

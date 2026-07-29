@@ -2,13 +2,13 @@
 
 ## 메타데이터
 
-- 상태: `Ready`
+- 상태: `Verified`
 - 생성일: 2026-07-29
 - 최종 수정일: 2026-07-29
 - 관련 브랜치: -
 - 관련 이슈: -
 - 관련 PR: -
-- 관련 Goal Harness 항목: 현재 전체 계약, Q-006, Q-010~Q-014
+- 관련 Goal Harness 항목: 전체 웹 수직 슬라이스 계약, 게이트 W0~W5
 - 선행 플랜: 없음
 - 후속 플랜: PLAN-002~PLAN-006
 
@@ -214,11 +214,11 @@ workspace 안에서만 변경한다.
 
 ## 진행 상황
 
-- [ ] v1 archive
-- [ ] v2 계약과 schema
-- [ ] AGENTS와 CLI 정합화
-- [ ] backlog 연결
-- [ ] 검증과 사용자 확인
+- [x] v1 archive
+- [x] v2 계약과 schema
+- [x] AGENTS와 CLI 정합화
+- [x] backlog 연결
+- [x] 검증과 사용자 확인
 
 ## 결정 기록
 
@@ -233,16 +233,34 @@ workspace 안에서만 변경한다.
 
 ## 실제 변경 파일
 
-예정 상태. 구현 시 실제 파일로 갱신한다.
+- `.goal/archive/commercial-v1/`
+- `.goal/goal.json`
+- `.goal/gates.json`
+- `.goal/rubric.json`
+- `.goal/backlog.json`
+- `.goal/PLAYBOOK.md`
+- `.goal/schemas/goal.schema.json`
+- `.goal/schemas/gates.schema.json`
+- `.goal/schemas/backlog.schema.json`
+- `.goal/schemas/rubric.schema.json`
+- `AGENTS.md`
+- `scripts/validate-goal.mjs`
+- `tests/validate-goal-schema.test.ts`
+- `docs/plans/PLAN-001-premium-web-slice-contract.md`
+- `docs/plans/README.md`
 
 ## 테스트 결과
 
-미실행.
+- `npm run goal:validate` -> PASS (DECISION_HOLES 0, 6 gates, 5 backlog items, 7 rubric dimensions)
+- `npm run goal:status` -> PASS (Goal: Premium Desktop Web Vertical Slice, Backlog: ready=4 active=1)
+- `npm run goal:next` -> PASS (Next active item: W2-CROWN-RUSH-V2)
+- `npm run format:check` -> PASS (All matched files use Prettier code style)
+- `npm test` -> PASS (15 test files passed, 96 tests)
 
 ## 결과
 
-미구현.
+`Verified`. v1 계약 아카이브, v2 데스크톱 웹 수직 슬라이스 목표 계약 전환, CLI/스크립트/규칙 정합화 및 자동 검증이 완료되었습니다.
 
 ## 후속 작업
 
-PLAN-002에서 왕관 질주 v2 상태 머신과 회색 상자 fixture를 구현한다.
+PLAN-002에서 연쇄 왕관 질주 v2 상태 머신과 회색 상자 fixture를 구현한다.

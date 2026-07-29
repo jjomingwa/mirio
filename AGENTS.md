@@ -21,18 +21,12 @@ conversion metric, price policy, audience, platform, or evidence rules.
 
 ## Truth rules
 
-- The commercial goal starts and remains `UNPROVEN` until G6 has valid external evidence.
+- The goal starts and remains `UNPROVEN` until W5 has valid user acceptance evidence.
 - A requirement or gate may be `PASS`, `FAIL`, or `UNKNOWN`.
 - No evidence means `UNKNOWN`, never `PASS`.
-- A build, automated test, screenshot, self-review, or simulated buyer does not prove fun,
-  premium value, legal clearance, Steam purchase conversion, or retained purchases.
-- Do not claim that a USD 20+ price or 50%+ conversion is achieved from code quality alone.
-- Do not invent evidence, test output, player feedback, purchase data, reviewer identity, or
-  completion state.
-- Steam and Windows are the researched measurement candidate, not a user-approved target.
-  Store, operating system, and audience remain `NEEDS_USER_DECISION`.
-- Those missing decisions block audience/store-dependent G5 and G6 work. They do not block
-  platform-independent G1-G4 work already represented in the backlog.
+- A build, automated test, screenshot, or self-review does not prove user satisfaction, control feel, or complete vertical slice quality.
+- Do not invent evidence, test output, player feedback, or completion state.
+- Modern desktop web browsers (Chrome/Edge) are the canonical target environment.
 
 ## Deterministic work loop
 
@@ -185,8 +179,4 @@ change the target, run as administrator, or continue read-only. Never bypass the
 
 ## Completion
 
-The overall goal is complete only when every required gate is PASS and G6 proves the
-pre-registered conversion rule on the user-approved store. The current Steam UTM contract is
-a candidate protocol until the user chooses Steam. G5 intent or willingness-to-pay data is a
-leading indicator and cannot substitute for G6. Day-14 refund and retained-purchase results
-are a separate audit and must be reported separately from the 72-hour conversion result.
+The overall goal is complete only when every required gate W0 through W5 is PASS and W5 proves user final acceptance on the canonical desktop web target.

@@ -1,0 +1,76 @@
+{
+  "$schema": "./schemas/assets.schema.json",
+  "schema_version": 1,
+  "policy": {
+    "release_rule": "Every shipped asset package must have commercial_status APPROVED with preserved source, license text, exact file scope, and required credits.",
+    "allowed_statuses": ["NEEDS_HUMAN_REVIEW", "APPROVED", "REJECTED"]
+  },
+  "packages": [
+    {
+      "id": "sunnyland-base",
+      "runtime_paths": [
+        "public/assets/sunnyland-base/**",
+        "public/assets/audio/music/platformer_level03_loop.ogg"
+      ],
+      "source": "https://opengameart.org/content/sunny-land-2d-pixel-art-pack",
+      "local_license_files": [
+        "public/assets/licenses/sunnyland/public-license.txt"
+      ],
+      "required_credit": "Verify the bundled music attribution text and show it in the shipped credits.",
+      "commercial_status": "NEEDS_HUMAN_REVIEW",
+      "review_evidence": []
+    },
+    {
+      "id": "sunnyland-forest",
+      "runtime_paths": ["public/assets/sunnyland-forest/**"],
+      "source": "https://ansimuz.itch.io/sunny-land-forest",
+      "local_license_files": [
+        "public/assets/licenses/sunnyland-forest/public-license.txt"
+      ],
+      "required_credit": "Confirm the downloaded archive and local license refer to the exact shipped files.",
+      "commercial_status": "NEEDS_HUMAN_REVIEW",
+      "review_evidence": []
+    },
+    {
+      "id": "sideview-fantasy",
+      "runtime_paths": ["public/assets/fantasy/**"],
+      "source": "https://opengameart.org/content/sideview-fantasy-patreon-collection",
+      "local_license_files": [
+        "public/assets/fantasy/Sprites/Grotto-escape-2-boss-dragon/patreon-license.txt"
+      ],
+      "required_credit": "Resolve the bundled Patreon-only notice against the later CC0 distribution and preserve proof that it covers the exact shipped archive.",
+      "commercial_status": "NEEDS_HUMAN_REVIEW",
+      "review_evidence": []
+    },
+    {
+      "id": "exploration-music",
+      "runtime_paths": ["public/assets/audio/music/exploration.ogg"],
+      "source": "https://opengameart.org/content/chiptune-exploration",
+      "local_license_files": [],
+      "required_credit": "The source page identifies Ansimuz, CC0, and optional attribution; preserve a dated source record.",
+      "commercial_status": "NEEDS_HUMAN_REVIEW",
+      "review_evidence": []
+    },
+    {
+      "id": "going-up-music",
+      "runtime_paths": ["public/assets/audio/music/Going Up.ogg"],
+      "source": "https://opengameart.org/content/going-up-adventure-chiptune",
+      "local_license_files": [],
+      "supplemental_files": [
+        "public/assets/licenses/going-up/public-license.txt"
+      ],
+      "required_credit": "The current local text describes artwork rather than this music; preserve the CC0 source record for the exact audio archive before approval.",
+      "commercial_status": "NEEDS_HUMAN_REVIEW",
+      "review_evidence": []
+    },
+    {
+      "id": "platformer-sfx",
+      "runtime_paths": ["public/assets/audio/sfx/**"],
+      "source": "https://opengameart.org/content/sound-effects-for-platformer",
+      "local_license_files": [],
+      "required_credit": "The source page identifies Listener and CC0; preserve a dated source record and map all 19 samples to it.",
+      "commercial_status": "NEEDS_HUMAN_REVIEW",
+      "review_evidence": []
+    }
+  ]
+}

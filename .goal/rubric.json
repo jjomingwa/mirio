@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/rubric.schema.json",
-  "version": 1,
-  "title": "Premium USD 24.99 quality rubric",
+  "version": 2,
+  "title": "Premium Web Vertical Slice Quality Rubric",
   "status": "UNPROVEN",
   "scale": {
     "minimum": 0,
@@ -39,7 +39,7 @@
     "minimum_score_for_core_feel": 4,
     "minimum_score_for_world_differentiation": 4,
     "critical_findings_allowed": 0,
-    "independent_review_required": true,
+    "independent_review_required": false,
     "subjective_dimensions_require_human_evidence": true,
     "missing_score_result": "UNKNOWN"
   },
@@ -51,8 +51,7 @@
       "human_evidence_required": true,
       "criteria": [
         "Movement is predictable, responsive, and expressive.",
-        "Damage, hazards, goals, and enemy intentions are readable.",
-        "Difficulty failures feel attributable to player decisions rather than ambiguity."
+        "Crown Rush dash, charge, and hazards are clear and readable."
       ],
       "current_score": null,
       "status": "UNKNOWN",
@@ -64,9 +63,8 @@
       "weight": 20,
       "human_evidence_required": true,
       "criteria": [
-        "Worlds introduce materially different mechanics and decisions.",
-        "Enemy behavior and encounter composition vary meaningfully.",
-        "Boss progression expresses the world's identity rather than reusing one fight."
+        "Goldenwind Forest stages introduce distinct platforming and encounter challenges.",
+        "Broken Throne boss fight features telegraphed phase transitions."
       ],
       "current_score": null,
       "status": "UNKNOWN",
@@ -74,13 +72,11 @@
     },
     {
       "id": "R3",
-      "name": "Content value, pacing, and replayability",
+      "name": "Content value and pacing",
       "weight": 15,
       "human_evidence_required": true,
       "criteria": [
-        "The opening, learning curve, escalation, secrets, and ending form a coherent arc.",
-        "Campaign length and authored variety justify the planned price.",
-        "Optional goals and routes add meaningful replay value without padding."
+        "Stage progression, secret areas, and boss battle form a coherent 50-70 minute arc."
       ],
       "current_score": null,
       "status": "UNKNOWN",
@@ -92,9 +88,7 @@
       "weight": 15,
       "human_evidence_required": true,
       "criteria": [
-        "Backgrounds, characters, effects, UI, and animation share a coherent art direction.",
-        "Music and sound reinforce world identity, action, and feedback.",
-        "No placeholder, permanently retained, missing, or visibly incompatible asset remains."
+        "Original custom pixel art, UI, effects, and audio tracks form a unified theme."
       ],
       "current_score": null,
       "status": "UNKNOWN",
@@ -102,13 +96,11 @@
     },
     {
       "id": "R5",
-      "name": "Onboarding, narrative, and product identity",
-      "weight": 10,
-      "human_evidence_required": true,
+      "name": "Web browser stability and performance",
+      "weight": 15,
+      "human_evidence_required": false,
       "criteria": [
-        "The premise, player goal, controls, and stakes are clear without external explanation.",
-        "The product has a memorable identity distinct from its references.",
-        "Store-facing names and claims match the shipped experience."
+        "Runs smoothly at 60 FPS in Chrome/Edge without memory leaks or frame drops."
       ],
       "current_score": null,
       "status": "UNKNOWN",
@@ -116,13 +108,11 @@
     },
     {
       "id": "R6",
-      "name": "Stability, performance, and save integrity",
+      "name": "Accessibility and input coverage",
       "weight": 10,
-      "human_evidence_required": false,
+      "human_evidence_required": true,
       "criteria": [
-        "Representative sessions complete without crash, soft lock, leak, or progression loss.",
-        "Frame pacing, loading, input processing, and asset delivery remain acceptable on the target class of hardware.",
-        "Save validation and migration preserve bounded, legitimate progress."
+        "Keyboard and Gamepad controls are rebindable and fully functional."
       ],
       "current_score": null,
       "status": "UNKNOWN",
@@ -130,27 +120,11 @@
     },
     {
       "id": "R7",
-      "name": "Accessibility and input coverage",
+      "name": "Asset license and commercial clearance",
       "weight": 5,
       "human_evidence_required": true,
       "criteria": [
-        "Keyboard, gamepad, and touch behavior are usable where claimed.",
-        "Reduced motion, reduced flash, volume, pause, and readable UI settings work in practice.",
-        "Critical information is not conveyed by a single inaccessible cue."
-      ],
-      "current_score": null,
-      "status": "UNKNOWN",
-      "evidence_ids": []
-    },
-    {
-      "id": "R8",
-      "name": "Commercial, IP, and asset readiness",
-      "weight": 5,
-      "human_evidence_required": true,
-      "criteria": [
-        "Product identity avoids unlicensed or confusing third-party names and presentation.",
-        "Every shipped asset has a traceable commercial-use basis.",
-        "Required attribution, notices, price claims, and store disclosures are complete."
+        "All shipped assets have verifiable original or commercial license rights."
       ],
       "current_score": null,
       "status": "UNKNOWN",

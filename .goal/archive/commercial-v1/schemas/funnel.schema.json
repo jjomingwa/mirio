@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "funnel.schema.json",
+  "title": "Crowntrail preregistered Steam funnel result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "cohort_id",
+    "protocol_locked_at_utc",
+    "collection_closed_at_utc",
+    "price_usd",
+    "launch_discount_percent",
+    "attribution_window_hours",
+    "eligible_unique_utm_visits",
+    "attributed_paid_purchases",
+    "observed_rate",
+    "wilson_95_lower_bound",
+    "deduplicated",
+    "source_provenance",
+    "status",
+    "day_14_audit"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "cohort_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol_locked_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "collection_closed_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "price_usd": {
+      "type": "number",
+      "minimum": 20
+    },
+    "launch_discount_percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 15
+    },
+    "attribution_window_hours": {
+      "const": 72
+    },
+    "eligible_unique_utm_visits": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "attributed_paid_purchases": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "observed_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "wilson_95_lower_bound": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "deduplicated": {
+      "type": "boolean"
+    },
+    "source_provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "enum": ["PASS", "FAIL", "UNKNOWN"]
+    },
+    "day_14_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "refund_count",
+        "refund_rate",
+        "retained_purchase_count",
+        "retained_purchase_rate",
+        "reported_separately"
+      ],
+      "properties": {
+        "status": {
+          "enum": ["PASS", "FAIL", "UNKNOWN"]
+        },
+        "refund_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "refund_rate": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "retained_purchase_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "retained_purchase_rate": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "reported_separately": {
+          "const": true
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "PASS"
+          }
+        },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "eligible_unique_utm_visits": {
+            "minimum": 400
+          },
+          "attributed_paid_purchases": {
+            "minimum": 220
+          },
+          "observed_rate": {
+            "minimum": 0.55
+          },
+          "wilson_95_lower_bound": {
+            "minimum": 0.5
+          },
+          "deduplicated": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,70 +1,31 @@
 {
   "$schema": "./schemas/goal.schema.json",
-  "version": 1,
-  "id": "crowntrail-premium-qualified-conversion",
-  "title": "Premium release with evidence-backed qualified conversion",
-  "objective": "Continuously improve Crowntrail Kingdom until a USD 20 or higher commercial release and a 50% or higher qualified purchase conversion claim are supported by current evidence.",
+  "version": 2,
+  "id": "crowntrail-web-slice",
+  "title": "Premium Desktop Web Vertical Slice",
+  "objective": "Deliver a polished 50-70 minute action-platformer vertical slice playable in modern desktop browsers.",
   "status": "UNPROVEN",
-  "target": {
-    "store": "NEEDS_USER_DECISION",
-    "operating_system": "NEEDS_USER_DECISION",
-    "primary_audience": "NEEDS_USER_DECISION",
-    "audience_inclusion_criteria": "NEEDS_USER_DECISION",
-    "audience_exclusion_criteria": "NEEDS_USER_DECISION"
+  "delivery_target": {
+    "store": "Desktop Web (Chrome/Edge)",
+    "platform": "Browser",
+    "input": ["Keyboard", "Gamepad"],
+    "target_audience": "Mid-difficulty action platformer players",
+    "estimated_playtime_minutes": "50-70"
   },
-  "price_policy": {
-    "currency": "USD",
-    "floor": 20,
-    "planned_test_price": 24.99,
-    "maximum_launch_discount_percent": 15,
-    "minimum_discounted_launch_price": 21.24,
-    "count_only_price_exposures_at_or_above_floor": true
+  "experience_contract": {
+    "core_mechanic": "Crown Rush v2 (Dash, Charge, Trail, Encounter)",
+    "handcrafted_world": "Goldenwind Forest (Stage 1 & 2)",
+    "boss_fight_and_ending": "Broken Throne Boss Fight & Ending",
+    "save_system": "Local Storage Stage & Progress Retention"
   },
-  "conversion_contract": {
-    "id": "demo-complete-steam-utm-to-paid-72h",
-    "start_event": "demo_complete",
-    "cta_event": "demo_complete_purchase_cta",
-    "denominator_event": "tracked_steam_utm_visit_from_demo_complete_cta",
-    "numerator_event": "attributed_paid_purchase_within_72_hours",
-    "attribution_window_hours": 72,
-    "unit": "unique_eligible_player",
-    "minimum_sample_size": 400,
-    "minimum_purchases_at_minimum_sample": 220,
-    "minimum_observed_rate": 0.55,
-    "confidence_method": "two_sided_wilson_95",
-    "minimum_wilson_lower_bound": 0.5,
-    "deduplication_required": true,
-    "cohort_definition_must_be_locked_before_collection": true,
-    "status": "UNPROVEN"
-  },
-  "day_14_audit": {
-    "separate_from_72_hour_conversion": true,
-    "audit_day": 14,
-    "metrics": [
-      "refund_count",
-      "refund_rate",
-      "retained_purchase_count",
-      "retained_purchase_rate"
-    ],
-    "reporting_required": true,
-    "status": "UNPROVEN"
-  },
-  "work_authorization": {
-    "platform_independent_gates_allowed_while_audience_unknown": [
-      "G1",
-      "G2",
-      "G3",
-      "G4"
-    ],
-    "audience_dependent_gates_blocked_until_decision": ["G5", "G6"],
-    "network_install_publish_and_external_accounts_require_approval": true
+  "acceptance_authority": {
+    "user_acceptance_required": true,
+    "automated_test_authority": "Verification and correctness"
   },
   "truth_policy": {
     "allowed_evidence_statuses": ["PASS", "FAIL", "UNKNOWN"],
     "no_evidence_status": "UNKNOWN",
     "self_review_can_complete_goal": false,
-    "automated_tests_can_prove_market_conversion": false,
-    "g5_can_substitute_for_g6": false,
     "all_required_gates_must_pass": true
   }
 }

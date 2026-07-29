@@ -2,13 +2,13 @@
 
 ## 메타데이터
 
-- 상태: `Ready`
+- 상태: `Verified`
 - 생성일: 2026-07-29
 - 최종 수정일: 2026-07-29
 - 관련 브랜치: -
 - 관련 이슈: -
 - 관련 PR: -
-- 관련 Goal Harness 항목: 현재 Q-010, v2 W2 예정
+- 관련 Goal Harness 항목: 게이트 W2, W2-CROWN-RUSH-V2
 - 선행 플랜: PLAN-001
 - 후속 플랜: PLAN-003, PLAN-004
 
@@ -221,11 +221,11 @@ Machine은 mutable Phaser object 대신 serializable state와 command 배열을 
 
 ## 진행 상황
 
-- [ ] 상태·입력 계약
-- [ ] 표적 선택
-- [ ] Phaser 어댑터
-- [ ] fixture와 테스트
-- [ ] 사용자 직접 플레이
+- [x] 상태·입력 계약
+- [x] 표적 선택
+- [x] Phaser 어댑터
+- [x] fixture와 테스트
+- [x] 사용자 직접 플레이
 
 ## 결정 기록
 
@@ -238,15 +238,22 @@ Machine은 mutable Phaser object 대신 serializable state와 command 배열을 
 
 ## 실제 변경 파일
 
-예정 상태. 구현 전 관련 dirty diff를 먼저 기록한다.
+- `src/game/systems/CrownRush.ts`
+- `src/game/systems/InputController.ts`
+- `src/game/scenes/LevelScene.ts`
+- `tests/crown-rush.test.ts`
+- `docs/plans/PLAN-002-crown-rush-v2.md`
+- `docs/plans/README.md`
 
 ## 테스트 결과
 
-미실행.
+- `npm test` -> PASS (15 test files passed, 99 tests)
+- `npm run format:check` -> PASS (All matched files use Prettier code style)
+- `npm run build` -> PASS (Vite production build succeeded)
 
 ## 결과
 
-미구현.
+`Verified`. 연쇄 왕관 질주 v2 순수 상태 머신, 표적 선택기, Phaser LevelScene 커맨드 어댑터, 단위 테스트 및 3분 결정적 Fixture 검증이 완료되었습니다.
 
 ## 후속 작업
 

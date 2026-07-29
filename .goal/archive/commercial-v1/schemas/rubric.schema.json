@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rubric.schema.json",
+  "title": "Crowntrail premium quality rubric",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "version",
+    "title",
+    "status",
+    "scale",
+    "pass_policy",
+    "dimensions"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": ["UNPROVEN", "PROVEN"]
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum", "maximum", "anchors"],
+      "properties": {
+        "minimum": {
+          "const": 0
+        },
+        "maximum": {
+          "const": 5
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["score", "meaning"],
+            "properties": {
+              "score": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "meaning": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "pass_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimum_weighted_percent",
+        "minimum_score_for_any_dimension",
+        "minimum_score_for_core_feel",
+        "minimum_score_for_world_differentiation",
+        "critical_findings_allowed",
+        "independent_review_required",
+        "subjective_dimensions_require_human_evidence",
+        "missing_score_result"
+      ],
+      "properties": {
+        "minimum_weighted_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "minimum_score_for_any_dimension": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "minimum_score_for_core_feel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "minimum_score_for_world_differentiation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "critical_findings_allowed": {
+          "const": 0
+        },
+        "independent_review_required": {
+          "const": true
+        },
+        "subjective_dimensions_require_human_evidence": {
+          "const": true
+        },
+        "missing_score_result": {
+          "const": "UNKNOWN"
+        }
+      }
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/dimension"
+      }
+    }
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "weight",
+        "human_evidence_required",
+        "criteria",
+        "current_score",
+        "status",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^R[1-8]$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "human_evidence_required": {
+          "type": "boolean"
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "current_score": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 5
+        },
+        "status": {
+          "enum": ["PASS", "FAIL", "UNKNOWN"]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "PASS"
+              }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "current_score": {
+                "type": "number"
+              },
+              "evidence_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

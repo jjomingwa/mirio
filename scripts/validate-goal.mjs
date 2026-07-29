@@ -66,19 +66,6 @@ function findDecisionHoles(value) {
   return 0;
 }
 
-function wilsonLower(successes, sampleSize, z = 1.959963984540054) {
-  const rate = successes / sampleSize;
-  const denominator = 1 + (z * z) / sampleSize;
-  const center = (rate + (z * z) / (2 * sampleSize)) / denominator;
-  const margin =
-    (z *
-      Math.sqrt(
-        (rate * (1 - rate) + (z * z) / (4 * sampleSize)) / sampleSize,
-      )) /
-    denominator;
-  return center - margin;
-}
-
 const goal = load("goal.json");
 const gatesDocument = load("gates.json");
 const rubric = load("rubric.json");
@@ -164,8 +151,8 @@ const gateIds = gates.map((gate) => gate.id);
 unique(gateIds, "gate IDs");
 check(
   JSON.stringify(gateIds) ===
-    JSON.stringify(["G0", "G1", "G2", "G3", "G4", "G5", "G6"]),
-  "Gate IDs must be G0 through G6 in order",
+    JSON.stringify(["W0", "W1", "W2", "W3", "W4", "W5"]),
+  "Gate IDs must be W0 through W5 in order",
 );
 const requirementIds = gates.flatMap((gate) =>
   (gate.requirements ?? []).map((requirement) => requirement.id),
@@ -233,32 +220,14 @@ function visit(id, chain = []) {
 for (const id of itemIds) visit(id);
 
 if (goal) {
-  const contract = goal.conversion_contract;
+  check(goal.version === 2, "Goal version must be 2");
   check(
-    goal.status === "UNPROVEN",
-    "Goal must remain UNPROVEN before G6 evidence",
-  );
-  check(goal.price_policy?.floor >= 20, "Price floor must be at least USD 20");
-  check(
-    goal.price_policy?.minimum_discounted_launch_price >= 20,
-    "Discounted launch price falls below USD 20",
+    goal.status === "UNPROVEN" || goal.status === "PROVEN",
+    "Goal status must be UNPROVEN or PROVEN",
   );
   check(
-    contract?.minimum_sample_size >= 400,
-    "Conversion sample must be at least 400",
-  );
-  check(
-    contract?.minimum_purchases_at_minimum_sample /
-      contract?.minimum_sample_size >=
-      contract?.minimum_observed_rate,
-    "Minimum purchase count does not meet the observed-rate rule",
-  );
-  check(
-    wilsonLower(
-      contract?.minimum_purchases_at_minimum_sample,
-      contract?.minimum_sample_size,
-    ) >= contract?.minimum_wilson_lower_bound,
-    "Minimum purchase count does not meet the Wilson lower-bound rule",
+    goal.acceptance_authority?.user_acceptance_required === true,
+    "User acceptance must be required",
   );
   console.log(`DECISION_HOLES ${findDecisionHoles(goal)}`);
 }

@@ -1,0 +1,318 @@
+{
+  "$schema": "./schemas/gates.schema.json",
+  "version": 1,
+  "status_values": ["PASS", "FAIL", "UNKNOWN"],
+  "no_evidence_policy": "UNKNOWN",
+  "gates": [
+    {
+      "id": "G0",
+      "name": "Commercial contract and measurement feasibility",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": true,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G0-R1",
+          "description": "The target store, operating system, and USD price policy are approved by the user and recorded without contradiction.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["validated goal contract"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G0-R2",
+          "description": "Primary target audience inclusion and exclusion criteria are approved by the user.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": ["user-approved audience decision"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G0-R3",
+          "description": "Steam UTM visit-to-paid-purchase attribution within 72 hours is technically and contractually feasible before cohort collection.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "Steam attribution feasibility record",
+            "locked cohort protocol"
+          ],
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "name": "Reproducible baseline and repository navigation",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": true,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G1-R1",
+          "description": "A baseline commit exists and every verification run records commit SHA and dirty state.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["Git state evidence"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G1-R2",
+          "description": "Repository instructions, documented paths, and executable commands match the current tree.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["navigation audit", "command inventory"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G1-R3",
+          "description": "Goal, gates, rubric, backlog, and schemas parse and their identifiers and dependencies are internally consistent.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["contract validation output"],
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "Deterministic game and build correctness",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": true,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G2-R1",
+          "description": "Formatting, lint, unit tests, strict TypeScript, and production build pass on the same commit.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["command results"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G2-R2",
+          "description": "World graph, castle and fortress routing, final-stage reachability, and campaign counts are invariant-tested.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["graph invariant tests"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G2-R3",
+          "description": "Crown collection cannot exceed the campaign maximum and malformed or duplicate save data cannot inflate totals.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["save invariant tests"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G2-R4",
+          "description": "All runtime asset references resolve and required license records are present.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["asset reference audit"],
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "Real browser, input, and runtime proof",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": true,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G3-R1",
+          "description": "A real browser completes opening, map, course, boss, next-world, and ending flows without test-only bypasses.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["Playwright trace", "flow assertions"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G3-R2",
+          "description": "Keyboard, gamepad, touch, pause, restart, settings, reduced motion, and reduced flash work in representative runtime checks.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "automated input coverage",
+            "human device checklist"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G3-R3",
+          "description": "Repeated enemy defeats do not leave permanent pop effects, bodies, listeners, or unbounded scene objects.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": [
+            "enemy effect lifetime test",
+            "runtime object-count evidence"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G3-R4",
+          "description": "Desktop and narrow viewport runs have no unexpected console errors, failed asset requests, unreadable UI, or retained critical visual defects.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": [
+            "console and network log",
+            "screenshots",
+            "independent visual review"
+          ],
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "Premium vertical slice and commercial safety",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": true,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G4-R1",
+          "description": "A representative vertical slice has a complete content matrix covering narrative hook, world identity, mechanics, enemies, exploration, boss progression, audio, visuals, save flow, and accessibility.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "content matrix",
+            "captured playthrough",
+            "independent premium-quality review"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G4-R2",
+          "description": "World and stage content demonstrates materially distinct play rather than palette, seed, and difficulty variation alone.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "world differentiation matrix",
+            "player review"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G4-R3",
+          "description": "Nintendo-associated names and other avoidable third-party identity risks are removed from the product and commercial-facing materials.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": ["name scan", "human IP review"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G4-R4",
+          "description": "Every shipped third-party asset has source, creator, license, commercial-use basis, local license or source snapshot, and file hash, with conflicts resolved by qualified review.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "asset manifest",
+            "license files",
+            "qualified commercial license review"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G4-R5",
+          "description": "The weighted premium quality rubric passes with no critical finding and no required subjective dimension scored only by the implementer.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": ["rubric result", "independent reviews"],
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "Target-audience blinded playtest",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": false,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G5-R1",
+          "description": "The user-approved audience definition and a preregistered recruitment and exclusion protocol are used.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": ["audience decision", "cohort protocol"],
+          "evidence_ids": []
+        },
+        {
+          "id": "G5-R2",
+          "description": "Independent target players complete blinded play sessions and score premium quality and willingness to pay without implementer substitution.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "anonymized session records",
+            "rubric responses",
+            "willingness-to-pay responses"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G5-R3",
+          "description": "Critical findings are resolved or explicitly accepted by the user before funnel testing.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": ["finding disposition"],
+          "evidence_ids": []
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "name": "Steam purchase conversion and day-14 audit",
+      "status": "UNKNOWN",
+      "platform_independent_work_may_continue": false,
+      "evidence_ids": [],
+      "requirements": [
+        {
+          "id": "G6-R1",
+          "description": "The demo-complete CTA to tracked Steam UTM visit cohort is locked, deduplicated, and collected at USD 20 or above.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "locked cohort definition",
+            "price exposure record",
+            "deduplicated aggregate dataset"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G6-R2",
+          "description": "At least 400 eligible unique visits are observed, with at least 220 purchases at n=400 or an observed rate of at least 0.55 for larger cohorts, and the two-sided Wilson 95% lower bound is at least 0.50.",
+          "status": "UNKNOWN",
+          "automatable": true,
+          "evidence_required": [
+            "funnel dataset",
+            "Wilson calculation",
+            "independent calculation review"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G6-R3",
+          "description": "Purchases use the 72-hour attribution window and are reconciled to authoritative Steam data without fabricated user-level linkage.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": [
+            "Steam report provenance",
+            "attribution reconciliation"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "id": "G6-R4",
+          "description": "Day-14 refunds and retained purchases are reported as a separate audit and are not used to rewrite the preregistered 72-hour result.",
+          "status": "UNKNOWN",
+          "automatable": false,
+          "evidence_required": ["day-14 audit"],
+          "evidence_ids": []
+        }
+      ]
+    }
+  ]
+}

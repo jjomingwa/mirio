@@ -14,7 +14,10 @@ import { planHorizontalMovement } from "../systems/HorizontalMovement";
 import {
   advanceCrownRush,
   createCrownRushState,
+  notifyTargetHit,
+  resetCrownRush,
   type CrownRushState,
+  type RushTarget,
 } from "../systems/CrownRush";
 
 interface SceneData {
@@ -156,31 +159,45 @@ export class LevelScene extends Phaser.Scene {
     if (grounded) this.lastGroundedMs = time;
     if (input.jumpPressed) this.jumpBufferedMs = time;
 
-    const direction: -1 | 0 | 1 =
-      input.left === input.right ? 0 : input.left ? -1 : 1;
-    const wasRushing = this.crownRush.phase === "rushing";
-    const rush = advanceCrownRush(this.crownRush, {
+    const direction: -1 | 0 | 1 = input.moveX as -1 | 0 | 1;
+    const targets = this.collectRushTargets();
+
+    const rushStep = advanceCrownRush(this.crownRush, input, {
       now: time,
+      playerX: this.player.x,
+      playerY: this.player.y,
       grounded,
-      pressed: input.runPressed,
-      direction,
+      targets,
+      aimAssistEnabled: useGameStore.getState().save.settings.screenShake,
     });
-    this.crownRush = rush.state;
-    if (rush.activation) {
-      this.crownRushDirection = rush.activation.direction;
-      this.player.setTint(0xffdf72);
-      audioDirector.playSfx("jump", 55);
-    }
-    if (wasRushing && this.crownRush.phase !== "rushing") {
-      this.player.clearTint();
+    this.crownRush = rushStep.state;
+
+    for (const cmd of rushStep.commands) {
+      if (cmd.kind === "set_time_scale") {
+        this.time.timeScale = cmd.payload;
+        this.physics.world.timeScale = cmd.payload;
+      } else if (cmd.kind === "play_sfx") {
+        audioDirector.playSfx(
+          cmd.payload === "aim_start" ? "jump" : "jump",
+          55,
+        );
+      } else if (cmd.kind === "clear_tint") {
+        this.player.clearTint();
+      }
     }
 
-    if (this.crownRush.phase === "rushing") {
+    if (this.crownRush.phase === "aiming") {
+      this.player.setTint(0xffdf72);
+    } else if (this.crownRush.phase === "rushing") {
+      this.player.setTint(0xffaa22);
       body
-        .setVelocityX(this.crownRushDirection * 390)
-        .setAccelerationX(0)
-        .setDragX(0)
-        .setMaxVelocity(390, 760);
+        .setVelocity(
+          this.crownRush.rushDirX * 480,
+          this.crownRush.rushDirY * 480,
+        )
+        .setAcceleration(0, 0)
+        .setDrag(0, 0)
+        .setMaxVelocity(480, 760);
     } else {
       const motion = planHorizontalMovement(
         direction,
@@ -218,6 +235,41 @@ export class LevelScene extends Phaser.Scene {
     if (this.player.y > 318 || this.elapsedMs >= this.stage.timeLimit * 1000) {
       this.damagePlayer(true, true);
     }
+  }
+
+  private collectRushTargets(): RushTarget[] {
+    const targets: RushTarget[] = [];
+    if (!this.player) return targets;
+
+    for (const child of this.enemies.getChildren()) {
+      const enemy = child as Phaser.Physics.Arcade.Sprite;
+      if (enemy.active) {
+        targets.push({
+          id: `enemy_${enemy.x}_${enemy.y}`,
+          kind: "enemy",
+          x: enemy.x,
+          y: enemy.y,
+          recharge: true,
+          enabled: true,
+        });
+      }
+    }
+
+    for (const child of this.pickups.getChildren()) {
+      const pickup = child as Phaser.Physics.Arcade.Sprite;
+      if (pickup.active && pickup.getData("pickupType") === "crown") {
+        targets.push({
+          id: `ring_${pickup.x}_${pickup.y}`,
+          kind: "ring",
+          x: pickup.x,
+          y: pickup.y,
+          recharge: true,
+          enabled: true,
+        });
+      }
+    }
+
+    return targets;
   }
 
   private createBackground(): void {
@@ -509,6 +561,21 @@ export class LevelScene extends Phaser.Scene {
     if (stomping || this.crownRush.phase === "rushing") {
       if (this.defeatedEnemies.has(enemy)) return;
       this.defeatedEnemies.add(enemy);
+      if (this.crownRush.phase === "rushing") {
+        const hitResult = notifyTargetHit(
+          this.crownRush,
+          {
+            id: `enemy_${enemy.x}_${enemy.y}`,
+            kind: "enemy",
+            x: enemy.x,
+            y: enemy.y,
+            recharge: true,
+            enabled: true,
+          },
+          this.time.now,
+        );
+        this.crownRush = hitResult.state;
+      }
       enemy.disableBody(true, true);
       if (stomping) playerBody.setVelocityY(-285);
       audioDirector.playSfx("stomp", 90);
@@ -653,6 +720,9 @@ export class LevelScene extends Phaser.Scene {
 
   private restoreRuntime(): void {
     this.paused = false;
+    this.time.timeScale = 1.0;
+    this.physics.world.timeScale = 1.0;
+    this.crownRush = resetCrownRush("resume");
     this.physics.world.resume();
     this.anims.resumeAll();
     audioDirector.resumeAll();
@@ -670,6 +740,9 @@ export class LevelScene extends Phaser.Scene {
   }
 
   private shutdown(): void {
+    this.time.timeScale = 1.0;
+    this.physics.world.timeScale = 1.0;
+    this.crownRush = resetCrownRush("shutdown");
     this.enemyPopEffects?.destroyAll();
     this.enemyPopEffects = undefined;
     gameEvents.off(GameEvent.Pause, this.pauseGame, this);
